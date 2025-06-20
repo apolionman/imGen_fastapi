@@ -1,19 +1,48 @@
 FROM python:3.11-slim
 
+# Environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
+# Working directory
 WORKDIR /app
 
-RUN apt update && apt install -y curl && apt-get install -y gcc ccache && apt-get install -y libgl1 libglib2.0-0 ffmpeg
+# Install system-level dependencies
+RUN apt-get update && apt-get install -y \
+  curl \
+  gcc \
+  ccache \
+  libgl1 \
+  libglib2.0-0 \
+  ffmpeg \
+  git \
+  wget \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
 
+# Install Python dependencies (mirroring Colab setup)
 COPY requirements.txt ./
 RUN pip install --no-cache-dir --prefer-binary -r requirements.txt
 
-RUN pip install paddlepaddle -f https://www.paddlepaddle.org.cn/whl/linux/noavx/stable.html
+# Install BLIP repo in editable mode
+RUN pip install -e git+https://github.com/pharmapsychotic/BLIP.git@lib#egg=blip
 
+# Clone clip-interrogator repo (optional, only needed if used in app logic)
+RUN git clone -b open-clip https://github.com/pharmapsychotic/clip-interrogator.git
+
+# Download cache files (optional; you could also do this dynamically on app start if desired)
+RUN mkdir -p /app/cache && \
+  wget https://huggingface.co/pharma/ci-preprocess/resolve/main/ViT-H-14_laion2b_s32b_b79k_artists.pkl -P /app/cache && \
+  wget https://huggingface.co/pharma/ci-preprocess/resolve/main/ViT-H-14_laion2b_s32b_b79k_flavors.pkl -P /app/cache && \
+  wget https://huggingface.co/pharma/ci-preprocess/resolve/main/ViT-H-14_laion2b_s32b_b79k_mediums.pkl -P /app/cache && \
+  wget https://huggingface.co/pharma/ci-preprocess/resolve/main/ViT-H-14_laion2b_s32b_b79k_movements.pkl -P /app/cache && \
+  wget https://huggingface.co/pharma/ci-preprocess/resolve/main/ViT-H-14_laion2b_s32b_b79k_trendings.pkl -P /app/cache
+
+# Copy your FastAPI app code (if you have app/main.py etc.)
 COPY . .
 
+# Expose FastAPI port
 EXPOSE 8000
 
+# Default command to run your app
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

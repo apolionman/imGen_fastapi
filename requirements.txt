@@ -33,7 +33,6 @@ pyyaml
 pymupdf
 pdfminer.six
 pdf2image
-transformers
 sentence-transformers
 langchain
 langchain-ollama
@@ -81,3 +80,9 @@ openai==1.74.0
 openai-whisper
 openai-agents
 openai-agents[voice]
+
+#clip
+ftfy
+gradio
+regex
+transformers==4.21.2
