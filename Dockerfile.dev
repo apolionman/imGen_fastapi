@@ -37,11 +37,11 @@ COPY requirements.txt ./
 RUN pip install --upgrade pip setuptools wheel
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Install fixed version of tokenizers that resolves Rust compilation issues
-RUN pip install --no-cache-dir tokenizers>=0.15.0
+# Install fixed dependencies before BLIP
+RUN pip install --no-cache-dir tokenizers>=0.15.0 transformers>=4.37.0
 
 # Install BLIP in editable mode
-RUN pip install -e git+https://github.com/pharmapsychotic/BLIP.git@lib#egg=blip
+RUN pip install --no-cache-dir -e git+https://github.com/pharmapsychotic/BLIP.git@lib#egg=blip
 
 # Optional: Clone clip-interrogator
 RUN git clone -b open-clip https://github.com/pharmapsychotic/clip-interrogator.git
