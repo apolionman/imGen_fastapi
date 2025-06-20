@@ -3,7 +3,6 @@ FROM python:3.11-slim
 # Environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
-ENV PATH="/root/.cargo/bin:$PATH"
 
 WORKDIR /app
 
@@ -29,12 +28,18 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Rust via rustup
-RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
+# Ensure latest pip and Rust are installed
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
+ENV PATH="/root/.cargo/bin:${PATH}"
+RUN rustup update
+RUN pip install --upgrade pip setuptools wheel
+
+# Use binary wheels only (avoid building from source)
+ENV PIP_ONLY_BINARY=:all:
+ENV PIP_NO_BUILD_ISOLATION=1
 
 # Install Python dependencies
 COPY requirements.txt ./
-RUN pip install --upgrade pip setuptools wheel
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Install BLIP with explicit tokenizers build control
