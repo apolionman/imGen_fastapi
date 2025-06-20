@@ -32,20 +32,6 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Install BLIP in editable mode
-RUN pip install --no-cache-dir -e git+https://github.com/pharmapsychotic/BLIP.git@lib#egg=blip
-
-# Optional: Clone clip-interrogator
-RUN git clone -b open-clip https://github.com/pharmapsychotic/clip-interrogator.git
-
-# Optional: Cache concept vocab files
-RUN mkdir -p /app/cache && \
-  wget https://huggingface.co/pharma/ci-preprocess/resolve/main/ViT-H-14_laion2b_s32b_b79k_artists.pkl -P /app/cache && \
-  wget https://huggingface.co/pharma/ci-preprocess/resolve/main/ViT-H-14_laion2b_s32b_b79k_flavors.pkl -P /app/cache && \
-  wget https://huggingface.co/pharma/ci-preprocess/resolve/main/ViT-H-14_laion2b_s32b_b79k_mediums.pkl -P /app/cache && \
-  wget https://huggingface.co/pharma/ci-preprocess/resolve/main/ViT-H-14_laion2b_s32b_b79k_movements.pkl -P /app/cache && \
-  wget https://huggingface.co/pharma/ci-preprocess/resolve/main/ViT-H-14_laion2b_s32b_b79k_trendings.pkl -P /app/cache
-
 # Copy application code
 COPY . .
 
