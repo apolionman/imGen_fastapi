@@ -90,4 +90,3 @@ fairscale
 requests
 open_clip_torch
 transformers==4.33.3
-tokenizers==0.13.3

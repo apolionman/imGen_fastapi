@@ -7,7 +7,7 @@ ENV PATH="/root/.cargo/bin:$PATH"
 
 WORKDIR /app
 
-# Install system dependencies and Rust toolchain
+# Install system dependencies including Rust build essentials
 RUN apt-get update && apt-get install -y \
     curl \
     gcc \
@@ -23,34 +23,28 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     libffi-dev \
     python3-dev \
-    libxml2-dev \
-    libxslt1-dev \
-    zlib1g-dev \
+    # Add required libraries for tokenizers
+    libclang-dev \
+    cmake \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Rust using rustup and set default
-RUN curl https://sh.rustup.rs -sSf | bash -s -- -y && \
-    /root/.cargo/bin/rustup default stable && \
-    /root/.cargo/bin/rustup update
+# Install Rust via rustup
+RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
 
-# Upgrade pip and install Python build tools
+# Install Python dependencies
 COPY requirements.txt ./
-RUN pip install --upgrade pip setuptools wheel setuptools-rust
+RUN pip install --upgrade pip setuptools wheel
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Add this if you still face issues
-# RUN pip install cmake maturin
+# Install BLIP with explicit tokenizers build control
+RUN pip install --no-cache-dir tokenizers==0.13.3 && \
+    pip install -e git+https://github.com/pharmapsychotic/BLIP.git@lib#egg=blip
 
-# Install tokenizers from source first
-RUN pip install --no-binary :all: tokenizers
-
-# Now install BLIP
-RUN pip install -e git+https://github.com/pharmapsychotic/BLIP.git@lib#egg=blip
-
-# Clone clip-interrogator
+# Optional: Clone clip-interrogator
 RUN git clone -b open-clip https://github.com/pharmapsychotic/clip-interrogator.git
 
-# Optional: Cache vocab files
+# Optional: Cache concept vocab files
 RUN mkdir -p /app/cache && \
   wget https://huggingface.co/pharma/ci-preprocess/resolve/main/ViT-H-14_laion2b_s32b_b79k_artists.pkl -P /app/cache && \
   wget https://huggingface.co/pharma/ci-preprocess/resolve/main/ViT-H-14_laion2b_s32b_b79k_flavors.pkl -P /app/cache && \
@@ -58,7 +52,7 @@ RUN mkdir -p /app/cache && \
   wget https://huggingface.co/pharma/ci-preprocess/resolve/main/ViT-H-14_laion2b_s32b_b79k_movements.pkl -P /app/cache && \
   wget https://huggingface.co/pharma/ci-preprocess/resolve/main/ViT-H-14_laion2b_s32b_b79k_trendings.pkl -P /app/cache
 
-# Copy your app code
+# Copy application code
 COPY . .
 
 EXPOSE 8000
