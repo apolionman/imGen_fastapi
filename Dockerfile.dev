@@ -34,11 +34,7 @@ RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
 
 # Install Python dependencies
 COPY requirements.txt ./
-RUN pip install --upgrade pip setuptools wheel
 RUN pip install --no-cache-dir -r requirements.txt
-
-# Install fixed dependencies before BLIP
-RUN pip install --no-cache-dir tokenizers>=0.15.0 transformers>=4.37.0
 
 # Install BLIP in editable mode
 RUN pip install --no-cache-dir -e git+https://github.com/pharmapsychotic/BLIP.git@lib#egg=blip
