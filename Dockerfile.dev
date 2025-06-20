@@ -3,11 +3,12 @@ FROM python:3.11-slim
 # Environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
+ENV PATH="/root/.cargo/bin:$PATH"
 
 # Working directory
 WORKDIR /app
 
-# Install system-level dependencies
+# Install system-level dependencies + Rust
 RUN apt-get update && apt-get install -y \
   curl \
   gcc \
@@ -18,11 +19,13 @@ RUN apt-get update && apt-get install -y \
   ffmpeg \
   git \
   wget \
+  && curl https://sh.rustup.rs -sSf | bash -s -- -y \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies (mirroring Colab setup)
 COPY requirements.txt ./
+RUN pip install --upgrade pip
 RUN pip install --no-cache-dir --prefer-binary -r requirements.txt
 
 # Install BLIP repo in editable mode
@@ -39,7 +42,7 @@ RUN mkdir -p /app/cache && \
   wget https://huggingface.co/pharma/ci-preprocess/resolve/main/ViT-H-14_laion2b_s32b_b79k_movements.pkl -P /app/cache && \
   wget https://huggingface.co/pharma/ci-preprocess/resolve/main/ViT-H-14_laion2b_s32b_b79k_trendings.pkl -P /app/cache
 
-# Copy your FastAPI app code (if you have app/main.py etc.)
+# Copy your FastAPI app code
 COPY . .
 
 # Expose FastAPI port
