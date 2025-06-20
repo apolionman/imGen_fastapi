@@ -5,6 +5,7 @@ import tempfile, os, httpx, asyncio, subprocess, whisper
 from uuid import uuid4
 from datetime import datetime, timedelta
 
+router = APIRouter()
 
 @router.get("/health")
 async def health():
