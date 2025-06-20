@@ -1,0 +1,35 @@
+name: Deploy to Local
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy_to_local:
+    runs-on: [dgx-2]
+
+    steps:
+      - name: Checkout latest code
+        uses: actions/checkout@v4
+    
+      - name: Build Docker image
+        run: |
+          docker build -t gblr:dev -f Dockerfile.dev .
+    
+      - name: Deploy to Docker Swarm
+        run: |
+          # Remove the service if it exists (optional)
+          docker service rm gblr || true
+
+          # Create the service with 3 replicas, GPU support, and env vars
+          docker service create \
+            --name gblr \
+            --replicas 3 \
+            --publish published=8015,target=8000 \
+            --env NVIDIA_VISIBLE_DEVICES=all \
+            --constraint 'node.labels.gpu == true' \
+            gblr:dev
+
+    environment:
+      name: env
