@@ -7,7 +7,7 @@ ENV PATH="/root/.cargo/bin:$PATH"
 
 WORKDIR /app
 
-# System dependencies and Rust toolchain
+# Install system dependencies and Rust via rustup (recommended)
 RUN apt-get update && apt-get install -y \
     curl \
     gcc \
@@ -23,23 +23,24 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     libffi-dev \
     python3-dev \
-    rustc \
-    cargo \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Python dependencies
-COPY requirements.txt ./
-RUN pip install --upgrade pip
-RUN pip install --use-pep517 --no-cache-dir -r requirements.txt
+# Install Rust via rustup (better for tokenizers)
+RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
 
-# BLIP (editable install)
+# Install Python dependencies
+COPY requirements.txt ./
+RUN pip install --upgrade pip setuptools wheel
+RUN pip install --use-pep517 --no-build-isolation --no-cache-dir -r requirements.txt
+
+# Install BLIP in editable mode
 RUN pip install -e git+https://github.com/pharmapsychotic/BLIP.git@lib#egg=blip
 
 # Optional: Clone clip-interrogator
 RUN git clone -b open-clip https://github.com/pharmapsychotic/clip-interrogator.git
 
-# Optional: Cache files
+# Optional: Cache concept vocab files
 RUN mkdir -p /app/cache && \
   wget https://huggingface.co/pharma/ci-preprocess/resolve/main/ViT-H-14_laion2b_s32b_b79k_artists.pkl -P /app/cache && \
   wget https://huggingface.co/pharma/ci-preprocess/resolve/main/ViT-H-14_laion2b_s32b_b79k_flavors.pkl -P /app/cache && \
@@ -47,7 +48,7 @@ RUN mkdir -p /app/cache && \
   wget https://huggingface.co/pharma/ci-preprocess/resolve/main/ViT-H-14_laion2b_s32b_b79k_movements.pkl -P /app/cache && \
   wget https://huggingface.co/pharma/ci-preprocess/resolve/main/ViT-H-14_laion2b_s32b_b79k_trendings.pkl -P /app/cache
 
-# Copy app code
+# Copy application code
 COPY . .
 
 EXPOSE 8000
