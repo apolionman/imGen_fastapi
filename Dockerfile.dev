@@ -1,42 +1,40 @@
 FROM python:3.11-slim
 
 # Environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 ENV PATH="/root/.cargo/bin:$PATH"
 
-# Working directory
 WORKDIR /app
 
-# Install system-level dependencies + Rust + OpenSSL dev + pkg-config
+# System dependencies and Rust toolchain
 RUN apt-get update && apt-get install -y \
-  curl \
-  gcc \
-  g++ \
-  ccache \
-  libgl1 \
-  libglib2.0-0 \
-  ffmpeg \
-  git \
-  wget \
-  pkg-config \
-  libssl-dev \
-  && curl https://sh.rustup.rs -sSf | bash -s -- -y \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/*
+    build-essential \
+    gcc \
+    g++ \
+    curl \
+    git \
+    wget \
+    libssl-dev \
+    pkg-config \
+    libglib2.0-0 \
+    libgl1 \
+    ffmpeg \
+    && curl https://sh.rustup.rs -sSf | bash -s -- -y \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Install Python dependencies
+# Python dependencies
 COPY requirements.txt ./
 RUN pip install --upgrade pip
-RUN pip install --no-cache-dir --prefer-binary -r requirements.txt
+RUN pip install --use-pep517 --no-cache-dir -r requirements.txt
 
-# Install BLIP repo in editable mode
+# BLIP (editable install)
 RUN pip install -e git+https://github.com/pharmapsychotic/BLIP.git@lib#egg=blip
 
-# Clone clip-interrogator repo (optional)
+# Optional: Clone clip-interrogator
 RUN git clone -b open-clip https://github.com/pharmapsychotic/clip-interrogator.git
 
-# Download cache files
+# Optional: Cache files
 RUN mkdir -p /app/cache && \
   wget https://huggingface.co/pharma/ci-preprocess/resolve/main/ViT-H-14_laion2b_s32b_b79k_artists.pkl -P /app/cache && \
   wget https://huggingface.co/pharma/ci-preprocess/resolve/main/ViT-H-14_laion2b_s32b_b79k_flavors.pkl -P /app/cache && \
@@ -47,8 +45,5 @@ RUN mkdir -p /app/cache && \
 # Copy app code
 COPY . .
 
-# Expose FastAPI port
 EXPOSE 8000
-
-# Run FastAPI app
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

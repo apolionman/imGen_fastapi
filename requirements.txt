@@ -86,3 +86,8 @@ ftfy
 gradio
 regex
 transformers==4.21.2
+timm
+fairscale
+requests
+open_clip_torch
+tokenizers==0.13.3
