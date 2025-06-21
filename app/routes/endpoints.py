@@ -17,10 +17,12 @@ config.chunk_size = 2048
 config.flavor_intermediate_count = 512
 config.blip_num_beams = 64
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+# Set device and dtype in config BEFORE creating Interrogator
+config.device = "cuda" if torch.cuda.is_available() else "cpu"
+config.dtype = torch.float32  # Force float32 globally
+config.clip_model_jit = False
 
 ci = Interrogator(config)
-ci.clip_model = ci.clip_model.to(dtype=torch.float32, device=device)
 
 router = APIRouter()
 
