@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM dt-base:latest
 
 # Environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
