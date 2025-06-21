@@ -12,6 +12,10 @@ jobs:
     steps:
       - name: Checkout latest code
         uses: actions/checkout@v4
+
+      - name: Build Image
+        run: |
+          docker build -t gblr:dev .
       
       - name: Remove Existing Docker
         run: |
