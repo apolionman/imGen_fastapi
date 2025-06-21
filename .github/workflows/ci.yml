@@ -26,6 +26,7 @@ jobs:
           docker service create \
             --name gblr \
             --replicas 3 \
+            --mount type=bind,source=/home/prepaire/clip/models/pkl,target=/app/cache/pkl \
             --publish published=8015,target=8000 \
             --env NVIDIA_VISIBLE_DEVICES=all \
             --constraint 'node.labels.gpu == true' \

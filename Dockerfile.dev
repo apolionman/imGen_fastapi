@@ -31,6 +31,8 @@ RUN apt-get update && apt-get install -y \
 # Install Python dependencies
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -e 'git+https://github.com/pharmapsychotic/BLIP.git@lib#egg=blip' --no-deps
+RUN git clone -b open-clip https://github.com/pharmapsychotic/clip-interrogator.git
 
 # Copy application code
 COPY . .
