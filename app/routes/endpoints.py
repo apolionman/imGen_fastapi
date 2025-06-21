@@ -15,7 +15,7 @@ config = Config()
 config.blip_offload = True
 config.chunk_size = 2048
 config.flavor_intermediate_count = 512
-config.blip_num_beams = 64
+config.blip_num_beams = 16
 # config.device = "cuda"
 # config.clip_model_jit = False
 
