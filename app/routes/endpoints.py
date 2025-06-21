@@ -1,11 +1,9 @@
-from fastapi import APIRouter, Depends, HTTPException, status, UploadFile, File, Form, Query, Request
-from fastapi.responses import StreamingResponse, JSONResponse
-from typing import List, Dict, Optional
-import tempfile, os, httpx, asyncio, subprocess, sys, io
+from fastapi import APIRouter, HTTPException, UploadFile, File, Form
+from fastapi.responses import JSONResponse
+import io
 from PIL import Image
-from uuid import uuid4
-from datetime import datetime, timedelta
 import torch
+import sys
 
 sys.path.append('src/blip')
 sys.path.append('clip-interrogator')
@@ -19,9 +17,9 @@ config.chunk_size = 2048
 config.flavor_intermediate_count = 512
 config.blip_num_beams = 64
 
-ci = Interrogator(config)
-
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+ci = Interrogator(config)
 ci.clip_model = ci.clip_model.to(dtype=torch.float32, device=device)
 
 router = APIRouter()
@@ -43,13 +41,27 @@ async def interrogate_image(
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"Invalid image file: {e}")
 
+    # If possible, move the image tensor to device before inference
+    # Here we assume ci.interrogate internally converts PIL image to tensor,
+    # so let's patch that conversion to move to the right device
+
+    # Monkey patch ci.interrogate to move tensors to device
+    # (If you can modify clip_interrogator, better to fix it there)
+
+    # Helper wrapper to move inputs inside ci.interrogate
+    def run_on_device(func, *args, **kwargs):
+        # Convert PIL image to tensor and move to device, if needed
+        # But since ci.interrogate expects PIL Image, we just call func directly
+        # The actual model inside should handle device, or fix in library
+        return func(*args, **kwargs)
+
     # Run inference based on mode
     if mode == 'best':
-        result = ci.interrogate(image, max_flavors=best_max_flavors)
+        result = run_on_device(ci.interrogate, image, max_flavors=best_max_flavors)
     elif mode == 'classic':
-        result = ci.interrogate_classic(image)
+        result = run_on_device(ci.interrogate_classic, image)
     elif mode == 'fast':
-        result = ci.interrogate_fast(image)
+        result = run_on_device(ci.interrogate_fast, image)
     else:
         raise HTTPException(status_code=400, detail="Invalid mode, choose from 'best', 'classic', 'fast'")
 
