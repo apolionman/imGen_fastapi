@@ -13,9 +13,9 @@ from clip_interrogator import Config, Interrogator
 # Initialize once at startup
 config = Config()
 config.blip_offload = True
-config.chunk_size = 2048
-config.flavor_intermediate_count = 512
-config.blip_num_beams = 64
+config.chunk_size = 512
+config.flavor_intermediate_count = 64
+config.blip_num_beams = 8
 config.device = "cuda" if torch.cuda.is_available() else "cpu"
 config.clip_model_jit = False  # Disable JIT
 
