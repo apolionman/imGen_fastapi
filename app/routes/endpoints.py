@@ -22,7 +22,7 @@ config.blip_num_beams = 64
 ci = Interrogator(config)
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-ci.clip_model = ci.clip_model.to(device).float()
+ci.clip_model = ci.clip_model.to(dtype=torch.float32, device=device)
 
 router = APIRouter()
 
