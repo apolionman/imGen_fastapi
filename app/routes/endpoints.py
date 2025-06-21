@@ -5,6 +5,7 @@ import tempfile, os, httpx, asyncio, subprocess, sys, io
 from PIL import Image
 from uuid import uuid4
 from datetime import datetime, timedelta
+import torch
 
 sys.path.append('src/blip')
 sys.path.append('clip-interrogator')
@@ -19,6 +20,9 @@ config.flavor_intermediate_count = 512
 config.blip_num_beams = 64
 
 ci = Interrogator(config)
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+ci.clip_model = ci.clip_model.to(device).float()
 
 router = APIRouter()
 
