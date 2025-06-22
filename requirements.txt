@@ -17,7 +17,5 @@ regex
 timm
 fairscale
 requests
-torch==1.13.1 torchvision==0.14.1
 open_clip_torch
-Pillow==9.4.0
-transformers==4.25.1
+transformers==4.30.2
