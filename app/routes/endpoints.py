@@ -16,8 +16,8 @@ config.blip_offload = True
 config.chunk_size = 2048
 config.flavor_intermediate_count = 512
 config.blip_num_beams = 16
-# config.device = "cuda"
-# config.clip_model_jit = False
+config.device = "cuda" if torch.cuda.is_available() else "cpu"
+config.clip_model_jit = False
 
 # # Critical: Set default dtype before creating Interrogator
 # torch.set_default_dtype(torch.float32)
