@@ -37,35 +37,26 @@ async def interrogate_image(
     mode: str = Form('best'),
     best_max_flavors: int = Form(5),
 ):
-    # Read image bytes
     try:
         image_bytes = await image_file.read()
         image = Image.open(io.BytesIO(image_bytes)).convert('RGB')
+        image = image.resize((512, 512)).copy()  # Force safe size
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"Invalid image file: {e}")
 
-    # If possible, move the image tensor to device before inference
-    # Here we assume ci.interrogate internally converts PIL image to tensor,
-    # so let's patch that conversion to move to the right device
+    # Run in thread-safe executor
+    import asyncio
+    from functools import partial
+    loop = asyncio.get_event_loop()
 
-    # Monkey patch ci.interrogate to move tensors to device
-    # (If you can modify clip_interrogator, better to fix it there)
-
-    # Helper wrapper to move inputs inside ci.interrogate
-    def run_on_device(func, *args, **kwargs):
-        # Convert PIL image to tensor and move to device, if needed
-        # But since ci.interrogate expects PIL Image, we just call func directly
-        # The actual model inside should handle device, or fix in library
-        return func(*args, **kwargs)
-
-    # Run inference based on mode
     if mode == 'best':
-        result = run_on_device(ci.interrogate, image, max_flavors=best_max_flavors)
+        result = await loop.run_in_executor(None, partial(ci.interrogate, image, max_flavors=best_max_flavors))
     elif mode == 'classic':
-        result = run_on_device(ci.interrogate_classic, image)
+        result = await loop.run_in_executor(None, partial(ci.interrogate_classic, image))
     elif mode == 'fast':
-        result = run_on_device(ci.interrogate_fast, image)
+        result = await loop.run_in_executor(None, partial(ci.interrogate_fast, image))
     else:
-        raise HTTPException(status_code=400, detail="Invalid mode, choose from 'best', 'classic', 'fast'")
+        raise HTTPException(status_code=400, detail="Invalid mode")
 
     return JSONResponse(content={"result": result})
+
