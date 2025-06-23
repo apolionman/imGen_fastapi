@@ -10,17 +10,21 @@ sys.path.append('clip-interrogator')
 
 from clip_interrogator import Config, Interrogator
 
+# --- CONFIGURATION FIX ---
+
 # Initialize once at startup
 config = Config()
 config.blip_offload = True
 config.chunk_size = 2048
 config.flavor_intermediate_count = 512
-config.blip_num_beams = 16
-config.device = "cuda" if torch.cuda.is_available() else "cpu"
-config.clip_model_jit = False
 
-# # Critical: Set default dtype before creating Interrogator
-# torch.set_default_dtype(torch.float32)
+# FIX: Reduce the number of beams to a more conventional value.
+# A value of 16 is still high and should give good results. Start here.
+config.blip_num_beams = 16
+
+# If you are running on a CPU, this is fine.
+# If you have a GPU, ensure PyTorch with CUDA is installed and uncomment the next line.
+# config.device = "cuda"
 
 # Now create Interrogator
 ci = Interrogator(config)
@@ -40,23 +44,23 @@ async def interrogate_image(
     try:
         image_bytes = await image_file.read()
         image = Image.open(io.BytesIO(image_bytes)).convert('RGB')
-        image = image.resize((512, 512)).copy()  # Force safe size
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"Invalid image file: {e}")
 
-    # Run in thread-safe executor
-    import asyncio
-    from functools import partial
-    loop = asyncio.get_event_loop()
+    # Run inference based on mode
+    # The ci.interrogate methods will handle device placement internally
+    try:
+        if mode == 'best':
+            result = ci.interrogate(image, max_flavors=best_max_flavors)
+        elif mode == 'classic':
+            result = ci.interrogate_classic(image)
+        elif mode == 'fast':
+            result = ci.interrogate_fast(image)
+        else:
+            raise HTTPException(status_code=400, detail="Invalid mode, choose from 'best', 'classic', 'fast'")
+    except RuntimeError as e:
+        # Catch potential runtime errors from the model and return a 500
+        raise HTTPException(status_code=500, detail=f"Model inference failed: {e}")
 
-    if mode == 'best':
-        result = await loop.run_in_executor(None, partial(ci.interrogate, image, max_flavors=best_max_flavors))
-    elif mode == 'classic':
-        result = await loop.run_in_executor(None, partial(ci.interrogate_classic, image))
-    elif mode == 'fast':
-        result = await loop.run_in_executor(None, partial(ci.interrogate_fast, image))
-    else:
-        raise HTTPException(status_code=400, detail="Invalid mode")
 
     return JSONResponse(content={"result": result})
-
