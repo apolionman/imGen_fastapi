@@ -14,53 +14,43 @@ from clip_interrogator import Config, Interrogator
 # --- CONFIGURATION FIX ---
 
 config = Config()
+config.device = "cuda"
+config.clip_model_name = "ViT-L-14/openai"
+config.precision = 'full'  
 ci = Interrogator(config)
 
-image = Image.open(io.BytesIO(requests.get("https://images.unsplash.com/photo-1541696432-82c6da8ce7bf").content)).convert('RGB')
-print(ci.interrogate_fast(image))
+router = APIRouter()
 
-# config = Config()
-# config.blip_offload = True
-# config.chunk_size = 512   # Safer on most hardware
-# config.flavor_intermediate_count = 256
-# config.blip_num_beams = 4  # Or even 2 for testing
-# config.device = "cuda"  
+@router.get("/health")
+async def health():
+    return {"status": "ok"}
 
-# # Now create Interrogator
-# ci = Interrogator(config)
+@router.post("/interrogate")
+async def interrogate_image(
+    image_file: UploadFile = File(...),
+    mode: str = Form('best'),
+    best_max_flavors: int = Form(5),
+):
+    try:
+        image_bytes = await image_file.read()
+        image = Image.open(io.BytesIO(image_bytes)).convert('RGB')
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=f"Invalid image file: {e}")
 
-# router = APIRouter()
-
-# @router.get("/health")
-# async def health():
-#     return {"status": "ok"}
-
-# @router.post("/interrogate")
-# async def interrogate_image(
-#     image_file: UploadFile = File(...),
-#     mode: str = Form('best'),
-#     best_max_flavors: int = Form(5),
-# ):
-#     try:
-#         image_bytes = await image_file.read()
-#         image = Image.open(io.BytesIO(image_bytes)).convert('RGB')
-#     except Exception as e:
-#         raise HTTPException(status_code=400, detail=f"Invalid image file: {e}")
-
-#     # Run inference based on mode
-#     # The ci.interrogate methods will handle device placement internally
-#     try:
-#         if mode == 'best':
-#             result = ci.interrogate(image, max_flavors=best_max_flavors)
-#         elif mode == 'classic':
-#             result = ci.interrogate_classic(image)
-#         elif mode == 'fast':
-#             result = ci.interrogate_fast(image)
-#         else:
-#             raise HTTPException(status_code=400, detail="Invalid mode, choose from 'best', 'classic', 'fast'")
-#     except RuntimeError as e:
-#         # Catch potential runtime errors from the model and return a 500
-#         raise HTTPException(status_code=500, detail=f"Model inference failed: {e}")
+    # Run inference based on mode
+    # The ci.interrogate methods will handle device placement internally
+    try:
+        if mode == 'best':
+            result = ci.interrogate(image, max_flavors=best_max_flavors)
+        elif mode == 'classic':
+            result = ci.interrogate_classic(image)
+        elif mode == 'fast':
+            result = ci.interrogate_fast(image)
+        else:
+            raise HTTPException(status_code=400, detail="Invalid mode, choose from 'best', 'classic', 'fast'")
+    except RuntimeError as e:
+        # Catch potential runtime errors from the model and return a 500
+        raise HTTPException(status_code=500, detail=f"Model inference failed: {e}")
 
 
-#     return JSONResponse(content={"result": result})
+    return JSONResponse(content={"result": result})
