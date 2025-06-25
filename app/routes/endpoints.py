@@ -40,14 +40,15 @@ async def interrogate_image(
     # Run inference based on mode
     # The ci.interrogate methods will handle device placement internally
     try:
-        if mode == 'best':
-            result = ci.interrogate(image, max_flavors=best_max_flavors)
-        elif mode == 'classic':
-            result = ci.interrogate_classic(image)
-        elif mode == 'fast':
-            result = ci.interrogate_fast(image)
-        else:
-            raise HTTPException(status_code=400, detail="Invalid mode, choose from 'best', 'classic', 'fast'")
+        result = ci.interrogate(image)
+        # if mode == 'best':
+        #     result = ci.interrogate(image, max_flavors=best_max_flavors)
+        # elif mode == 'classic':
+        #     result = ci.interrogate_classic(image)
+        # elif mode == 'fast':
+        #     result = ci.interrogate_fast(image)
+        # else:
+        #     raise HTTPException(status_code=400, detail="Invalid mode, choose from 'best', 'classic', 'fast'")
     except RuntimeError as e:
         # Catch potential runtime errors from the model and return a 500
         raise HTTPException(status_code=500, detail=f"Model inference failed: {e}")
