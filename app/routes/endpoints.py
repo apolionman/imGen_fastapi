@@ -4,6 +4,7 @@ import io
 from PIL import Image
 import torch
 import sys
+import requests
 
 sys.path.append('src/blip')
 sys.path.append('clip-interrogator')
@@ -12,16 +13,18 @@ from clip_interrogator import Config, Interrogator
 
 # --- CONFIGURATION FIX ---
 
-# Initialize once at startup
+config = Config()
+ci = Interrogator(config)
+
+image = Image.open(io.BytesIO(requests.get("https://images.unsplash.com/photo-1541696432-82c6da8ce7bf").content)).convert('RGB')
+print(ci.interrogate_fast(image))
+
 config = Config()
 config.blip_offload = True
-config.chunk_size = 1024  # safer for most GPUs or CPUs
+config.chunk_size = 512   # Safer on most hardware
 config.flavor_intermediate_count = 256
-config.blip_num_beams = 4  # safer, adjust upward if stable
-config.device = "cuda"
-# If you are running on a CPU, this is fine.
-# If you have a GPU, ensure PyTorch with CUDA is installed and uncomment the next line.
-# config.device = "cuda"
+config.blip_num_beams = 4  # Or even 2 for testing
+config.device = "cuda"  
 
 # Now create Interrogator
 ci = Interrogator(config)
