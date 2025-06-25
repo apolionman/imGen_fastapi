@@ -27,9 +27,7 @@ async def health():
 
 @router.post("/interrogate")
 async def interrogate_image(
-    image_file: UploadFile = File(...),
-    mode: str = Form('best'),
-    best_max_flavors: int = Form(5),
+    image_file: UploadFile = File(...)
 ):
     try:
         image_bytes = await image_file.read()
