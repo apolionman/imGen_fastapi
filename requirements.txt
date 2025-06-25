@@ -14,8 +14,9 @@ httpx
 ftfy
 gradio
 regex
-timm
-fairscale
+clip-interrogator==0.3.0
+timm==0.9.2
+fairscale==0.4.1
 requests
 open_clip_torch
 transformers==4.30.2
