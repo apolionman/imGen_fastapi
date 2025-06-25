@@ -15,13 +15,10 @@ from clip_interrogator import Config, Interrogator
 # Initialize once at startup
 config = Config()
 config.blip_offload = True
-config.chunk_size = 2048
-config.flavor_intermediate_count = 512
-
-# FIX: Reduce the number of beams to a more conventional value.
-# A value of 16 is still high and should give good results. Start here.
-config.blip_num_beams = 16
-
+config.chunk_size = 1024  # safer for most GPUs or CPUs
+config.flavor_intermediate_count = 256
+config.blip_num_beams = 4  # safer, adjust upward if stable
+config.device = "cuda"
 # If you are running on a CPU, this is fine.
 # If you have a GPU, ensure PyTorch with CUDA is installed and uncomment the next line.
 # config.device = "cuda"
