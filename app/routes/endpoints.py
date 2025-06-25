@@ -1,6 +1,7 @@
 from fastapi import APIRouter, HTTPException, UploadFile, File, Form
 from fastapi.responses import JSONResponse
 import io
+from typing import Optional
 from PIL import Image
 import torch
 import sys
@@ -27,29 +28,28 @@ async def health():
 
 @router.post("/interrogate")
 async def interrogate_image(
-    image_file: UploadFile = File(...)
+    image_file: Optional[UploadFile] = File(None),
+    image_url: Optional[str] = Form(None)
 ):
-    try:
-        image_bytes = await image_file.read()
-        image = Image.open(io.BytesIO(image_bytes)).convert('RGB')
-    except Exception as e:
-        raise HTTPException(status_code=400, detail=f"Invalid image file: {e}")
+    # Check if either file or URL is provided
+    if not image_file and not image_url:
+        raise HTTPException(status_code=400, detail="Provide either an image file or an image URL.")
 
-    # Run inference based on mode
-    # The ci.interrogate methods will handle device placement internally
+    try:
+        if image_file:
+            image_bytes = await image_file.read()
+            image = Image.open(io.BytesIO(image_bytes)).convert('RGB')
+        elif image_url:
+            response = requests.get(image_url)
+            if response.status_code != 200:
+                raise HTTPException(status_code=400, detail="Failed to fetch image from URL.")
+            image = Image.open(io.BytesIO(response.content)).convert('RGB')
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=f"Invalid image input: {e}")
+
     try:
         result = ci.interrogate(image)
-        # if mode == 'best':
-        #     result = ci.interrogate(image, max_flavors=best_max_flavors)
-        # elif mode == 'classic':
-        #     result = ci.interrogate_classic(image)
-        # elif mode == 'fast':
-        #     result = ci.interrogate_fast(image)
-        # else:
-        #     raise HTTPException(status_code=400, detail="Invalid mode, choose from 'best', 'classic', 'fast'")
     except RuntimeError as e:
-        # Catch potential runtime errors from the model and return a 500
         raise HTTPException(status_code=500, detail=f"Model inference failed: {e}")
-
 
     return JSONResponse(content={"result": result})
