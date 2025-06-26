@@ -1,11 +1,9 @@
 from fastapi import APIRouter, HTTPException, UploadFile, File, Form
 from fastapi.responses import JSONResponse
-import io
 from typing import Optional
 from PIL import Image
-import torch
-import sys
-import requests
+import tempfile, os, httpx, asyncio, subprocess, whisper, requests, sys, torch, io
+stt = whisper.load_model("large")
 
 sys.path.append('src/blip')
 sys.path.append('clip-interrogator')
@@ -53,3 +51,66 @@ async def interrogate_image(
         raise HTTPException(status_code=500, detail=f"Model inference failed: {e}")
 
     return JSONResponse(content={"result": result})
+
+ALLOWED_TYPES = {
+    "audio/mpeg", "audio/webm", "video/mp4",
+    "audio/mp4", "video/webm", "audio/x-m4a", 
+    "audio/m4a",  "audio/ogg"
+}
+
+MIME_EXTENSION_MAP = {
+    "audio/mpeg": ".mp3",
+    "audio/webm": ".webm",
+    "video/webm": ".webm",
+    "video/mp4": ".mp4",
+    "audio/mp4": ".mp4",
+    "audio/x-m4a": ".m4a",
+    "audio/m4a": ".m4a",
+    "audio/ogg": ".ogg"
+}
+
+
+@router.post("/transcribe")
+async def transcribe_audio(
+    file: UploadFile = File(...),
+):
+    """
+    Transcribe uploaded audio/video using Whisper locally.
+    Supports: audio/mpeg, audio/webm, video/mp4, audio/mp4, video/webm, audio/x-m4a
+    """
+    if file.content_type not in ALLOWED_TYPES:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Unsupported file type: {file.content_type}. Must be one of {ALLOWED_TYPES}",
+        )
+
+    suffix = MIME_EXTENSION_MAP.get(file.content_type, ".tmp")
+    input_tmp = None
+    wav_path = None
+
+    try:
+        # Save the uploaded file temporarily
+        with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as input_tmp:
+            input_tmp.write(await file.read())
+            input_path = input_tmp.name
+
+        # Convert to mono WAV at 24kHz for Whisper
+        wav_path = input_path.replace(suffix, ".wav")
+        subprocess.run([
+            "ffmpeg", "-y", "-i", input_path,
+            "-ar", "24000", "-ac", "1", wav_path
+        ], check=True)
+
+        # Transcribe using whisper
+        result = stt.transcribe(wav_path, fp16=False)
+        text = result["text"].strip()
+        return JSONResponse(content={"transcription": text})
+
+    except subprocess.CalledProcessError as e:
+        raise HTTPException(status_code=500, detail=f"FFmpeg error: {e}")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        for path in [input_tmp.name if input_tmp else None, wav_path]:
+            if path and os.path.exists(path):
+                os.remove(path)

@@ -19,3 +19,7 @@ fairscale
 requests
 open_clip_torch
 transformers==4.21.2
+openai==1.74.0
+openai-whisper
+openai-agents
+openai-agents[voice]
