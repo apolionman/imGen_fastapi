@@ -21,4 +21,3 @@ open_clip_torch
 transformers==4.21.2
 openai
 openai-whisper
-openai-agents
