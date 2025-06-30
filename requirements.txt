@@ -24,3 +24,4 @@ openai
 openai-whisper
 diffusers
 accelerate
+huggingface_hub

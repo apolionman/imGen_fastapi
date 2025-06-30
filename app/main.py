@@ -3,6 +3,10 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse, JSONResponse
 import os, json, uuid, shutil, tempfile, httpx, re, asyncio, requests
 from uuid import UUID
+import os
+from huggingface_hub import login
+
+login(token=os.getenv("HUGGINGFACE_TOKEN"))
 
 # routes
 from app.routes.endpoints import router as endpoints_router
