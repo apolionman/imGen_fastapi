@@ -5,6 +5,7 @@ from PIL import Image
 import tempfile, os, httpx, asyncio, subprocess, whisper, requests, sys, torch, io
 from diffusers import FluxPipeline
 from app.scripts.flux_run import *
+import base64
 stt = whisper.load_model("large")
 
 sys.path.append('src/blip')
@@ -119,4 +120,9 @@ async def transcribe_audio(
 @router.post("/generate-image")
 async def generate_image(prompt: str):
     image_path = await generate_image_task(prompt=prompt)
-    return FileResponse(image_path, media_type="image/png", filename=os.path.basename(image_path))
+    with open(image_path, "rb") as img_file:
+        encoded_string = base64.b64encode(img_file.read()).decode('utf-8')
+
+    return JSONResponse({
+        "image_base64": f"data:image/png;base64,{encoded_string}"
+    })
