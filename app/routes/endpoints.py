@@ -117,12 +117,12 @@ async def transcribe_audio(
             if path and os.path.exists(path):
                 os.remove(path)
 
-@router.post("/generate-image")
-async def generate_image(prompt: str):
-    image_path = await generate_image_task(prompt=prompt)
-    with open(image_path, "rb") as img_file:
-        encoded_string = base64.b64encode(img_file.read()).decode('utf-8')
+# @router.post("/generate-image")
+# async def generate_image(prompt: str):
+#     image_path = await generate_image_task(prompt=prompt)
+#     with open(image_path, "rb") as img_file:
+#         encoded_string = base64.b64encode(img_file.read()).decode('utf-8')
 
-    return JSONResponse({
-        "image_base64": f"data:image/png;base64,{encoded_string}"
-    })
+#     return JSONResponse({
+#         "image_base64": f"data:image/png;base64,{encoded_string}"
+#     })
