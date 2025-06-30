@@ -9,7 +9,6 @@ pipe = FluxPipeline.from_pretrained(
 )
 
 def generate_image(prompt: str):
-    generator = torch.Generator(device="cuda").manual_seed(0)
     with torch.no_grad():
         image = pipe(
             prompt,
@@ -18,7 +17,7 @@ def generate_image(prompt: str):
             guidance_scale=3.5,
             num_inference_steps=50,
             max_sequence_length=512,
-            generator=generator
+            generator=torch.manual_seed(0)
         ).images[0]
     genI_name = f"./output/{str(uuid.uuid4())[:8]}.png"
     image.save(genI_name)
