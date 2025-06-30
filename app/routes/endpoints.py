@@ -118,5 +118,5 @@ async def transcribe_audio(
 
 @router.post("/generate-image")
 async def generate_image(prompt: str):
-    image_path = await generate_image(prompt=prompt)
+    image_path = await generate_image_task(prompt=prompt)
     return FileResponse(image_path, media_type="image/png", filename=os.path.basename(image_path))

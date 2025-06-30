@@ -7,7 +7,7 @@ pipe = FluxPipeline.from_pretrained(
     device_map="balanced"
 )
 
-async def generate_image(prompt: str):
+async def generate_image_task(prompt: str):
     image = pipe(
         prompt,
         height=1024,
