@@ -18,7 +18,8 @@ timm
 fairscale
 requests
 open_clip_torch
-transformers==4.21.2
+# transformers==4.21.2
+transformers
 openai
 openai-whisper
 diffusers
