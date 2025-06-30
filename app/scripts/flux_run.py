@@ -8,7 +8,7 @@ pipe = FluxPipeline.from_pretrained(
     device_map="balanced"
 )
 
-def generate_image(prompt: str):
+async def generate_image(prompt: str):
     with torch.no_grad():
         image = pipe(
             prompt,
