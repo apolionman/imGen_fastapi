@@ -3,8 +3,8 @@ from fastapi.responses import JSONResponse, FileResponse
 from typing import Optional
 from PIL import Image
 import tempfile, os, httpx, asyncio, subprocess, whisper, requests, sys, torch, io
-from diffusers import FluxPipeline
-from app.scripts.flux_run import *
+# from diffusers import FluxPipeline
+# from app.scripts.flux_run import *
 import base64
 stt = whisper.load_model("large")
 
