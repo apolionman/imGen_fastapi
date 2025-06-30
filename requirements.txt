@@ -25,3 +25,5 @@ openai-whisper
 diffusers
 accelerate
 huggingface_hub
+protobuf>=3.20.0
+sentencepiece
