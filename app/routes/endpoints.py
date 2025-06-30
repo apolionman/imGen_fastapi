@@ -1,8 +1,10 @@
 from fastapi import APIRouter, HTTPException, UploadFile, File, Form
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, FileResponse
 from typing import Optional
 from PIL import Image
 import tempfile, os, httpx, asyncio, subprocess, whisper, requests, sys, torch, io
+from diffusers import FluxPipeline
+from app.scripts.flux_run import *
 stt = whisper.load_model("large")
 
 sys.path.append('src/blip')
@@ -69,7 +71,6 @@ MIME_EXTENSION_MAP = {
     "audio/ogg": ".ogg"
 }
 
-
 @router.post("/transcribe")
 async def transcribe_audio(
     file: UploadFile = File(...),
@@ -114,3 +115,8 @@ async def transcribe_audio(
         for path in [input_tmp.name if input_tmp else None, wav_path]:
             if path and os.path.exists(path):
                 os.remove(path)
+
+@router.post("/generate-image")
+async def generate_image(prompt: str):
+    image_path = await generate_image(prompt=prompt)
+    return FileResponse(image_path, media_type="image/png", filename=os.path.basename(image_path))
