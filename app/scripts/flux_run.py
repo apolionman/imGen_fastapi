@@ -16,8 +16,6 @@ pipe = FluxPipeline.from_pretrained(
 # Generate image
 image = pipe(
     args.prompt,
-    height=1024,
-    width=1024,
     guidance_scale=3.5,
     num_inference_steps=50,
     max_sequence_length=512,

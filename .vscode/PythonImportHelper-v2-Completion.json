@@ -1,0 +1,3685 @@
+[
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "UploadFile",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "File",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Form",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "BackgroundTasks",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "UploadFile",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "File",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Form",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Request",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "JSONResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "FileResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "RedirectResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "JSONResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "ImageFile",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "run_flux",
+        "importPath": "app.services.flux_service",
+        "description": "app.services.flux_service",
+        "isExtraImport": true,
+        "detail": "app.services.flux_service",
+        "documentation": {}
+    },
+    {
+        "label": "tempfile,",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tempfile.",
+        "description": "tempfile.",
+        "detail": "tempfile.",
+        "documentation": {}
+    },
+    {
+        "label": "base64",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "base64",
+        "description": "base64",
+        "detail": "base64",
+        "documentation": {}
+    },
+    {
+        "label": "Config",
+        "importPath": "clip_interrogator",
+        "description": "clip_interrogator",
+        "isExtraImport": true,
+        "detail": "clip_interrogator",
+        "documentation": {}
+    },
+    {
+        "label": "Interrogator",
+        "importPath": "clip_interrogator",
+        "description": "clip_interrogator",
+        "isExtraImport": true,
+        "detail": "clip_interrogator",
+        "documentation": {}
+    },
+    {
+        "label": "Config",
+        "importPath": "clip_interrogator",
+        "description": "clip_interrogator",
+        "isExtraImport": true,
+        "detail": "clip_interrogator",
+        "documentation": {}
+    },
+    {
+        "label": "Interrogator",
+        "importPath": "clip_interrogator",
+        "description": "clip_interrogator",
+        "isExtraImport": true,
+        "detail": "clip_interrogator",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "gradio",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "gradio",
+        "description": "gradio",
+        "detail": "gradio",
+        "documentation": {}
+    },
+    {
+        "label": "torch,",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "torch.",
+        "description": "torch.",
+        "detail": "torch.",
+        "documentation": {}
+    },
+    {
+        "label": "FluxPipeline",
+        "importPath": "diffusers",
+        "description": "diffusers",
+        "isExtraImport": true,
+        "detail": "diffusers",
+        "documentation": {}
+    },
+    {
+        "label": "subprocess",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "CORSMiddleware",
+        "importPath": "fastapi.middleware.cors",
+        "description": "fastapi.middleware.cors",
+        "isExtraImport": true,
+        "detail": "fastapi.middleware.cors",
+        "documentation": {}
+    },
+    {
+        "label": "os,",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os.",
+        "description": "os.",
+        "detail": "os.",
+        "documentation": {}
+    },
+    {
+        "label": "UUID",
+        "importPath": "uuid",
+        "description": "uuid",
+        "isExtraImport": true,
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "importPath": "huggingface_hub",
+        "description": "huggingface_hub",
+        "isExtraImport": true,
+        "detail": "huggingface_hub",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "importPath": "app.routes.endpoints",
+        "description": "app.routes.endpoints",
+        "isExtraImport": true,
+        "detail": "app.routes.endpoints",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "Dataset",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "Dataset",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "Dataset",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "Dataset",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "Dataset",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "Dataset",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "Dataset",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "DataLoader",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "DataLoader",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "DataLoader",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "DataLoader",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "DataLoader",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "DataLoader",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "DataLoader",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "download_url",
+        "importPath": "torchvision.datasets.utils",
+        "description": "torchvision.datasets.utils",
+        "isExtraImport": true,
+        "detail": "torchvision.datasets.utils",
+        "documentation": {}
+    },
+    {
+        "label": "download_url",
+        "importPath": "torchvision.datasets.utils",
+        "description": "torchvision.datasets.utils",
+        "isExtraImport": true,
+        "detail": "torchvision.datasets.utils",
+        "documentation": {}
+    },
+    {
+        "label": "download_url",
+        "importPath": "torchvision.datasets.utils",
+        "description": "torchvision.datasets.utils",
+        "isExtraImport": true,
+        "detail": "torchvision.datasets.utils",
+        "documentation": {}
+    },
+    {
+        "label": "download_url",
+        "importPath": "torchvision.datasets.utils",
+        "description": "torchvision.datasets.utils",
+        "isExtraImport": true,
+        "detail": "torchvision.datasets.utils",
+        "documentation": {}
+    },
+    {
+        "label": "download_url",
+        "importPath": "torchvision.datasets.utils",
+        "description": "torchvision.datasets.utils",
+        "isExtraImport": true,
+        "detail": "torchvision.datasets.utils",
+        "documentation": {}
+    },
+    {
+        "label": "download_url",
+        "importPath": "torchvision.datasets.utils",
+        "description": "torchvision.datasets.utils",
+        "isExtraImport": true,
+        "detail": "torchvision.datasets.utils",
+        "documentation": {}
+    },
+    {
+        "label": "download_url",
+        "importPath": "torchvision.datasets.utils",
+        "description": "torchvision.datasets.utils",
+        "isExtraImport": true,
+        "detail": "torchvision.datasets.utils",
+        "documentation": {}
+    },
+    {
+        "label": "pre_caption",
+        "importPath": "data.utils",
+        "description": "data.utils",
+        "isExtraImport": true,
+        "detail": "data.utils",
+        "documentation": {}
+    },
+    {
+        "label": "pre_caption",
+        "importPath": "data.utils",
+        "description": "data.utils",
+        "isExtraImport": true,
+        "detail": "data.utils",
+        "documentation": {}
+    },
+    {
+        "label": "pre_caption",
+        "importPath": "data.utils",
+        "description": "data.utils",
+        "isExtraImport": true,
+        "detail": "data.utils",
+        "documentation": {}
+    },
+    {
+        "label": "pre_caption",
+        "importPath": "data.utils",
+        "description": "data.utils",
+        "isExtraImport": true,
+        "detail": "data.utils",
+        "documentation": {}
+    },
+    {
+        "label": "pre_caption",
+        "importPath": "data.utils",
+        "description": "data.utils",
+        "isExtraImport": true,
+        "detail": "data.utils",
+        "documentation": {}
+    },
+    {
+        "label": "pre_question",
+        "importPath": "data.utils",
+        "description": "data.utils",
+        "isExtraImport": true,
+        "detail": "data.utils",
+        "documentation": {}
+    },
+    {
+        "label": "save_result",
+        "importPath": "data.utils",
+        "description": "data.utils",
+        "isExtraImport": true,
+        "detail": "data.utils",
+        "documentation": {}
+    },
+    {
+        "label": "save_result",
+        "importPath": "data.utils",
+        "description": "data.utils",
+        "isExtraImport": true,
+        "detail": "data.utils",
+        "documentation": {}
+    },
+    {
+        "label": "coco_caption_eval",
+        "importPath": "data.utils",
+        "description": "data.utils",
+        "isExtraImport": true,
+        "detail": "data.utils",
+        "documentation": {}
+    },
+    {
+        "label": "save_result",
+        "importPath": "data.utils",
+        "description": "data.utils",
+        "isExtraImport": true,
+        "detail": "data.utils",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "os,glob",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os.glob",
+        "description": "os.glob",
+        "detail": "os.glob",
+        "documentation": {}
+    },
+    {
+        "label": "torch",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "torch",
+        "description": "torch",
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "nn",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "nn",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "nn",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "nn",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "nn",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "nn",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "Tensor",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "device",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "dtype",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "nn",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "nn",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "Tensor",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "device",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "dtype",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "nn",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "nn",
+        "importPath": "torch",
+        "description": "torch",
+        "isExtraImport": true,
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "torch.distributed",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "torch.distributed",
+        "description": "torch.distributed",
+        "detail": "torch.distributed",
+        "documentation": {}
+    },
+    {
+        "label": "utils",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "utils",
+        "description": "utils",
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "warmup_lr_schedule",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "step_lr_schedule",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "cosine_lr_schedule",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "cosine_lr_schedule",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "warmup_lr_schedule",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "cosine_lr_schedule",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "cosine_lr_schedule",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "COCO",
+        "importPath": "pycocotools.coco",
+        "description": "pycocotools.coco",
+        "isExtraImport": true,
+        "detail": "pycocotools.coco",
+        "documentation": {}
+    },
+    {
+        "label": "COCOEvalCap",
+        "importPath": "pycocoevalcap.eval",
+        "description": "pycocoevalcap.eval",
+        "isExtraImport": true,
+        "detail": "pycocoevalcap.eval",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "decord",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "decord",
+        "description": "decord",
+        "detail": "decord",
+        "documentation": {}
+    },
+    {
+        "label": "VideoReader",
+        "importPath": "decord",
+        "description": "decord",
+        "isExtraImport": true,
+        "detail": "decord",
+        "documentation": {}
+    },
+    {
+        "label": "warnings",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "warnings",
+        "description": "warnings",
+        "detail": "warnings",
+        "documentation": {}
+    },
+    {
+        "label": "VisionTransformer",
+        "importPath": "models.vit",
+        "description": "models.vit",
+        "isExtraImport": true,
+        "detail": "models.vit",
+        "documentation": {}
+    },
+    {
+        "label": "interpolate_pos_embed",
+        "importPath": "models.vit",
+        "description": "models.vit",
+        "isExtraImport": true,
+        "detail": "models.vit",
+        "documentation": {}
+    },
+    {
+        "label": "interpolate_pos_embed",
+        "importPath": "models.vit",
+        "description": "models.vit",
+        "isExtraImport": true,
+        "detail": "models.vit",
+        "documentation": {}
+    },
+    {
+        "label": "BertConfig",
+        "importPath": "models.med",
+        "description": "models.med",
+        "isExtraImport": true,
+        "detail": "models.med",
+        "documentation": {}
+    },
+    {
+        "label": "BertModel",
+        "importPath": "models.med",
+        "description": "models.med",
+        "isExtraImport": true,
+        "detail": "models.med",
+        "documentation": {}
+    },
+    {
+        "label": "BertLMHeadModel",
+        "importPath": "models.med",
+        "description": "models.med",
+        "isExtraImport": true,
+        "detail": "models.med",
+        "documentation": {}
+    },
+    {
+        "label": "BertConfig",
+        "importPath": "models.med",
+        "description": "models.med",
+        "isExtraImport": true,
+        "detail": "models.med",
+        "documentation": {}
+    },
+    {
+        "label": "BertModel",
+        "importPath": "models.med",
+        "description": "models.med",
+        "isExtraImport": true,
+        "detail": "models.med",
+        "documentation": {}
+    },
+    {
+        "label": "BertConfig",
+        "importPath": "models.med",
+        "description": "models.med",
+        "isExtraImport": true,
+        "detail": "models.med",
+        "documentation": {}
+    },
+    {
+        "label": "BertConfig",
+        "importPath": "models.med",
+        "description": "models.med",
+        "isExtraImport": true,
+        "detail": "models.med",
+        "documentation": {}
+    },
+    {
+        "label": "BertModel",
+        "importPath": "models.med",
+        "description": "models.med",
+        "isExtraImport": true,
+        "detail": "models.med",
+        "documentation": {}
+    },
+    {
+        "label": "BertLMHeadModel",
+        "importPath": "models.med",
+        "description": "models.med",
+        "isExtraImport": true,
+        "detail": "models.med",
+        "documentation": {}
+    },
+    {
+        "label": "BertConfig",
+        "importPath": "models.med",
+        "description": "models.med",
+        "isExtraImport": true,
+        "detail": "models.med",
+        "documentation": {}
+    },
+    {
+        "label": "BertModel",
+        "importPath": "models.med",
+        "description": "models.med",
+        "isExtraImport": true,
+        "detail": "models.med",
+        "documentation": {}
+    },
+    {
+        "label": "BertConfig",
+        "importPath": "models.med",
+        "description": "models.med",
+        "isExtraImport": true,
+        "detail": "models.med",
+        "documentation": {}
+    },
+    {
+        "label": "BertModel",
+        "importPath": "models.med",
+        "description": "models.med",
+        "isExtraImport": true,
+        "detail": "models.med",
+        "documentation": {}
+    },
+    {
+        "label": "BertLMHeadModel",
+        "importPath": "models.med",
+        "description": "models.med",
+        "isExtraImport": true,
+        "detail": "models.med",
+        "documentation": {}
+    },
+    {
+        "label": "transformers",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "transformers",
+        "description": "transformers",
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "BertTokenizer",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "BertTokenizer",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "BertTokenizer",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "BertTokenizer",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "BertTokenizer",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "BertTokenizer",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "torch.nn.functional",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "torch.nn.functional",
+        "description": "torch.nn.functional",
+        "detail": "torch.nn.functional",
+        "documentation": {}
+    },
+    {
+        "label": "urlparse",
+        "importPath": "urllib.parse",
+        "description": "urllib.parse",
+        "isExtraImport": true,
+        "detail": "urllib.parse",
+        "documentation": {}
+    },
+    {
+        "label": "download_cached_file",
+        "importPath": "timm.models.hub",
+        "description": "timm.models.hub",
+        "isExtraImport": true,
+        "detail": "timm.models.hub",
+        "documentation": {}
+    },
+    {
+        "label": "download_cached_file",
+        "importPath": "timm.models.hub",
+        "description": "timm.models.hub",
+        "isExtraImport": true,
+        "detail": "timm.models.hub",
+        "documentation": {}
+    },
+    {
+        "label": "create_vit",
+        "importPath": "models.blip",
+        "description": "models.blip",
+        "isExtraImport": true,
+        "detail": "models.blip",
+        "documentation": {}
+    },
+    {
+        "label": "init_tokenizer",
+        "importPath": "models.blip",
+        "description": "models.blip",
+        "isExtraImport": true,
+        "detail": "models.blip",
+        "documentation": {}
+    },
+    {
+        "label": "load_checkpoint",
+        "importPath": "models.blip",
+        "description": "models.blip",
+        "isExtraImport": true,
+        "detail": "models.blip",
+        "documentation": {}
+    },
+    {
+        "label": "create_vit",
+        "importPath": "models.blip",
+        "description": "models.blip",
+        "isExtraImport": true,
+        "detail": "models.blip",
+        "documentation": {}
+    },
+    {
+        "label": "init_tokenizer",
+        "importPath": "models.blip",
+        "description": "models.blip",
+        "isExtraImport": true,
+        "detail": "models.blip",
+        "documentation": {}
+    },
+    {
+        "label": "is_url",
+        "importPath": "models.blip",
+        "description": "models.blip",
+        "isExtraImport": true,
+        "detail": "models.blip",
+        "documentation": {}
+    },
+    {
+        "label": "create_vit",
+        "importPath": "models.blip",
+        "description": "models.blip",
+        "isExtraImport": true,
+        "detail": "models.blip",
+        "documentation": {}
+    },
+    {
+        "label": "init_tokenizer",
+        "importPath": "models.blip",
+        "description": "models.blip",
+        "isExtraImport": true,
+        "detail": "models.blip",
+        "documentation": {}
+    },
+    {
+        "label": "load_checkpoint",
+        "importPath": "models.blip",
+        "description": "models.blip",
+        "isExtraImport": true,
+        "detail": "models.blip",
+        "documentation": {}
+    },
+    {
+        "label": "create_vit",
+        "importPath": "models.blip",
+        "description": "models.blip",
+        "isExtraImport": true,
+        "detail": "models.blip",
+        "documentation": {}
+    },
+    {
+        "label": "init_tokenizer",
+        "importPath": "models.blip",
+        "description": "models.blip",
+        "isExtraImport": true,
+        "detail": "models.blip",
+        "documentation": {}
+    },
+    {
+        "label": "load_checkpoint",
+        "importPath": "models.blip",
+        "description": "models.blip",
+        "isExtraImport": true,
+        "detail": "models.blip",
+        "documentation": {}
+    },
+    {
+        "label": "create_vit",
+        "importPath": "models.blip",
+        "description": "models.blip",
+        "isExtraImport": true,
+        "detail": "models.blip",
+        "documentation": {}
+    },
+    {
+        "label": "init_tokenizer",
+        "importPath": "models.blip",
+        "description": "models.blip",
+        "isExtraImport": true,
+        "detail": "models.blip",
+        "documentation": {}
+    },
+    {
+        "label": "load_checkpoint",
+        "importPath": "models.blip",
+        "description": "models.blip",
+        "isExtraImport": true,
+        "detail": "models.blip",
+        "documentation": {}
+    },
+    {
+        "label": "blip_decoder",
+        "importPath": "models.blip",
+        "description": "models.blip",
+        "isExtraImport": true,
+        "detail": "models.blip",
+        "documentation": {}
+    },
+    {
+        "label": "blip_decoder",
+        "importPath": "models.blip",
+        "description": "models.blip",
+        "isExtraImport": true,
+        "detail": "models.blip",
+        "documentation": {}
+    },
+    {
+        "label": "blip_decoder",
+        "importPath": "models.blip",
+        "description": "models.blip",
+        "isExtraImport": true,
+        "detail": "models.blip",
+        "documentation": {}
+    },
+    {
+        "label": "BertModel",
+        "importPath": "models.nlvr_encoder",
+        "description": "models.nlvr_encoder",
+        "isExtraImport": true,
+        "detail": "models.nlvr_encoder",
+        "documentation": {}
+    },
+    {
+        "label": "math",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "math",
+        "description": "math",
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "torch.utils.checkpoint",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "torch.utils.checkpoint",
+        "description": "torch.utils.checkpoint",
+        "detail": "torch.utils.checkpoint",
+        "documentation": {}
+    },
+    {
+        "label": "torch.nn",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "torch.nn",
+        "description": "torch.nn",
+        "detail": "torch.nn",
+        "documentation": {}
+    },
+    {
+        "label": "CrossEntropyLoss",
+        "importPath": "torch.nn",
+        "description": "torch.nn",
+        "isExtraImport": true,
+        "detail": "torch.nn",
+        "documentation": {}
+    },
+    {
+        "label": "CrossEntropyLoss",
+        "importPath": "torch.nn",
+        "description": "torch.nn",
+        "isExtraImport": true,
+        "detail": "torch.nn",
+        "documentation": {}
+    },
+    {
+        "label": "ACT2FN",
+        "importPath": "transformers.activations",
+        "description": "transformers.activations",
+        "isExtraImport": true,
+        "detail": "transformers.activations",
+        "documentation": {}
+    },
+    {
+        "label": "ACT2FN",
+        "importPath": "transformers.activations",
+        "description": "transformers.activations",
+        "isExtraImport": true,
+        "detail": "transformers.activations",
+        "documentation": {}
+    },
+    {
+        "label": "ModelOutput",
+        "importPath": "transformers.file_utils",
+        "description": "transformers.file_utils",
+        "isExtraImport": true,
+        "detail": "transformers.file_utils",
+        "documentation": {}
+    },
+    {
+        "label": "ModelOutput",
+        "importPath": "transformers.file_utils",
+        "description": "transformers.file_utils",
+        "isExtraImport": true,
+        "detail": "transformers.file_utils",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModelOutputWithPastAndCrossAttentions",
+        "importPath": "transformers.modeling_outputs",
+        "description": "transformers.modeling_outputs",
+        "isExtraImport": true,
+        "detail": "transformers.modeling_outputs",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModelOutputWithPoolingAndCrossAttentions",
+        "importPath": "transformers.modeling_outputs",
+        "description": "transformers.modeling_outputs",
+        "isExtraImport": true,
+        "detail": "transformers.modeling_outputs",
+        "documentation": {}
+    },
+    {
+        "label": "CausalLMOutputWithCrossAttentions",
+        "importPath": "transformers.modeling_outputs",
+        "description": "transformers.modeling_outputs",
+        "isExtraImport": true,
+        "detail": "transformers.modeling_outputs",
+        "documentation": {}
+    },
+    {
+        "label": "MaskedLMOutput",
+        "importPath": "transformers.modeling_outputs",
+        "description": "transformers.modeling_outputs",
+        "isExtraImport": true,
+        "detail": "transformers.modeling_outputs",
+        "documentation": {}
+    },
+    {
+        "label": "MultipleChoiceModelOutput",
+        "importPath": "transformers.modeling_outputs",
+        "description": "transformers.modeling_outputs",
+        "isExtraImport": true,
+        "detail": "transformers.modeling_outputs",
+        "documentation": {}
+    },
+    {
+        "label": "NextSentencePredictorOutput",
+        "importPath": "transformers.modeling_outputs",
+        "description": "transformers.modeling_outputs",
+        "isExtraImport": true,
+        "detail": "transformers.modeling_outputs",
+        "documentation": {}
+    },
+    {
+        "label": "QuestionAnsweringModelOutput",
+        "importPath": "transformers.modeling_outputs",
+        "description": "transformers.modeling_outputs",
+        "isExtraImport": true,
+        "detail": "transformers.modeling_outputs",
+        "documentation": {}
+    },
+    {
+        "label": "SequenceClassifierOutput",
+        "importPath": "transformers.modeling_outputs",
+        "description": "transformers.modeling_outputs",
+        "isExtraImport": true,
+        "detail": "transformers.modeling_outputs",
+        "documentation": {}
+    },
+    {
+        "label": "TokenClassifierOutput",
+        "importPath": "transformers.modeling_outputs",
+        "description": "transformers.modeling_outputs",
+        "isExtraImport": true,
+        "detail": "transformers.modeling_outputs",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModelOutputWithPastAndCrossAttentions",
+        "importPath": "transformers.modeling_outputs",
+        "description": "transformers.modeling_outputs",
+        "isExtraImport": true,
+        "detail": "transformers.modeling_outputs",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModelOutputWithPoolingAndCrossAttentions",
+        "importPath": "transformers.modeling_outputs",
+        "description": "transformers.modeling_outputs",
+        "isExtraImport": true,
+        "detail": "transformers.modeling_outputs",
+        "documentation": {}
+    },
+    {
+        "label": "CausalLMOutputWithCrossAttentions",
+        "importPath": "transformers.modeling_outputs",
+        "description": "transformers.modeling_outputs",
+        "isExtraImport": true,
+        "detail": "transformers.modeling_outputs",
+        "documentation": {}
+    },
+    {
+        "label": "MaskedLMOutput",
+        "importPath": "transformers.modeling_outputs",
+        "description": "transformers.modeling_outputs",
+        "isExtraImport": true,
+        "detail": "transformers.modeling_outputs",
+        "documentation": {}
+    },
+    {
+        "label": "MultipleChoiceModelOutput",
+        "importPath": "transformers.modeling_outputs",
+        "description": "transformers.modeling_outputs",
+        "isExtraImport": true,
+        "detail": "transformers.modeling_outputs",
+        "documentation": {}
+    },
+    {
+        "label": "NextSentencePredictorOutput",
+        "importPath": "transformers.modeling_outputs",
+        "description": "transformers.modeling_outputs",
+        "isExtraImport": true,
+        "detail": "transformers.modeling_outputs",
+        "documentation": {}
+    },
+    {
+        "label": "QuestionAnsweringModelOutput",
+        "importPath": "transformers.modeling_outputs",
+        "description": "transformers.modeling_outputs",
+        "isExtraImport": true,
+        "detail": "transformers.modeling_outputs",
+        "documentation": {}
+    },
+    {
+        "label": "SequenceClassifierOutput",
+        "importPath": "transformers.modeling_outputs",
+        "description": "transformers.modeling_outputs",
+        "isExtraImport": true,
+        "detail": "transformers.modeling_outputs",
+        "documentation": {}
+    },
+    {
+        "label": "TokenClassifierOutput",
+        "importPath": "transformers.modeling_outputs",
+        "description": "transformers.modeling_outputs",
+        "isExtraImport": true,
+        "detail": "transformers.modeling_outputs",
+        "documentation": {}
+    },
+    {
+        "label": "PreTrainedModel",
+        "importPath": "transformers.modeling_utils",
+        "description": "transformers.modeling_utils",
+        "isExtraImport": true,
+        "detail": "transformers.modeling_utils",
+        "documentation": {}
+    },
+    {
+        "label": "apply_chunking_to_forward",
+        "importPath": "transformers.modeling_utils",
+        "description": "transformers.modeling_utils",
+        "isExtraImport": true,
+        "detail": "transformers.modeling_utils",
+        "documentation": {}
+    },
+    {
+        "label": "find_pruneable_heads_and_indices",
+        "importPath": "transformers.modeling_utils",
+        "description": "transformers.modeling_utils",
+        "isExtraImport": true,
+        "detail": "transformers.modeling_utils",
+        "documentation": {}
+    },
+    {
+        "label": "prune_linear_layer",
+        "importPath": "transformers.modeling_utils",
+        "description": "transformers.modeling_utils",
+        "isExtraImport": true,
+        "detail": "transformers.modeling_utils",
+        "documentation": {}
+    },
+    {
+        "label": "PreTrainedModel",
+        "importPath": "transformers.modeling_utils",
+        "description": "transformers.modeling_utils",
+        "isExtraImport": true,
+        "detail": "transformers.modeling_utils",
+        "documentation": {}
+    },
+    {
+        "label": "apply_chunking_to_forward",
+        "importPath": "transformers.modeling_utils",
+        "description": "transformers.modeling_utils",
+        "isExtraImport": true,
+        "detail": "transformers.modeling_utils",
+        "documentation": {}
+    },
+    {
+        "label": "find_pruneable_heads_and_indices",
+        "importPath": "transformers.modeling_utils",
+        "description": "transformers.modeling_utils",
+        "isExtraImport": true,
+        "detail": "transformers.modeling_utils",
+        "documentation": {}
+    },
+    {
+        "label": "prune_linear_layer",
+        "importPath": "transformers.modeling_utils",
+        "description": "transformers.modeling_utils",
+        "isExtraImport": true,
+        "detail": "transformers.modeling_utils",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "importPath": "transformers.utils",
+        "description": "transformers.utils",
+        "isExtraImport": true,
+        "detail": "transformers.utils",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "importPath": "transformers.utils",
+        "description": "transformers.utils",
+        "isExtraImport": true,
+        "detail": "transformers.utils",
+        "documentation": {}
+    },
+    {
+        "label": "BertConfig",
+        "importPath": "transformers.models.bert.configuration_bert",
+        "description": "transformers.models.bert.configuration_bert",
+        "isExtraImport": true,
+        "detail": "transformers.models.bert.configuration_bert",
+        "documentation": {}
+    },
+    {
+        "label": "BertConfig",
+        "importPath": "transformers.models.bert.configuration_bert",
+        "description": "transformers.models.bert.configuration_bert",
+        "isExtraImport": true,
+        "detail": "transformers.models.bert.configuration_bert",
+        "documentation": {}
+    },
+    {
+        "label": "partial",
+        "importPath": "functools",
+        "description": "functools",
+        "isExtraImport": true,
+        "detail": "functools",
+        "documentation": {}
+    },
+    {
+        "label": "_cfg",
+        "importPath": "timm.models.vision_transformer",
+        "description": "timm.models.vision_transformer",
+        "isExtraImport": true,
+        "detail": "timm.models.vision_transformer",
+        "documentation": {}
+    },
+    {
+        "label": "PatchEmbed",
+        "importPath": "timm.models.vision_transformer",
+        "description": "timm.models.vision_transformer",
+        "isExtraImport": true,
+        "detail": "timm.models.vision_transformer",
+        "documentation": {}
+    },
+    {
+        "label": "register_model",
+        "importPath": "timm.models.registry",
+        "description": "timm.models.registry",
+        "isExtraImport": true,
+        "detail": "timm.models.registry",
+        "documentation": {}
+    },
+    {
+        "label": "trunc_normal_",
+        "importPath": "timm.models.layers",
+        "description": "timm.models.layers",
+        "isExtraImport": true,
+        "detail": "timm.models.layers",
+        "documentation": {}
+    },
+    {
+        "label": "DropPath",
+        "importPath": "timm.models.layers",
+        "description": "timm.models.layers",
+        "isExtraImport": true,
+        "detail": "timm.models.layers",
+        "documentation": {}
+    },
+    {
+        "label": "named_apply",
+        "importPath": "timm.models.helpers",
+        "description": "timm.models.helpers",
+        "isExtraImport": true,
+        "detail": "timm.models.helpers",
+        "documentation": {}
+    },
+    {
+        "label": "adapt_input_conv",
+        "importPath": "timm.models.helpers",
+        "description": "timm.models.helpers",
+        "isExtraImport": true,
+        "detail": "timm.models.helpers",
+        "documentation": {}
+    },
+    {
+        "label": "checkpoint_wrapper",
+        "importPath": "fairscale.nn.checkpoint.checkpoint_activations",
+        "description": "fairscale.nn.checkpoint.checkpoint_activations",
+        "isExtraImport": true,
+        "detail": "fairscale.nn.checkpoint.checkpoint_activations",
+        "documentation": {}
+    },
+    {
+        "label": "cv2",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "cv2",
+        "description": "cv2",
+        "detail": "cv2",
+        "documentation": {}
+    },
+    {
+        "label": "argparse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "argparse",
+        "description": "argparse",
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "ruamel_yaml",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "ruamel_yaml",
+        "description": "ruamel_yaml",
+        "detail": "ruamel_yaml",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "torch.backends.cudnn",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "torch.backends.cudnn",
+        "description": "torch.backends.cudnn",
+        "detail": "torch.backends.cudnn",
+        "documentation": {}
+    },
+    {
+        "label": "create_dataset",
+        "importPath": "data",
+        "description": "data",
+        "isExtraImport": true,
+        "detail": "data",
+        "documentation": {}
+    },
+    {
+        "label": "create_sampler",
+        "importPath": "data",
+        "description": "data",
+        "isExtraImport": true,
+        "detail": "data",
+        "documentation": {}
+    },
+    {
+        "label": "create_loader",
+        "importPath": "data",
+        "description": "data",
+        "isExtraImport": true,
+        "detail": "data",
+        "documentation": {}
+    },
+    {
+        "label": "create_dataset",
+        "importPath": "data",
+        "description": "data",
+        "isExtraImport": true,
+        "detail": "data",
+        "documentation": {}
+    },
+    {
+        "label": "create_sampler",
+        "importPath": "data",
+        "description": "data",
+        "isExtraImport": true,
+        "detail": "data",
+        "documentation": {}
+    },
+    {
+        "label": "create_loader",
+        "importPath": "data",
+        "description": "data",
+        "isExtraImport": true,
+        "detail": "data",
+        "documentation": {}
+    },
+    {
+        "label": "create_dataset",
+        "importPath": "data",
+        "description": "data",
+        "isExtraImport": true,
+        "detail": "data",
+        "documentation": {}
+    },
+    {
+        "label": "create_sampler",
+        "importPath": "data",
+        "description": "data",
+        "isExtraImport": true,
+        "detail": "data",
+        "documentation": {}
+    },
+    {
+        "label": "create_loader",
+        "importPath": "data",
+        "description": "data",
+        "isExtraImport": true,
+        "detail": "data",
+        "documentation": {}
+    },
+    {
+        "label": "create_dataset",
+        "importPath": "data",
+        "description": "data",
+        "isExtraImport": true,
+        "detail": "data",
+        "documentation": {}
+    },
+    {
+        "label": "create_sampler",
+        "importPath": "data",
+        "description": "data",
+        "isExtraImport": true,
+        "detail": "data",
+        "documentation": {}
+    },
+    {
+        "label": "create_loader",
+        "importPath": "data",
+        "description": "data",
+        "isExtraImport": true,
+        "detail": "data",
+        "documentation": {}
+    },
+    {
+        "label": "create_dataset",
+        "importPath": "data",
+        "description": "data",
+        "isExtraImport": true,
+        "detail": "data",
+        "documentation": {}
+    },
+    {
+        "label": "create_sampler",
+        "importPath": "data",
+        "description": "data",
+        "isExtraImport": true,
+        "detail": "data",
+        "documentation": {}
+    },
+    {
+        "label": "create_loader",
+        "importPath": "data",
+        "description": "data",
+        "isExtraImport": true,
+        "detail": "data",
+        "documentation": {}
+    },
+    {
+        "label": "create_dataset",
+        "importPath": "data",
+        "description": "data",
+        "isExtraImport": true,
+        "detail": "data",
+        "documentation": {}
+    },
+    {
+        "label": "create_sampler",
+        "importPath": "data",
+        "description": "data",
+        "isExtraImport": true,
+        "detail": "data",
+        "documentation": {}
+    },
+    {
+        "label": "create_loader",
+        "importPath": "data",
+        "description": "data",
+        "isExtraImport": true,
+        "detail": "data",
+        "documentation": {}
+    },
+    {
+        "label": "blip_retrieval",
+        "importPath": "models.blip_retrieval",
+        "description": "models.blip_retrieval",
+        "isExtraImport": true,
+        "detail": "models.blip_retrieval",
+        "documentation": {}
+    },
+    {
+        "label": "blip_retrieval",
+        "importPath": "models.blip_retrieval",
+        "description": "models.blip_retrieval",
+        "isExtraImport": true,
+        "detail": "models.blip_retrieval",
+        "documentation": {}
+    },
+    {
+        "label": "VideoDataset",
+        "importPath": "data.video_dataset",
+        "description": "data.video_dataset",
+        "isExtraImport": true,
+        "detail": "data.video_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "transforms",
+        "importPath": "torchvision",
+        "description": "torchvision",
+        "isExtraImport": true,
+        "detail": "torchvision",
+        "documentation": {}
+    },
+    {
+        "label": "InterpolationMode",
+        "importPath": "torchvision.transforms.functional",
+        "description": "torchvision.transforms.functional",
+        "isExtraImport": true,
+        "detail": "torchvision.transforms.functional",
+        "documentation": {}
+    },
+    {
+        "label": "cog",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "cog",
+        "description": "cog",
+        "detail": "cog",
+        "documentation": {}
+    },
+    {
+        "label": "blip_vqa",
+        "importPath": "models.blip_vqa",
+        "description": "models.blip_vqa",
+        "isExtraImport": true,
+        "detail": "models.blip_vqa",
+        "documentation": {}
+    },
+    {
+        "label": "blip_vqa",
+        "importPath": "models.blip_vqa",
+        "description": "models.blip_vqa",
+        "isExtraImport": true,
+        "detail": "models.blip_vqa",
+        "documentation": {}
+    },
+    {
+        "label": "blip_itm",
+        "importPath": "models.blip_itm",
+        "description": "models.blip_itm",
+        "isExtraImport": true,
+        "detail": "models.blip_itm",
+        "documentation": {}
+    },
+    {
+        "label": "blip_pretrain",
+        "importPath": "models.blip_pretrain",
+        "description": "models.blip_pretrain",
+        "isExtraImport": true,
+        "detail": "models.blip_pretrain",
+        "documentation": {}
+    },
+    {
+        "label": "pkg_resources",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pkg_resources",
+        "description": "pkg_resources",
+        "detail": "pkg_resources",
+        "documentation": {}
+    },
+    {
+        "label": "setup",
+        "importPath": "setuptools",
+        "description": "setuptools",
+        "isExtraImport": true,
+        "detail": "setuptools",
+        "documentation": {}
+    },
+    {
+        "label": "find_packages",
+        "importPath": "setuptools",
+        "description": "setuptools",
+        "isExtraImport": true,
+        "detail": "setuptools",
+        "documentation": {}
+    },
+    {
+        "label": "pickle",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pickle",
+        "description": "pickle",
+        "detail": "pickle",
+        "documentation": {}
+    },
+    {
+        "label": "blip_nlvr",
+        "importPath": "models.blip_nlvr",
+        "description": "models.blip_nlvr",
+        "isExtraImport": true,
+        "detail": "models.blip_nlvr",
+        "documentation": {}
+    },
+    {
+        "label": "vqa_collate_fn",
+        "importPath": "data.vqa_dataset",
+        "description": "data.vqa_dataset",
+        "isExtraImport": true,
+        "detail": "data.vqa_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "io",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "io",
+        "description": "io",
+        "detail": "io",
+        "documentation": {}
+    },
+    {
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "deque",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "delete_file",
+        "kind": 2,
+        "importPath": "app.routes.endpoints",
+        "description": "app.routes.endpoints",
+        "peekOfCode": "def delete_file(file_path: str):\n    try:\n        if os.path.exists(file_path):\n            os.remove(file_path)\n    except Exception as e:\n        print(f\"Error deleting file {file_path}: {e}\")\n@router.get(\"/generate-flux\")\nasync def generate_flux(prompt: str, return_base64: bool = False, background_tasks: BackgroundTasks = None):\n    result = run_flux(prompt)\n    if result[\"status\"] != \"success\":",
+        "detail": "app.routes.endpoints",
+        "documentation": {}
+    },
+    {
+        "label": "stt",
+        "kind": 5,
+        "importPath": "app.routes.endpoints",
+        "description": "app.routes.endpoints",
+        "peekOfCode": "stt = whisper.load_model(\"large\")\nsys.path.append('src/blip')\nsys.path.append('clip-interrogator')\nfrom clip_interrogator import Config, Interrogator\n# --- CONFIGURATION FIX ---\nconfig = Config()\nconfig.device = \"cuda\"\nconfig.clip_model_name = \"ViT-H-14/laion2b_s32b_b79k\"\nconfig.precision = 'full'  \nci = Interrogator(config)",
+        "detail": "app.routes.endpoints",
+        "documentation": {}
+    },
+    {
+        "label": "config",
+        "kind": 5,
+        "importPath": "app.routes.endpoints",
+        "description": "app.routes.endpoints",
+        "peekOfCode": "config = Config()\nconfig.device = \"cuda\"\nconfig.clip_model_name = \"ViT-H-14/laion2b_s32b_b79k\"\nconfig.precision = 'full'  \nci = Interrogator(config)\nrouter = APIRouter()\n@router.get(\"/health\")\nasync def health():\n    return {\"status\": \"ok\"}\n@router.post(\"/interrogate\")",
+        "detail": "app.routes.endpoints",
+        "documentation": {}
+    },
+    {
+        "label": "config.device",
+        "kind": 5,
+        "importPath": "app.routes.endpoints",
+        "description": "app.routes.endpoints",
+        "peekOfCode": "config.device = \"cuda\"\nconfig.clip_model_name = \"ViT-H-14/laion2b_s32b_b79k\"\nconfig.precision = 'full'  \nci = Interrogator(config)\nrouter = APIRouter()\n@router.get(\"/health\")\nasync def health():\n    return {\"status\": \"ok\"}\n@router.post(\"/interrogate\")\nasync def interrogate_image(",
+        "detail": "app.routes.endpoints",
+        "documentation": {}
+    },
+    {
+        "label": "config.clip_model_name",
+        "kind": 5,
+        "importPath": "app.routes.endpoints",
+        "description": "app.routes.endpoints",
+        "peekOfCode": "config.clip_model_name = \"ViT-H-14/laion2b_s32b_b79k\"\nconfig.precision = 'full'  \nci = Interrogator(config)\nrouter = APIRouter()\n@router.get(\"/health\")\nasync def health():\n    return {\"status\": \"ok\"}\n@router.post(\"/interrogate\")\nasync def interrogate_image(\n    image_file: Optional[UploadFile] = File(None),",
+        "detail": "app.routes.endpoints",
+        "documentation": {}
+    },
+    {
+        "label": "config.precision",
+        "kind": 5,
+        "importPath": "app.routes.endpoints",
+        "description": "app.routes.endpoints",
+        "peekOfCode": "config.precision = 'full'  \nci = Interrogator(config)\nrouter = APIRouter()\n@router.get(\"/health\")\nasync def health():\n    return {\"status\": \"ok\"}\n@router.post(\"/interrogate\")\nasync def interrogate_image(\n    image_file: Optional[UploadFile] = File(None),\n    image_url: Optional[str] = Form(None)",
+        "detail": "app.routes.endpoints",
+        "documentation": {}
+    },
+    {
+        "label": "ci",
+        "kind": 5,
+        "importPath": "app.routes.endpoints",
+        "description": "app.routes.endpoints",
+        "peekOfCode": "ci = Interrogator(config)\nrouter = APIRouter()\n@router.get(\"/health\")\nasync def health():\n    return {\"status\": \"ok\"}\n@router.post(\"/interrogate\")\nasync def interrogate_image(\n    image_file: Optional[UploadFile] = File(None),\n    image_url: Optional[str] = Form(None)\n):",
+        "detail": "app.routes.endpoints",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "app.routes.endpoints",
+        "description": "app.routes.endpoints",
+        "peekOfCode": "router = APIRouter()\n@router.get(\"/health\")\nasync def health():\n    return {\"status\": \"ok\"}\n@router.post(\"/interrogate\")\nasync def interrogate_image(\n    image_file: Optional[UploadFile] = File(None),\n    image_url: Optional[str] = Form(None)\n):\n    # Check if either file or URL is provided",
+        "detail": "app.routes.endpoints",
+        "documentation": {}
+    },
+    {
+        "label": "ALLOWED_TYPES",
+        "kind": 5,
+        "importPath": "app.routes.endpoints",
+        "description": "app.routes.endpoints",
+        "peekOfCode": "ALLOWED_TYPES = {\n    \"audio/mpeg\", \"audio/webm\", \"video/mp4\",\n    \"audio/mp4\", \"video/webm\", \"audio/x-m4a\", \n    \"audio/m4a\",  \"audio/ogg\"\n}\nMIME_EXTENSION_MAP = {\n    \"audio/mpeg\": \".mp3\",\n    \"audio/webm\": \".webm\",\n    \"video/webm\": \".webm\",\n    \"video/mp4\": \".mp4\",",
+        "detail": "app.routes.endpoints",
+        "documentation": {}
+    },
+    {
+        "label": "MIME_EXTENSION_MAP",
+        "kind": 5,
+        "importPath": "app.routes.endpoints",
+        "description": "app.routes.endpoints",
+        "peekOfCode": "MIME_EXTENSION_MAP = {\n    \"audio/mpeg\": \".mp3\",\n    \"audio/webm\": \".webm\",\n    \"video/webm\": \".webm\",\n    \"video/mp4\": \".mp4\",\n    \"audio/mp4\": \".mp4\",\n    \"audio/x-m4a\": \".m4a\",\n    \"audio/m4a\": \".m4a\",\n    \"audio/ogg\": \".ogg\"\n}",
+        "detail": "app.routes.endpoints",
+        "documentation": {}
+    },
+    {
+        "label": "config",
+        "kind": 5,
+        "importPath": "app.scripts.clip",
+        "description": "app.scripts.clip",
+        "peekOfCode": "config = Config()\nconfig.blip_offload = True\nconfig.chunk_size = 2048\nconfig.flavor_intermediate_count = 512\nconfig.blip_num_beams = 64\nci = Interrogator(config)\nasync def inference(image, mode, best_max_flavors):\n    image = image.convert('RGB')\n    if mode == 'best':\n        return ci.interrogate(image, max_flavors=int(best_max_flavors))",
+        "detail": "app.scripts.clip",
+        "documentation": {}
+    },
+    {
+        "label": "config.blip_offload",
+        "kind": 5,
+        "importPath": "app.scripts.clip",
+        "description": "app.scripts.clip",
+        "peekOfCode": "config.blip_offload = True\nconfig.chunk_size = 2048\nconfig.flavor_intermediate_count = 512\nconfig.blip_num_beams = 64\nci = Interrogator(config)\nasync def inference(image, mode, best_max_flavors):\n    image = image.convert('RGB')\n    if mode == 'best':\n        return ci.interrogate(image, max_flavors=int(best_max_flavors))\n    elif mode == 'classic':",
+        "detail": "app.scripts.clip",
+        "documentation": {}
+    },
+    {
+        "label": "config.chunk_size",
+        "kind": 5,
+        "importPath": "app.scripts.clip",
+        "description": "app.scripts.clip",
+        "peekOfCode": "config.chunk_size = 2048\nconfig.flavor_intermediate_count = 512\nconfig.blip_num_beams = 64\nci = Interrogator(config)\nasync def inference(image, mode, best_max_flavors):\n    image = image.convert('RGB')\n    if mode == 'best':\n        return ci.interrogate(image, max_flavors=int(best_max_flavors))\n    elif mode == 'classic':\n        return ci.interrogate_classic(image)",
+        "detail": "app.scripts.clip",
+        "documentation": {}
+    },
+    {
+        "label": "config.flavor_intermediate_count",
+        "kind": 5,
+        "importPath": "app.scripts.clip",
+        "description": "app.scripts.clip",
+        "peekOfCode": "config.flavor_intermediate_count = 512\nconfig.blip_num_beams = 64\nci = Interrogator(config)\nasync def inference(image, mode, best_max_flavors):\n    image = image.convert('RGB')\n    if mode == 'best':\n        return ci.interrogate(image, max_flavors=int(best_max_flavors))\n    elif mode == 'classic':\n        return ci.interrogate_classic(image)\n    else:",
+        "detail": "app.scripts.clip",
+        "documentation": {}
+    },
+    {
+        "label": "config.blip_num_beams",
+        "kind": 5,
+        "importPath": "app.scripts.clip",
+        "description": "app.scripts.clip",
+        "peekOfCode": "config.blip_num_beams = 64\nci = Interrogator(config)\nasync def inference(image, mode, best_max_flavors):\n    image = image.convert('RGB')\n    if mode == 'best':\n        return ci.interrogate(image, max_flavors=int(best_max_flavors))\n    elif mode == 'classic':\n        return ci.interrogate_classic(image)\n    else:\n        return ci.interrogate_fast(image)",
+        "detail": "app.scripts.clip",
+        "documentation": {}
+    },
+    {
+        "label": "ci",
+        "kind": 5,
+        "importPath": "app.scripts.clip",
+        "description": "app.scripts.clip",
+        "peekOfCode": "ci = Interrogator(config)\nasync def inference(image, mode, best_max_flavors):\n    image = image.convert('RGB')\n    if mode == 'best':\n        return ci.interrogate(image, max_flavors=int(best_max_flavors))\n    elif mode == 'classic':\n        return ci.interrogate_classic(image)\n    else:\n        return ci.interrogate_fast(image)",
+        "detail": "app.scripts.clip",
+        "documentation": {}
+    },
+    {
+        "label": "parser",
+        "kind": 5,
+        "importPath": "app.scripts.flux_run",
+        "description": "app.scripts.flux_run",
+        "peekOfCode": "parser = argparse.ArgumentParser()\nparser.add_argument('--prompt', type=str, required=True)\nargs = parser.parse_args()\n# Load pipeline\npipe = FluxPipeline.from_pretrained(\n    \"black-forest-labs/FLUX.1-dev\",\n    torch_dtype=torch.bfloat16,\n    device_map=\"balanced\"\n)\n# Generate image",
+        "detail": "app.scripts.flux_run",
+        "documentation": {}
+    },
+    {
+        "label": "args",
+        "kind": 5,
+        "importPath": "app.scripts.flux_run",
+        "description": "app.scripts.flux_run",
+        "peekOfCode": "args = parser.parse_args()\n# Load pipeline\npipe = FluxPipeline.from_pretrained(\n    \"black-forest-labs/FLUX.1-dev\",\n    torch_dtype=torch.bfloat16,\n    device_map=\"balanced\"\n)\n# Generate image\nimage = pipe(\n    args.prompt,",
+        "detail": "app.scripts.flux_run",
+        "documentation": {}
+    },
+    {
+        "label": "pipe",
+        "kind": 5,
+        "importPath": "app.scripts.flux_run",
+        "description": "app.scripts.flux_run",
+        "peekOfCode": "pipe = FluxPipeline.from_pretrained(\n    \"black-forest-labs/FLUX.1-dev\",\n    torch_dtype=torch.bfloat16,\n    device_map=\"balanced\"\n)\n# Generate image\nimage = pipe(\n    args.prompt,\n    guidance_scale=3.5,\n    num_inference_steps=50,",
+        "detail": "app.scripts.flux_run",
+        "documentation": {}
+    },
+    {
+        "label": "image",
+        "kind": 5,
+        "importPath": "app.scripts.flux_run",
+        "description": "app.scripts.flux_run",
+        "peekOfCode": "image = pipe(\n    args.prompt,\n    guidance_scale=3.5,\n    num_inference_steps=50,\n    max_sequence_length=512,\n    generator=torch.manual_seed(0)\n).images[0]\n# Save image\noutput_dir = \"./output\"\nos.makedirs(output_dir, exist_ok=True)",
+        "detail": "app.scripts.flux_run",
+        "documentation": {}
+    },
+    {
+        "label": "output_dir",
+        "kind": 5,
+        "importPath": "app.scripts.flux_run",
+        "description": "app.scripts.flux_run",
+        "peekOfCode": "output_dir = \"./output\"\nos.makedirs(output_dir, exist_ok=True)\ngenI_name = os.path.join(output_dir, f\"{str(uuid.uuid4())[:8]}.png\")\nimage.save(genI_name)\nprint(f\"✅ Image saved to {genI_name}\")",
+        "detail": "app.scripts.flux_run",
+        "documentation": {}
+    },
+    {
+        "label": "genI_name",
+        "kind": 5,
+        "importPath": "app.scripts.flux_run",
+        "description": "app.scripts.flux_run",
+        "peekOfCode": "genI_name = os.path.join(output_dir, f\"{str(uuid.uuid4())[:8]}.png\")\nimage.save(genI_name)\nprint(f\"✅ Image saved to {genI_name}\")",
+        "detail": "app.scripts.flux_run",
+        "documentation": {}
+    },
+    {
+        "label": "run_flux",
+        "kind": 2,
+        "importPath": "app.services.flux_service",
+        "description": "app.services.flux_service",
+        "peekOfCode": "def run_flux(prompt: str):\n    python_exec = \"/app/flux_venv/bin/python\"\n    script_path = \"/app/app/scripts/flux_run.py\"\n    try:\n        result = subprocess.run(\n            [python_exec, script_path, \"--prompt\", prompt],\n            cwd=\"/app/app/scripts\",\n            check=True,\n            capture_output=True,\n            text=True",
+        "detail": "app.services.flux_service",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "app.main",
+        "description": "app.main",
+        "peekOfCode": "app = FastAPI()\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"*\"],\n    allow_credentials=True,\n    allow_methods=[\"*\"],\n    allow_headers=[\"*\"],\n)\napp.include_router(endpoints_router, prefix=\"/api/v1\", tags=[\"Backend Endpoints\"])",
+        "detail": "app.main",
+        "documentation": {}
+    },
+    {
+        "label": "coco_karpathy_train",
+        "kind": 6,
+        "importPath": "venv.src.blip.data.coco_karpathy_dataset",
+        "description": "venv.src.blip.data.coco_karpathy_dataset",
+        "peekOfCode": "class coco_karpathy_train(Dataset):\n    def __init__(self, transform, image_root, ann_root, max_words=30, prompt=''):        \n        '''\n        image_root (string): Root directory of images (e.g. coco/images/)\n        ann_root (string): directory to store the annotation file\n        '''        \n        url = 'https://storage.googleapis.com/sfr-vision-language-research/datasets/coco_karpathy_train.json'\n        filename = 'coco_karpathy_train.json'\n        download_url(url,ann_root)\n        self.annotation = json.load(open(os.path.join(ann_root,filename),'r'))",
+        "detail": "venv.src.blip.data.coco_karpathy_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "coco_karpathy_caption_eval",
+        "kind": 6,
+        "importPath": "venv.src.blip.data.coco_karpathy_dataset",
+        "description": "venv.src.blip.data.coco_karpathy_dataset",
+        "peekOfCode": "class coco_karpathy_caption_eval(Dataset):\n    def __init__(self, transform, image_root, ann_root, split):  \n        '''\n        image_root (string): Root directory of images (e.g. coco/images/)\n        ann_root (string): directory to store the annotation file\n        split (string): val or test\n        '''\n        urls = {'val':'https://storage.googleapis.com/sfr-vision-language-research/datasets/coco_karpathy_val.json',\n                'test':'https://storage.googleapis.com/sfr-vision-language-research/datasets/coco_karpathy_test.json'}\n        filenames = {'val':'coco_karpathy_val.json','test':'coco_karpathy_test.json'}",
+        "detail": "venv.src.blip.data.coco_karpathy_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "coco_karpathy_retrieval_eval",
+        "kind": 6,
+        "importPath": "venv.src.blip.data.coco_karpathy_dataset",
+        "description": "venv.src.blip.data.coco_karpathy_dataset",
+        "peekOfCode": "class coco_karpathy_retrieval_eval(Dataset):\n    def __init__(self, transform, image_root, ann_root, split, max_words=30):  \n        '''\n        image_root (string): Root directory of images (e.g. coco/images/)\n        ann_root (string): directory to store the annotation file\n        split (string): val or test\n        '''\n        urls = {'val':'https://storage.googleapis.com/sfr-vision-language-research/datasets/coco_karpathy_val.json',\n                'test':'https://storage.googleapis.com/sfr-vision-language-research/datasets/coco_karpathy_test.json'}\n        filenames = {'val':'coco_karpathy_val.json','test':'coco_karpathy_test.json'}",
+        "detail": "venv.src.blip.data.coco_karpathy_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "flickr30k_train",
+        "kind": 6,
+        "importPath": "venv.src.blip.data.flickr30k_dataset",
+        "description": "venv.src.blip.data.flickr30k_dataset",
+        "peekOfCode": "class flickr30k_train(Dataset):\n    def __init__(self, transform, image_root, ann_root, max_words=30, prompt=''):        \n        '''\n        image_root (string): Root directory of images (e.g. flickr30k/)\n        ann_root (string): directory to store the annotation file\n        '''        \n        url = 'https://storage.googleapis.com/sfr-vision-language-research/datasets/flickr30k_train.json'\n        filename = 'flickr30k_train.json'\n        download_url(url,ann_root)\n        self.annotation = json.load(open(os.path.join(ann_root,filename),'r'))",
+        "detail": "venv.src.blip.data.flickr30k_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "flickr30k_retrieval_eval",
+        "kind": 6,
+        "importPath": "venv.src.blip.data.flickr30k_dataset",
+        "description": "venv.src.blip.data.flickr30k_dataset",
+        "peekOfCode": "class flickr30k_retrieval_eval(Dataset):\n    def __init__(self, transform, image_root, ann_root, split, max_words=30):  \n        '''\n        image_root (string): Root directory of images (e.g. flickr30k/)\n        ann_root (string): directory to store the annotation file\n        split (string): val or test\n        '''\n        urls = {'val':'https://storage.googleapis.com/sfr-vision-language-research/datasets/flickr30k_val.json',\n                'test':'https://storage.googleapis.com/sfr-vision-language-research/datasets/flickr30k_test.json'}\n        filenames = {'val':'flickr30k_val.json','test':'flickr30k_test.json'}",
+        "detail": "venv.src.blip.data.flickr30k_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "nlvr_dataset",
+        "kind": 6,
+        "importPath": "venv.src.blip.data.nlvr_dataset",
+        "description": "venv.src.blip.data.nlvr_dataset",
+        "peekOfCode": "class nlvr_dataset(Dataset):\n    def __init__(self, transform, image_root, ann_root, split):  \n        '''\n        image_root (string): Root directory of images \n        ann_root (string): directory to store the annotation file\n        split (string): train, val or test\n        '''\n        urls = {'train':'https://storage.googleapis.com/sfr-vision-language-research/datasets/nlvr_train.json',\n                'val':'https://storage.googleapis.com/sfr-vision-language-research/datasets/nlvr_dev.json',\n                'test':'https://storage.googleapis.com/sfr-vision-language-research/datasets/nlvr_test.json'}",
+        "detail": "venv.src.blip.data.nlvr_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "nocaps_eval",
+        "kind": 6,
+        "importPath": "venv.src.blip.data.nocaps_dataset",
+        "description": "venv.src.blip.data.nocaps_dataset",
+        "peekOfCode": "class nocaps_eval(Dataset):\n    def __init__(self, transform, image_root, ann_root, split):   \n        urls = {'val':'https://storage.googleapis.com/sfr-vision-language-research/datasets/nocaps_val.json',\n                'test':'https://storage.googleapis.com/sfr-vision-language-research/datasets/nocaps_test.json'}\n        filenames = {'val':'nocaps_val.json','test':'nocaps_test.json'}\n        download_url(urls[split],ann_root)\n        self.annotation = json.load(open(os.path.join(ann_root,filenames[split]),'r'))\n        self.transform = transform\n        self.image_root = image_root\n    def __len__(self):",
+        "detail": "venv.src.blip.data.nocaps_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "pretrain_dataset",
+        "kind": 6,
+        "importPath": "venv.src.blip.data.pretrain_dataset",
+        "description": "venv.src.blip.data.pretrain_dataset",
+        "peekOfCode": "class pretrain_dataset(Dataset):\n    def __init__(self, ann_file, laion_path, transform): \n        self.ann_pretrain = []\n        for f in ann_file:\n            print('loading '+f)\n            ann = json.load(open(f,'r'))\n            self.ann_pretrain += ann\n        self.laion_path = laion_path\n        if self.laion_path:\n            self.laion_files = glob.glob(os.path.join(laion_path,'*.json'))",
+        "detail": "venv.src.blip.data.pretrain_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "ImageFile.LOAD_TRUNCATED_IMAGES",
+        "kind": 5,
+        "importPath": "venv.src.blip.data.pretrain_dataset",
+        "description": "venv.src.blip.data.pretrain_dataset",
+        "peekOfCode": "ImageFile.LOAD_TRUNCATED_IMAGES = True\nImage.MAX_IMAGE_PIXELS = None\nfrom data.utils import pre_caption\nimport os,glob\nclass pretrain_dataset(Dataset):\n    def __init__(self, ann_file, laion_path, transform): \n        self.ann_pretrain = []\n        for f in ann_file:\n            print('loading '+f)\n            ann = json.load(open(f,'r'))",
+        "detail": "venv.src.blip.data.pretrain_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "Image.MAX_IMAGE_PIXELS",
+        "kind": 5,
+        "importPath": "venv.src.blip.data.pretrain_dataset",
+        "description": "venv.src.blip.data.pretrain_dataset",
+        "peekOfCode": "Image.MAX_IMAGE_PIXELS = None\nfrom data.utils import pre_caption\nimport os,glob\nclass pretrain_dataset(Dataset):\n    def __init__(self, ann_file, laion_path, transform): \n        self.ann_pretrain = []\n        for f in ann_file:\n            print('loading '+f)\n            ann = json.load(open(f,'r'))\n            self.ann_pretrain += ann",
+        "detail": "venv.src.blip.data.pretrain_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "pre_caption",
+        "kind": 2,
+        "importPath": "venv.src.blip.data.utils",
+        "description": "venv.src.blip.data.utils",
+        "peekOfCode": "def pre_caption(caption,max_words=50):\n    caption = re.sub(\n        r\"([.!\\\"()*#:;~])\",       \n        ' ',\n        caption.lower(),\n    )\n    caption = re.sub(\n        r\"\\s{2,}\",\n        ' ',\n        caption,",
+        "detail": "venv.src.blip.data.utils",
+        "documentation": {}
+    },
+    {
+        "label": "pre_question",
+        "kind": 2,
+        "importPath": "venv.src.blip.data.utils",
+        "description": "venv.src.blip.data.utils",
+        "peekOfCode": "def pre_question(question,max_ques_words=50):\n    question = re.sub(\n        r\"([.!\\\"()*#:;~])\",\n        '',\n        question.lower(),\n    ) \n    question = question.rstrip(' ')\n    #truncate question\n    question_words = question.split(' ')\n    if len(question_words)>max_ques_words:",
+        "detail": "venv.src.blip.data.utils",
+        "documentation": {}
+    },
+    {
+        "label": "save_result",
+        "kind": 2,
+        "importPath": "venv.src.blip.data.utils",
+        "description": "venv.src.blip.data.utils",
+        "peekOfCode": "def save_result(result, result_dir, filename, remove_duplicate=''):\n    result_file = os.path.join(result_dir, '%s_rank%d.json'%(filename,utils.get_rank()))\n    final_result_file = os.path.join(result_dir, '%s.json'%filename)\n    json.dump(result,open(result_file,'w'))\n    dist.barrier()\n    if utils.is_main_process():   \n        # combine results from all processes\n        result = []\n        for rank in range(utils.get_world_size()):\n            result_file = os.path.join(result_dir, '%s_rank%d.json'%(filename,rank))",
+        "detail": "venv.src.blip.data.utils",
+        "documentation": {}
+    },
+    {
+        "label": "coco_caption_eval",
+        "kind": 2,
+        "importPath": "venv.src.blip.data.utils",
+        "description": "venv.src.blip.data.utils",
+        "peekOfCode": "def coco_caption_eval(coco_gt_root, results_file, split):\n    urls = {'val':'https://storage.googleapis.com/sfr-vision-language-research/datasets/coco_karpathy_val_gt.json',\n            'test':'https://storage.googleapis.com/sfr-vision-language-research/datasets/coco_karpathy_test_gt.json'}\n    filenames = {'val':'coco_karpathy_val_gt.json','test':'coco_karpathy_test_gt.json'}    \n    download_url(urls[split],coco_gt_root)\n    annotation_file = os.path.join(coco_gt_root,filenames[split])\n    # create coco object and coco_result object\n    coco = COCO(annotation_file)\n    coco_result = coco.loadRes(results_file)\n    # create coco_eval object by taking coco and coco_result",
+        "detail": "venv.src.blip.data.utils",
+        "documentation": {}
+    },
+    {
+        "label": "ImageNorm",
+        "kind": 6,
+        "importPath": "venv.src.blip.data.video_dataset",
+        "description": "venv.src.blip.data.video_dataset",
+        "peekOfCode": "class ImageNorm(object):\n    \"\"\"Apply Normalization to Image Pixels on GPU\n    \"\"\"\n    def __init__(self, mean, std):\n        self.mean = torch.tensor(mean).view(1, 3, 1, 1)\n        self.std = torch.tensor(std).view(1, 3, 1, 1)\n    def __call__(self, img):\n        if torch.max(img) > 1 and self.mean.max() <= 1:\n            img.div_(255.)\n        return img.sub_(self.mean).div_(self.std)",
+        "detail": "venv.src.blip.data.video_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "VideoDataset",
+        "kind": 6,
+        "importPath": "venv.src.blip.data.video_dataset",
+        "description": "venv.src.blip.data.video_dataset",
+        "peekOfCode": "class VideoDataset(Dataset):\n    def __init__(self, video_root, ann_root, num_frm=4, frm_sampling_strategy=\"rand\", max_img_size=384, video_fmt='.mp4'):\n        '''\n        image_root (string): Root directory of video\n        ann_root (string): directory to store the annotation file\n        '''        \n        url = 'https://storage.googleapis.com/sfr-vision-language-research/datasets/msrvtt_test.jsonl'\n        filename = 'msrvtt_test.jsonl'\n        download_url(url,ann_root)\n        self.annotation = load_jsonl(os.path.join(ann_root,filename))",
+        "detail": "venv.src.blip.data.video_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "load_jsonl",
+        "kind": 2,
+        "importPath": "venv.src.blip.data.video_dataset",
+        "description": "venv.src.blip.data.video_dataset",
+        "peekOfCode": "def load_jsonl(filename):\n    with open(filename, \"r\") as f:\n        return [json.loads(l.strip(\"\\n\")) for l in f.readlines()]\nclass VideoDataset(Dataset):\n    def __init__(self, video_root, ann_root, num_frm=4, frm_sampling_strategy=\"rand\", max_img_size=384, video_fmt='.mp4'):\n        '''\n        image_root (string): Root directory of video\n        ann_root (string): directory to store the annotation file\n        '''        \n        url = 'https://storage.googleapis.com/sfr-vision-language-research/datasets/msrvtt_test.jsonl'",
+        "detail": "venv.src.blip.data.video_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "vqa_dataset",
+        "kind": 6,
+        "importPath": "venv.src.blip.data.vqa_dataset",
+        "description": "venv.src.blip.data.vqa_dataset",
+        "peekOfCode": "class vqa_dataset(Dataset):\n    def __init__(self, transform, ann_root, vqa_root, vg_root, train_files=[], split=\"train\"):\n        self.split = split        \n        self.transform = transform\n        self.vqa_root = vqa_root\n        self.vg_root = vg_root\n        if split=='train':\n            urls = {'vqa_train':'https://storage.googleapis.com/sfr-vision-language-research/datasets/vqa_train.json',\n                    'vqa_val':'https://storage.googleapis.com/sfr-vision-language-research/datasets/vqa_val.json',\n                    'vg_qa':'https://storage.googleapis.com/sfr-vision-language-research/datasets/vg_qa.json'}",
+        "detail": "venv.src.blip.data.vqa_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "vqa_collate_fn",
+        "kind": 2,
+        "importPath": "venv.src.blip.data.vqa_dataset",
+        "description": "venv.src.blip.data.vqa_dataset",
+        "peekOfCode": "def vqa_collate_fn(batch):\n    image_list, question_list, answer_list, weight_list, n = [], [], [], [], []\n    for image, question, answer, weights in batch:\n        image_list.append(image)\n        question_list.append(question)\n        weight_list += weights       \n        answer_list += answer\n        n.append(len(answer))\n    return torch.stack(image_list,dim=0), question_list, answer_list, torch.Tensor(weight_list), n",
+        "detail": "venv.src.blip.data.vqa_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "BLIP_Base",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.blip",
+        "description": "venv.src.blip.models.blip",
+        "peekOfCode": "class BLIP_Base(nn.Module):\n    def __init__(self,                 \n                 med_config = 'configs/med_config.json',  \n                 image_size = 224,\n                 vit = 'base',\n                 vit_grad_ckpt = False,\n                 vit_ckpt_layer = 0,                 \n                 ):\n        \"\"\"\n        Args:",
+        "detail": "venv.src.blip.models.blip",
+        "documentation": {}
+    },
+    {
+        "label": "BLIP_Decoder",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.blip",
+        "description": "venv.src.blip.models.blip",
+        "peekOfCode": "class BLIP_Decoder(nn.Module):\n    def __init__(self,                 \n                 med_config = 'configs/med_config.json',  \n                 image_size = 384,\n                 vit = 'base',\n                 vit_grad_ckpt = False,\n                 vit_ckpt_layer = 0,\n                 prompt = 'a picture of ',\n                 ):\n        \"\"\"",
+        "detail": "venv.src.blip.models.blip",
+        "documentation": {}
+    },
+    {
+        "label": "blip_decoder",
+        "kind": 2,
+        "importPath": "venv.src.blip.models.blip",
+        "description": "venv.src.blip.models.blip",
+        "peekOfCode": "def blip_decoder(pretrained='',**kwargs):\n    model = BLIP_Decoder(**kwargs)\n    if pretrained:\n        model,msg = load_checkpoint(model,pretrained)\n        assert(len(msg.missing_keys)==0)\n    return model    \ndef blip_feature_extractor(pretrained='',**kwargs):\n    model = BLIP_Base(**kwargs)\n    if pretrained:\n        model,msg = load_checkpoint(model,pretrained)",
+        "detail": "venv.src.blip.models.blip",
+        "documentation": {}
+    },
+    {
+        "label": "blip_feature_extractor",
+        "kind": 2,
+        "importPath": "venv.src.blip.models.blip",
+        "description": "venv.src.blip.models.blip",
+        "peekOfCode": "def blip_feature_extractor(pretrained='',**kwargs):\n    model = BLIP_Base(**kwargs)\n    if pretrained:\n        model,msg = load_checkpoint(model,pretrained)\n        assert(len(msg.missing_keys)==0)\n    return model        \ndef init_tokenizer():\n    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')\n    tokenizer.add_special_tokens({'bos_token':'[DEC]'})\n    tokenizer.add_special_tokens({'additional_special_tokens':['[ENC]']})       ",
+        "detail": "venv.src.blip.models.blip",
+        "documentation": {}
+    },
+    {
+        "label": "init_tokenizer",
+        "kind": 2,
+        "importPath": "venv.src.blip.models.blip",
+        "description": "venv.src.blip.models.blip",
+        "peekOfCode": "def init_tokenizer():\n    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')\n    tokenizer.add_special_tokens({'bos_token':'[DEC]'})\n    tokenizer.add_special_tokens({'additional_special_tokens':['[ENC]']})       \n    tokenizer.enc_token_id = tokenizer.additional_special_tokens_ids[0]  \n    return tokenizer\ndef create_vit(vit, image_size, use_grad_checkpointing=False, ckpt_layer=0, drop_path_rate=0):\n    assert vit in ['base', 'large'], \"vit parameter must be base or large\"\n    if vit=='base':\n        vision_width = 768",
+        "detail": "venv.src.blip.models.blip",
+        "documentation": {}
+    },
+    {
+        "label": "create_vit",
+        "kind": 2,
+        "importPath": "venv.src.blip.models.blip",
+        "description": "venv.src.blip.models.blip",
+        "peekOfCode": "def create_vit(vit, image_size, use_grad_checkpointing=False, ckpt_layer=0, drop_path_rate=0):\n    assert vit in ['base', 'large'], \"vit parameter must be base or large\"\n    if vit=='base':\n        vision_width = 768\n        visual_encoder = VisionTransformer(img_size=image_size, patch_size=16, embed_dim=vision_width, depth=12, \n                                           num_heads=12, use_grad_checkpointing=use_grad_checkpointing, ckpt_layer=ckpt_layer,\n                                           drop_path_rate=0 or drop_path_rate\n                                          )   \n    elif vit=='large':\n        vision_width = 1024",
+        "detail": "venv.src.blip.models.blip",
+        "documentation": {}
+    },
+    {
+        "label": "is_url",
+        "kind": 2,
+        "importPath": "venv.src.blip.models.blip",
+        "description": "venv.src.blip.models.blip",
+        "peekOfCode": "def is_url(url_or_filename):\n    parsed = urlparse(url_or_filename)\n    return parsed.scheme in (\"http\", \"https\")\ndef load_checkpoint(model,url_or_filename):\n    if is_url(url_or_filename):\n        cached_file = download_cached_file(url_or_filename, check_hash=False, progress=True)\n        checkpoint = torch.load(cached_file, map_location='cpu') \n    elif os.path.isfile(url_or_filename):        \n        checkpoint = torch.load(url_or_filename, map_location='cpu') \n    else:",
+        "detail": "venv.src.blip.models.blip",
+        "documentation": {}
+    },
+    {
+        "label": "load_checkpoint",
+        "kind": 2,
+        "importPath": "venv.src.blip.models.blip",
+        "description": "venv.src.blip.models.blip",
+        "peekOfCode": "def load_checkpoint(model,url_or_filename):\n    if is_url(url_or_filename):\n        cached_file = download_cached_file(url_or_filename, check_hash=False, progress=True)\n        checkpoint = torch.load(cached_file, map_location='cpu') \n    elif os.path.isfile(url_or_filename):        \n        checkpoint = torch.load(url_or_filename, map_location='cpu') \n    else:\n        raise RuntimeError('checkpoint url or path is invalid')\n    state_dict = checkpoint['model']\n    state_dict['visual_encoder.pos_embed'] = interpolate_pos_embed(state_dict['visual_encoder.pos_embed'],model.visual_encoder) ",
+        "detail": "venv.src.blip.models.blip",
+        "documentation": {}
+    },
+    {
+        "label": "BLIP_ITM",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.blip_itm",
+        "description": "venv.src.blip.models.blip_itm",
+        "peekOfCode": "class BLIP_ITM(nn.Module):\n    def __init__(self,                 \n                 med_config = 'configs/med_config.json',  \n                 image_size = 384,\n                 vit = 'base',\n                 vit_grad_ckpt = False,\n                 vit_ckpt_layer = 0,                      \n                 embed_dim = 256,     \n                 ):\n        \"\"\"",
+        "detail": "venv.src.blip.models.blip_itm",
+        "documentation": {}
+    },
+    {
+        "label": "blip_itm",
+        "kind": 2,
+        "importPath": "venv.src.blip.models.blip_itm",
+        "description": "venv.src.blip.models.blip_itm",
+        "peekOfCode": "def blip_itm(pretrained='',**kwargs):\n    model = BLIP_ITM(**kwargs)\n    if pretrained:\n        model,msg = load_checkpoint(model,pretrained)\n        assert(len(msg.missing_keys)==0)\n    return model",
+        "detail": "venv.src.blip.models.blip_itm",
+        "documentation": {}
+    },
+    {
+        "label": "BLIP_NLVR",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.blip_nlvr",
+        "description": "venv.src.blip.models.blip_nlvr",
+        "peekOfCode": "class BLIP_NLVR(nn.Module):\n    def __init__(self,                 \n                 med_config = 'configs/med_config.json',  \n                 image_size = 480,\n                 vit = 'base',\n                 vit_grad_ckpt = False,\n                 vit_ckpt_layer = 0,                   \n                 ):\n        \"\"\"\n        Args:",
+        "detail": "venv.src.blip.models.blip_nlvr",
+        "documentation": {}
+    },
+    {
+        "label": "blip_nlvr",
+        "kind": 2,
+        "importPath": "venv.src.blip.models.blip_nlvr",
+        "description": "venv.src.blip.models.blip_nlvr",
+        "peekOfCode": "def blip_nlvr(pretrained='',**kwargs):\n    model = BLIP_NLVR(**kwargs)\n    if pretrained:\n        model,msg = load_checkpoint(model,pretrained)\n        print(\"missing keys:\")\n        print(msg.missing_keys)\n    return model  \ndef load_checkpoint(model,url_or_filename):\n    if is_url(url_or_filename):\n        cached_file = download_cached_file(url_or_filename, check_hash=False, progress=True)",
+        "detail": "venv.src.blip.models.blip_nlvr",
+        "documentation": {}
+    },
+    {
+        "label": "load_checkpoint",
+        "kind": 2,
+        "importPath": "venv.src.blip.models.blip_nlvr",
+        "description": "venv.src.blip.models.blip_nlvr",
+        "peekOfCode": "def load_checkpoint(model,url_or_filename):\n    if is_url(url_or_filename):\n        cached_file = download_cached_file(url_or_filename, check_hash=False, progress=True)\n        checkpoint = torch.load(cached_file, map_location='cpu') \n    elif os.path.isfile(url_or_filename):        \n        checkpoint = torch.load(url_or_filename, map_location='cpu') \n    else:\n        raise RuntimeError('checkpoint url or path is invalid')\n    state_dict = checkpoint['model']\n    state_dict['visual_encoder.pos_embed'] = interpolate_pos_embed(state_dict['visual_encoder.pos_embed'],model.visual_encoder) ",
+        "detail": "venv.src.blip.models.blip_nlvr",
+        "documentation": {}
+    },
+    {
+        "label": "BLIP_Pretrain",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.blip_pretrain",
+        "description": "venv.src.blip.models.blip_pretrain",
+        "peekOfCode": "class BLIP_Pretrain(nn.Module):\n    def __init__(self,                 \n                 med_config = 'configs/bert_config.json',  \n                 image_size = 224,\n                 vit = 'base',\n                 vit_grad_ckpt = False,\n                 vit_ckpt_layer = 0,                    \n                 embed_dim = 256,     \n                 queue_size = 57600,\n                 momentum = 0.995,",
+        "detail": "venv.src.blip.models.blip_pretrain",
+        "documentation": {}
+    },
+    {
+        "label": "blip_pretrain",
+        "kind": 2,
+        "importPath": "venv.src.blip.models.blip_pretrain",
+        "description": "venv.src.blip.models.blip_pretrain",
+        "peekOfCode": "def blip_pretrain(**kwargs):\n    model = BLIP_Pretrain(**kwargs)\n    return model \n@torch.no_grad()\ndef concat_all_gather(tensor):\n    \"\"\"\n    Performs all_gather operation on the provided tensors.\n    *** Warning ***: torch.distributed.all_gather has no gradient.\n    \"\"\"\n    tensors_gather = [torch.ones_like(tensor)",
+        "detail": "venv.src.blip.models.blip_pretrain",
+        "documentation": {}
+    },
+    {
+        "label": "concat_all_gather",
+        "kind": 2,
+        "importPath": "venv.src.blip.models.blip_pretrain",
+        "description": "venv.src.blip.models.blip_pretrain",
+        "peekOfCode": "def concat_all_gather(tensor):\n    \"\"\"\n    Performs all_gather operation on the provided tensors.\n    *** Warning ***: torch.distributed.all_gather has no gradient.\n    \"\"\"\n    tensors_gather = [torch.ones_like(tensor)\n        for _ in range(torch.distributed.get_world_size())]\n    torch.distributed.all_gather(tensors_gather, tensor, async_op=False)\n    output = torch.cat(tensors_gather, dim=0)\n    return output     ",
+        "detail": "venv.src.blip.models.blip_pretrain",
+        "documentation": {}
+    },
+    {
+        "label": "tie_encoder_decoder_weights",
+        "kind": 2,
+        "importPath": "venv.src.blip.models.blip_pretrain",
+        "description": "venv.src.blip.models.blip_pretrain",
+        "peekOfCode": "def tie_encoder_decoder_weights(encoder: nn.Module, decoder: nn.Module, base_model_prefix: str, skip_key:str):\n    uninitialized_encoder_weights: List[str] = []\n    if decoder.__class__ != encoder.__class__:\n        logger.info(\n            f\"{decoder.__class__} and {encoder.__class__} are not equal. In this case make sure that all encoder weights are correctly initialized.\"\n        )\n    def tie_encoder_to_decoder_recursively(\n        decoder_pointer: nn.Module,\n        encoder_pointer: nn.Module,\n        module_name: str,",
+        "detail": "venv.src.blip.models.blip_pretrain",
+        "documentation": {}
+    },
+    {
+        "label": "BLIP_Retrieval",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.blip_retrieval",
+        "description": "venv.src.blip.models.blip_retrieval",
+        "peekOfCode": "class BLIP_Retrieval(nn.Module):\n    def __init__(self,                 \n                 med_config = 'configs/med_config.json',  \n                 image_size = 384,\n                 vit = 'base',\n                 vit_grad_ckpt = False,\n                 vit_ckpt_layer = 0,                      \n                 embed_dim = 256,     \n                 queue_size = 57600,\n                 momentum = 0.995,",
+        "detail": "venv.src.blip.models.blip_retrieval",
+        "documentation": {}
+    },
+    {
+        "label": "GatherLayer",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.blip_retrieval",
+        "description": "venv.src.blip.models.blip_retrieval",
+        "peekOfCode": "class GatherLayer(torch.autograd.Function):\n    \"\"\"\n    Gather tensors from all workers with support for backward propagation:\n    This implementation does not cut the gradients as torch.distributed.all_gather does.\n    \"\"\"\n    @staticmethod\n    def forward(ctx, x):\n        output = [torch.zeros_like(x) for _ in range(torch.distributed.get_world_size())]\n        torch.distributed.all_gather(output, x)\n        return tuple(output)",
+        "detail": "venv.src.blip.models.blip_retrieval",
+        "documentation": {}
+    },
+    {
+        "label": "blip_retrieval",
+        "kind": 2,
+        "importPath": "venv.src.blip.models.blip_retrieval",
+        "description": "venv.src.blip.models.blip_retrieval",
+        "peekOfCode": "def blip_retrieval(pretrained='',**kwargs):\n    model = BLIP_Retrieval(**kwargs)\n    if pretrained:\n        model,msg = load_checkpoint(model,pretrained)\n        print(\"missing keys:\")\n        print(msg.missing_keys)\n    return model \n@torch.no_grad()\ndef concat_all_gather(tensor):\n    \"\"\"",
+        "detail": "venv.src.blip.models.blip_retrieval",
+        "documentation": {}
+    },
+    {
+        "label": "concat_all_gather",
+        "kind": 2,
+        "importPath": "venv.src.blip.models.blip_retrieval",
+        "description": "venv.src.blip.models.blip_retrieval",
+        "peekOfCode": "def concat_all_gather(tensor):\n    \"\"\"\n    Performs all_gather operation on the provided tensors.\n    *** Warning ***: torch.distributed.all_gather has no gradient.\n    \"\"\"\n    tensors_gather = [torch.ones_like(tensor)\n        for _ in range(torch.distributed.get_world_size())]\n    torch.distributed.all_gather(tensors_gather, tensor, async_op=False)\n    output = torch.cat(tensors_gather, dim=0)\n    return output      ",
+        "detail": "venv.src.blip.models.blip_retrieval",
+        "documentation": {}
+    },
+    {
+        "label": "all_gather_with_grad",
+        "kind": 2,
+        "importPath": "venv.src.blip.models.blip_retrieval",
+        "description": "venv.src.blip.models.blip_retrieval",
+        "peekOfCode": "def all_gather_with_grad(tensors):\n    \"\"\"\n    Performs all_gather operation on the provided tensors.\n    Graph remains connected for backward grad computation.\n    \"\"\"\n    # Queue the gathered tensors\n    world_size = torch.distributed.get_world_size()\n    # There is no need for reduction in the single-proc case\n    if world_size == 1:\n        return tensors",
+        "detail": "venv.src.blip.models.blip_retrieval",
+        "documentation": {}
+    },
+    {
+        "label": "BLIP_VQA",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.blip_vqa",
+        "description": "venv.src.blip.models.blip_vqa",
+        "peekOfCode": "class BLIP_VQA(nn.Module):\n    def __init__(self,                 \n                 med_config = 'configs/med_config.json',  \n                 image_size = 480,\n                 vit = 'base',\n                 vit_grad_ckpt = False,\n                 vit_ckpt_layer = 0,                   \n                 ):\n        \"\"\"\n        Args:",
+        "detail": "venv.src.blip.models.blip_vqa",
+        "documentation": {}
+    },
+    {
+        "label": "blip_vqa",
+        "kind": 2,
+        "importPath": "venv.src.blip.models.blip_vqa",
+        "description": "venv.src.blip.models.blip_vqa",
+        "peekOfCode": "def blip_vqa(pretrained='',**kwargs):\n    model = BLIP_VQA(**kwargs)\n    if pretrained:\n        model,msg = load_checkpoint(model,pretrained)\n#         assert(len(msg.missing_keys)==0)\n    return model  \ndef tile(x, dim, n_tile):\n    init_dim = x.size(dim)\n    repeat_idx = [1] * x.dim()\n    repeat_idx[dim] = n_tile",
+        "detail": "venv.src.blip.models.blip_vqa",
+        "documentation": {}
+    },
+    {
+        "label": "tile",
+        "kind": 2,
+        "importPath": "venv.src.blip.models.blip_vqa",
+        "description": "venv.src.blip.models.blip_vqa",
+        "peekOfCode": "def tile(x, dim, n_tile):\n    init_dim = x.size(dim)\n    repeat_idx = [1] * x.dim()\n    repeat_idx[dim] = n_tile\n    x = x.repeat(*(repeat_idx))\n    order_index = torch.LongTensor(np.concatenate([init_dim * np.arange(n_tile) + i for i in range(init_dim)]))\n    return torch.index_select(x, dim, order_index.to(x.device))",
+        "detail": "venv.src.blip.models.blip_vqa",
+        "documentation": {}
+    },
+    {
+        "label": "BertEmbeddings",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.med",
+        "description": "venv.src.blip.models.med",
+        "peekOfCode": "class BertEmbeddings(nn.Module):\n    \"\"\"Construct the embeddings from word and position embeddings.\"\"\"\n    def __init__(self, config):\n        super().__init__()\n        self.word_embeddings = nn.Embedding(config.vocab_size, config.hidden_size, padding_idx=config.pad_token_id)\n        self.position_embeddings = nn.Embedding(config.max_position_embeddings, config.hidden_size)\n        # self.LayerNorm is not snake-cased to stick with TensorFlow model variable name and be able to load\n        # any TensorFlow checkpoint file\n        self.LayerNorm = nn.LayerNorm(config.hidden_size, eps=config.layer_norm_eps)\n        self.dropout = nn.Dropout(config.hidden_dropout_prob)",
+        "detail": "venv.src.blip.models.med",
+        "documentation": {}
+    },
+    {
+        "label": "BertSelfAttention",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.med",
+        "description": "venv.src.blip.models.med",
+        "peekOfCode": "class BertSelfAttention(nn.Module):\n    def __init__(self, config, is_cross_attention):\n        super().__init__()\n        self.config = config\n        if config.hidden_size % config.num_attention_heads != 0 and not hasattr(config, \"embedding_size\"):\n            raise ValueError(\n                \"The hidden size (%d) is not a multiple of the number of attention \"\n                \"heads (%d)\" % (config.hidden_size, config.num_attention_heads)\n            )\n        self.num_attention_heads = config.num_attention_heads",
+        "detail": "venv.src.blip.models.med",
+        "documentation": {}
+    },
+    {
+        "label": "BertSelfOutput",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.med",
+        "description": "venv.src.blip.models.med",
+        "peekOfCode": "class BertSelfOutput(nn.Module):\n    def __init__(self, config):\n        super().__init__()\n        self.dense = nn.Linear(config.hidden_size, config.hidden_size)\n        self.LayerNorm = nn.LayerNorm(config.hidden_size, eps=config.layer_norm_eps)\n        self.dropout = nn.Dropout(config.hidden_dropout_prob)\n    def forward(self, hidden_states, input_tensor):\n        hidden_states = self.dense(hidden_states)\n        hidden_states = self.dropout(hidden_states)\n        hidden_states = self.LayerNorm(hidden_states + input_tensor)",
+        "detail": "venv.src.blip.models.med",
+        "documentation": {}
+    },
+    {
+        "label": "BertAttention",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.med",
+        "description": "venv.src.blip.models.med",
+        "peekOfCode": "class BertAttention(nn.Module):\n    def __init__(self, config, is_cross_attention=False):\n        super().__init__()\n        self.self = BertSelfAttention(config, is_cross_attention)\n        self.output = BertSelfOutput(config)\n        self.pruned_heads = set()\n    def prune_heads(self, heads):\n        if len(heads) == 0:\n            return\n        heads, index = find_pruneable_heads_and_indices(",
+        "detail": "venv.src.blip.models.med",
+        "documentation": {}
+    },
+    {
+        "label": "BertIntermediate",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.med",
+        "description": "venv.src.blip.models.med",
+        "peekOfCode": "class BertIntermediate(nn.Module):\n    def __init__(self, config):\n        super().__init__()\n        self.dense = nn.Linear(config.hidden_size, config.intermediate_size)\n        if isinstance(config.hidden_act, str):\n            self.intermediate_act_fn = ACT2FN[config.hidden_act]\n        else:\n            self.intermediate_act_fn = config.hidden_act\n    def forward(self, hidden_states):\n        hidden_states = self.dense(hidden_states)",
+        "detail": "venv.src.blip.models.med",
+        "documentation": {}
+    },
+    {
+        "label": "BertOutput",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.med",
+        "description": "venv.src.blip.models.med",
+        "peekOfCode": "class BertOutput(nn.Module):\n    def __init__(self, config):\n        super().__init__()\n        self.dense = nn.Linear(config.intermediate_size, config.hidden_size)\n        self.LayerNorm = nn.LayerNorm(config.hidden_size, eps=config.layer_norm_eps)\n        self.dropout = nn.Dropout(config.hidden_dropout_prob)\n    def forward(self, hidden_states, input_tensor):\n        hidden_states = self.dense(hidden_states)\n        hidden_states = self.dropout(hidden_states)\n        hidden_states = self.LayerNorm(hidden_states + input_tensor)",
+        "detail": "venv.src.blip.models.med",
+        "documentation": {}
+    },
+    {
+        "label": "BertLayer",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.med",
+        "description": "venv.src.blip.models.med",
+        "peekOfCode": "class BertLayer(nn.Module):\n    def __init__(self, config, layer_num):\n        super().__init__()\n        self.config = config\n        self.chunk_size_feed_forward = config.chunk_size_feed_forward\n        self.seq_len_dim = 1\n        self.attention = BertAttention(config)      \n        self.layer_num = layer_num          \n        if self.config.add_cross_attention:\n            self.crossattention = BertAttention(config, is_cross_attention=self.config.add_cross_attention)",
+        "detail": "venv.src.blip.models.med",
+        "documentation": {}
+    },
+    {
+        "label": "BertEncoder",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.med",
+        "description": "venv.src.blip.models.med",
+        "peekOfCode": "class BertEncoder(nn.Module):\n    def __init__(self, config):\n        super().__init__()\n        self.config = config\n        self.layer = nn.ModuleList([BertLayer(config,i) for i in range(config.num_hidden_layers)])\n        self.gradient_checkpointing = False\n    def forward(\n        self,\n        hidden_states,\n        attention_mask=None,",
+        "detail": "venv.src.blip.models.med",
+        "documentation": {}
+    },
+    {
+        "label": "BertPooler",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.med",
+        "description": "venv.src.blip.models.med",
+        "peekOfCode": "class BertPooler(nn.Module):\n    def __init__(self, config):\n        super().__init__()\n        self.dense = nn.Linear(config.hidden_size, config.hidden_size)\n        self.activation = nn.Tanh()\n    def forward(self, hidden_states):\n        # We \"pool\" the model by simply taking the hidden state corresponding\n        # to the first token.\n        first_token_tensor = hidden_states[:, 0]\n        pooled_output = self.dense(first_token_tensor)",
+        "detail": "venv.src.blip.models.med",
+        "documentation": {}
+    },
+    {
+        "label": "BertPredictionHeadTransform",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.med",
+        "description": "venv.src.blip.models.med",
+        "peekOfCode": "class BertPredictionHeadTransform(nn.Module):\n    def __init__(self, config):\n        super().__init__()\n        self.dense = nn.Linear(config.hidden_size, config.hidden_size)\n        if isinstance(config.hidden_act, str):\n            self.transform_act_fn = ACT2FN[config.hidden_act]\n        else:\n            self.transform_act_fn = config.hidden_act\n        self.LayerNorm = nn.LayerNorm(config.hidden_size, eps=config.layer_norm_eps)\n    def forward(self, hidden_states):",
+        "detail": "venv.src.blip.models.med",
+        "documentation": {}
+    },
+    {
+        "label": "BertLMPredictionHead",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.med",
+        "description": "venv.src.blip.models.med",
+        "peekOfCode": "class BertLMPredictionHead(nn.Module):\n    def __init__(self, config):\n        super().__init__()\n        self.transform = BertPredictionHeadTransform(config)\n        # The output weights are the same as the input embeddings, but there is\n        # an output-only bias for each token.\n        self.decoder = nn.Linear(config.hidden_size, config.vocab_size, bias=False)\n        self.bias = nn.Parameter(torch.zeros(config.vocab_size))\n        # Need a link between the two variables so that the bias is correctly resized with `resize_token_embeddings`\n        self.decoder.bias = self.bias",
+        "detail": "venv.src.blip.models.med",
+        "documentation": {}
+    },
+    {
+        "label": "BertOnlyMLMHead",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.med",
+        "description": "venv.src.blip.models.med",
+        "peekOfCode": "class BertOnlyMLMHead(nn.Module):\n    def __init__(self, config):\n        super().__init__()\n        self.predictions = BertLMPredictionHead(config)\n    def forward(self, sequence_output):\n        prediction_scores = self.predictions(sequence_output)\n        return prediction_scores\nclass BertPreTrainedModel(PreTrainedModel):\n    \"\"\"\n    An abstract class to handle weights initialization and a simple interface for downloading and loading pretrained",
+        "detail": "venv.src.blip.models.med",
+        "documentation": {}
+    },
+    {
+        "label": "BertPreTrainedModel",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.med",
+        "description": "venv.src.blip.models.med",
+        "peekOfCode": "class BertPreTrainedModel(PreTrainedModel):\n    \"\"\"\n    An abstract class to handle weights initialization and a simple interface for downloading and loading pretrained\n    models.\n    \"\"\"\n    config_class = BertConfig\n    base_model_prefix = \"bert\"\n    _keys_to_ignore_on_load_missing = [r\"position_ids\"]\n    def _init_weights(self, module):\n        \"\"\" Initialize the weights \"\"\"",
+        "detail": "venv.src.blip.models.med",
+        "documentation": {}
+    },
+    {
+        "label": "BertModel",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.med",
+        "description": "venv.src.blip.models.med",
+        "peekOfCode": "class BertModel(BertPreTrainedModel):\n    \"\"\"\n    The model can behave as an encoder (with only self-attention) as well as a decoder, in which case a layer of\n    cross-attention is added between the self-attention layers, following the architecture described in `Attention is\n    all you need <https://arxiv.org/abs/1706.03762>`__ by Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit,\n    Llion Jones, Aidan N. Gomez, Lukasz Kaiser and Illia Polosukhin.\n    argument and :obj:`add_cross_attention` set to :obj:`True`; an :obj:`encoder_hidden_states` is then expected as an\n    input to the forward pass.\n    \"\"\"\n    def __init__(self, config, add_pooling_layer=True):",
+        "detail": "venv.src.blip.models.med",
+        "documentation": {}
+    },
+    {
+        "label": "BertLMHeadModel",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.med",
+        "description": "venv.src.blip.models.med",
+        "peekOfCode": "class BertLMHeadModel(BertPreTrainedModel):\n    _keys_to_ignore_on_load_unexpected = [r\"pooler\"]\n    _keys_to_ignore_on_load_missing = [r\"position_ids\", r\"predictions.decoder.bias\"]\n    def __init__(self, config):\n        super().__init__(config)\n        self.bert = BertModel(config, add_pooling_layer=False)\n        self.cls = BertOnlyMLMHead(config)\n        self.init_weights()\n    def get_output_embeddings(self):\n        return self.cls.predictions.decoder",
+        "detail": "venv.src.blip.models.med",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "venv.src.blip.models.med",
+        "description": "venv.src.blip.models.med",
+        "peekOfCode": "logger = logging.get_logger(__name__)\nclass BertEmbeddings(nn.Module):\n    \"\"\"Construct the embeddings from word and position embeddings.\"\"\"\n    def __init__(self, config):\n        super().__init__()\n        self.word_embeddings = nn.Embedding(config.vocab_size, config.hidden_size, padding_idx=config.pad_token_id)\n        self.position_embeddings = nn.Embedding(config.max_position_embeddings, config.hidden_size)\n        # self.LayerNorm is not snake-cased to stick with TensorFlow model variable name and be able to load\n        # any TensorFlow checkpoint file\n        self.LayerNorm = nn.LayerNorm(config.hidden_size, eps=config.layer_norm_eps)",
+        "detail": "venv.src.blip.models.med",
+        "documentation": {}
+    },
+    {
+        "label": "BertEmbeddings",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.nlvr_encoder",
+        "description": "venv.src.blip.models.nlvr_encoder",
+        "peekOfCode": "class BertEmbeddings(nn.Module):\n    \"\"\"Construct the embeddings from word and position embeddings.\"\"\"\n    def __init__(self, config):\n        super().__init__()\n        self.word_embeddings = nn.Embedding(config.vocab_size, config.hidden_size, padding_idx=config.pad_token_id)\n        self.position_embeddings = nn.Embedding(config.max_position_embeddings, config.hidden_size)\n        # self.LayerNorm is not snake-cased to stick with TensorFlow model variable name and be able to load\n        # any TensorFlow checkpoint file\n        self.LayerNorm = nn.LayerNorm(config.hidden_size, eps=config.layer_norm_eps)\n        self.dropout = nn.Dropout(config.hidden_dropout_prob)",
+        "detail": "venv.src.blip.models.nlvr_encoder",
+        "documentation": {}
+    },
+    {
+        "label": "BertSelfAttention",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.nlvr_encoder",
+        "description": "venv.src.blip.models.nlvr_encoder",
+        "peekOfCode": "class BertSelfAttention(nn.Module):\n    def __init__(self, config, is_cross_attention):\n        super().__init__()\n        self.config = config\n        if config.hidden_size % config.num_attention_heads != 0 and not hasattr(config, \"embedding_size\"):\n            raise ValueError(\n                \"The hidden size (%d) is not a multiple of the number of attention \"\n                \"heads (%d)\" % (config.hidden_size, config.num_attention_heads)\n            )\n        self.num_attention_heads = config.num_attention_heads",
+        "detail": "venv.src.blip.models.nlvr_encoder",
+        "documentation": {}
+    },
+    {
+        "label": "BertSelfOutput",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.nlvr_encoder",
+        "description": "venv.src.blip.models.nlvr_encoder",
+        "peekOfCode": "class BertSelfOutput(nn.Module):\n    def __init__(self, config, twin=False, merge=False):     \n        super().__init__()\n        self.LayerNorm = nn.LayerNorm(config.hidden_size, eps=config.layer_norm_eps)\n        self.dropout = nn.Dropout(config.hidden_dropout_prob)        \n        if twin:\n            self.dense0 = nn.Linear(config.hidden_size, config.hidden_size)\n            self.dense1 = nn.Linear(config.hidden_size, config.hidden_size)         \n        else:\n            self.dense = nn.Linear(config.hidden_size, config.hidden_size)",
+        "detail": "venv.src.blip.models.nlvr_encoder",
+        "documentation": {}
+    },
+    {
+        "label": "BertAttention",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.nlvr_encoder",
+        "description": "venv.src.blip.models.nlvr_encoder",
+        "peekOfCode": "class BertAttention(nn.Module):\n    def __init__(self, config, is_cross_attention=False, layer_num=-1):\n        super().__init__()\n        if is_cross_attention:\n            self.self0 = BertSelfAttention(config, is_cross_attention)\n            self.self1 = BertSelfAttention(config, is_cross_attention)\n        else:    \n            self.self = BertSelfAttention(config, is_cross_attention)\n        self.output = BertSelfOutput(config, twin=is_cross_attention, merge=(is_cross_attention and layer_num>=6))\n        self.pruned_heads = set()",
+        "detail": "venv.src.blip.models.nlvr_encoder",
+        "documentation": {}
+    },
+    {
+        "label": "BertIntermediate",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.nlvr_encoder",
+        "description": "venv.src.blip.models.nlvr_encoder",
+        "peekOfCode": "class BertIntermediate(nn.Module):\n    def __init__(self, config):\n        super().__init__()\n        self.dense = nn.Linear(config.hidden_size, config.intermediate_size)\n        if isinstance(config.hidden_act, str):\n            self.intermediate_act_fn = ACT2FN[config.hidden_act]\n        else:\n            self.intermediate_act_fn = config.hidden_act\n    def forward(self, hidden_states):\n        hidden_states = self.dense(hidden_states)",
+        "detail": "venv.src.blip.models.nlvr_encoder",
+        "documentation": {}
+    },
+    {
+        "label": "BertOutput",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.nlvr_encoder",
+        "description": "venv.src.blip.models.nlvr_encoder",
+        "peekOfCode": "class BertOutput(nn.Module):\n    def __init__(self, config):\n        super().__init__()\n        self.dense = nn.Linear(config.intermediate_size, config.hidden_size)\n        self.LayerNorm = nn.LayerNorm(config.hidden_size, eps=config.layer_norm_eps)\n        self.dropout = nn.Dropout(config.hidden_dropout_prob)\n    def forward(self, hidden_states, input_tensor):\n        hidden_states = self.dense(hidden_states)\n        hidden_states = self.dropout(hidden_states)\n        hidden_states = self.LayerNorm(hidden_states + input_tensor)",
+        "detail": "venv.src.blip.models.nlvr_encoder",
+        "documentation": {}
+    },
+    {
+        "label": "BertLayer",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.nlvr_encoder",
+        "description": "venv.src.blip.models.nlvr_encoder",
+        "peekOfCode": "class BertLayer(nn.Module):\n    def __init__(self, config, layer_num):\n        super().__init__()\n        self.config = config\n        self.chunk_size_feed_forward = config.chunk_size_feed_forward\n        self.seq_len_dim = 1\n        self.attention = BertAttention(config)      \n        self.layer_num = layer_num          \n        if self.config.add_cross_attention:\n            self.crossattention = BertAttention(config, is_cross_attention=self.config.add_cross_attention, layer_num=layer_num)",
+        "detail": "venv.src.blip.models.nlvr_encoder",
+        "documentation": {}
+    },
+    {
+        "label": "BertEncoder",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.nlvr_encoder",
+        "description": "venv.src.blip.models.nlvr_encoder",
+        "peekOfCode": "class BertEncoder(nn.Module):\n    def __init__(self, config):\n        super().__init__()\n        self.config = config\n        self.layer = nn.ModuleList([BertLayer(config,i) for i in range(config.num_hidden_layers)])\n        self.gradient_checkpointing = False\n    def forward(\n        self,\n        hidden_states,\n        attention_mask=None,",
+        "detail": "venv.src.blip.models.nlvr_encoder",
+        "documentation": {}
+    },
+    {
+        "label": "BertPooler",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.nlvr_encoder",
+        "description": "venv.src.blip.models.nlvr_encoder",
+        "peekOfCode": "class BertPooler(nn.Module):\n    def __init__(self, config):\n        super().__init__()\n        self.dense = nn.Linear(config.hidden_size, config.hidden_size)\n        self.activation = nn.Tanh()\n    def forward(self, hidden_states):\n        # We \"pool\" the model by simply taking the hidden state corresponding\n        # to the first token.\n        first_token_tensor = hidden_states[:, 0]\n        pooled_output = self.dense(first_token_tensor)",
+        "detail": "venv.src.blip.models.nlvr_encoder",
+        "documentation": {}
+    },
+    {
+        "label": "BertPredictionHeadTransform",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.nlvr_encoder",
+        "description": "venv.src.blip.models.nlvr_encoder",
+        "peekOfCode": "class BertPredictionHeadTransform(nn.Module):\n    def __init__(self, config):\n        super().__init__()\n        self.dense = nn.Linear(config.hidden_size, config.hidden_size)\n        if isinstance(config.hidden_act, str):\n            self.transform_act_fn = ACT2FN[config.hidden_act]\n        else:\n            self.transform_act_fn = config.hidden_act\n        self.LayerNorm = nn.LayerNorm(config.hidden_size, eps=config.layer_norm_eps)\n    def forward(self, hidden_states):",
+        "detail": "venv.src.blip.models.nlvr_encoder",
+        "documentation": {}
+    },
+    {
+        "label": "BertLMPredictionHead",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.nlvr_encoder",
+        "description": "venv.src.blip.models.nlvr_encoder",
+        "peekOfCode": "class BertLMPredictionHead(nn.Module):\n    def __init__(self, config):\n        super().__init__()\n        self.transform = BertPredictionHeadTransform(config)\n        # The output weights are the same as the input embeddings, but there is\n        # an output-only bias for each token.\n        self.decoder = nn.Linear(config.hidden_size, config.vocab_size, bias=False)\n        self.bias = nn.Parameter(torch.zeros(config.vocab_size))\n        # Need a link between the two variables so that the bias is correctly resized with `resize_token_embeddings`\n        self.decoder.bias = self.bias",
+        "detail": "venv.src.blip.models.nlvr_encoder",
+        "documentation": {}
+    },
+    {
+        "label": "BertOnlyMLMHead",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.nlvr_encoder",
+        "description": "venv.src.blip.models.nlvr_encoder",
+        "peekOfCode": "class BertOnlyMLMHead(nn.Module):\n    def __init__(self, config):\n        super().__init__()\n        self.predictions = BertLMPredictionHead(config)\n    def forward(self, sequence_output):\n        prediction_scores = self.predictions(sequence_output)\n        return prediction_scores\nclass BertPreTrainedModel(PreTrainedModel):\n    \"\"\"\n    An abstract class to handle weights initialization and a simple interface for downloading and loading pretrained",
+        "detail": "venv.src.blip.models.nlvr_encoder",
+        "documentation": {}
+    },
+    {
+        "label": "BertPreTrainedModel",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.nlvr_encoder",
+        "description": "venv.src.blip.models.nlvr_encoder",
+        "peekOfCode": "class BertPreTrainedModel(PreTrainedModel):\n    \"\"\"\n    An abstract class to handle weights initialization and a simple interface for downloading and loading pretrained\n    models.\n    \"\"\"\n    config_class = BertConfig\n    base_model_prefix = \"bert\"\n    _keys_to_ignore_on_load_missing = [r\"position_ids\"]\n    def _init_weights(self, module):\n        \"\"\" Initialize the weights \"\"\"",
+        "detail": "venv.src.blip.models.nlvr_encoder",
+        "documentation": {}
+    },
+    {
+        "label": "BertModel",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.nlvr_encoder",
+        "description": "venv.src.blip.models.nlvr_encoder",
+        "peekOfCode": "class BertModel(BertPreTrainedModel):\n    \"\"\"\n    The model can behave as an encoder (with only self-attention) as well as a decoder, in which case a layer of\n    cross-attention is added between the self-attention layers, following the architecture described in `Attention is\n    all you need <https://arxiv.org/abs/1706.03762>`__ by Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit,\n    Llion Jones, Aidan N. Gomez, Lukasz Kaiser and Illia Polosukhin.\n    argument and :obj:`add_cross_attention` set to :obj:`True`; an :obj:`encoder_hidden_states` is then expected as an\n    input to the forward pass.\n    \"\"\"\n    def __init__(self, config, add_pooling_layer=True):",
+        "detail": "venv.src.blip.models.nlvr_encoder",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "venv.src.blip.models.nlvr_encoder",
+        "description": "venv.src.blip.models.nlvr_encoder",
+        "peekOfCode": "logger = logging.get_logger(__name__)\nclass BertEmbeddings(nn.Module):\n    \"\"\"Construct the embeddings from word and position embeddings.\"\"\"\n    def __init__(self, config):\n        super().__init__()\n        self.word_embeddings = nn.Embedding(config.vocab_size, config.hidden_size, padding_idx=config.pad_token_id)\n        self.position_embeddings = nn.Embedding(config.max_position_embeddings, config.hidden_size)\n        # self.LayerNorm is not snake-cased to stick with TensorFlow model variable name and be able to load\n        # any TensorFlow checkpoint file\n        self.LayerNorm = nn.LayerNorm(config.hidden_size, eps=config.layer_norm_eps)",
+        "detail": "venv.src.blip.models.nlvr_encoder",
+        "documentation": {}
+    },
+    {
+        "label": "Mlp",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.vit",
+        "description": "venv.src.blip.models.vit",
+        "peekOfCode": "class Mlp(nn.Module):\n    \"\"\" MLP as used in Vision Transformer, MLP-Mixer and related networks\n    \"\"\"\n    def __init__(self, in_features, hidden_features=None, out_features=None, act_layer=nn.GELU, drop=0.):\n        super().__init__()\n        out_features = out_features or in_features\n        hidden_features = hidden_features or in_features\n        self.fc1 = nn.Linear(in_features, hidden_features)\n        self.act = act_layer()\n        self.fc2 = nn.Linear(hidden_features, out_features)",
+        "detail": "venv.src.blip.models.vit",
+        "documentation": {}
+    },
+    {
+        "label": "Attention",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.vit",
+        "description": "venv.src.blip.models.vit",
+        "peekOfCode": "class Attention(nn.Module):\n    def __init__(self, dim, num_heads=8, qkv_bias=False, qk_scale=None, attn_drop=0., proj_drop=0.):\n        super().__init__()\n        self.num_heads = num_heads\n        head_dim = dim // num_heads\n        # NOTE scale factor was wrong in my original version, can set manually to be compat with prev weights\n        self.scale = qk_scale or head_dim ** -0.5\n        self.qkv = nn.Linear(dim, dim * 3, bias=qkv_bias)\n        self.attn_drop = nn.Dropout(attn_drop)\n        self.proj = nn.Linear(dim, dim)",
+        "detail": "venv.src.blip.models.vit",
+        "documentation": {}
+    },
+    {
+        "label": "Block",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.vit",
+        "description": "venv.src.blip.models.vit",
+        "peekOfCode": "class Block(nn.Module):\n    def __init__(self, dim, num_heads, mlp_ratio=4., qkv_bias=False, qk_scale=None, drop=0., attn_drop=0.,\n                 drop_path=0., act_layer=nn.GELU, norm_layer=nn.LayerNorm, use_grad_checkpointing=False):\n        super().__init__()\n        self.norm1 = norm_layer(dim)\n        self.attn = Attention(\n            dim, num_heads=num_heads, qkv_bias=qkv_bias, qk_scale=qk_scale, attn_drop=attn_drop, proj_drop=drop)\n        # NOTE: drop path for stochastic depth, we shall see if this is better than dropout here\n        self.drop_path = DropPath(drop_path) if drop_path > 0. else nn.Identity()\n        self.norm2 = norm_layer(dim)",
+        "detail": "venv.src.blip.models.vit",
+        "documentation": {}
+    },
+    {
+        "label": "VisionTransformer",
+        "kind": 6,
+        "importPath": "venv.src.blip.models.vit",
+        "description": "venv.src.blip.models.vit",
+        "peekOfCode": "class VisionTransformer(nn.Module):\n    \"\"\" Vision Transformer\n    A PyTorch impl of : `An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale`  -\n        https://arxiv.org/abs/2010.11929\n    \"\"\"\n    def __init__(self, img_size=224, patch_size=16, in_chans=3, num_classes=1000, embed_dim=768, depth=12,\n                 num_heads=12, mlp_ratio=4., qkv_bias=True, qk_scale=None, representation_size=None,\n                 drop_rate=0., attn_drop_rate=0., drop_path_rate=0., norm_layer=None, \n                 use_grad_checkpointing=False, ckpt_layer=0):\n        \"\"\"",
+        "detail": "venv.src.blip.models.vit",
+        "documentation": {}
+    },
+    {
+        "label": "interpolate_pos_embed",
+        "kind": 2,
+        "importPath": "venv.src.blip.models.vit",
+        "description": "venv.src.blip.models.vit",
+        "peekOfCode": "def interpolate_pos_embed(pos_embed_checkpoint, visual_encoder):        \n    # interpolate position embedding\n    embedding_size = pos_embed_checkpoint.shape[-1]\n    num_patches = visual_encoder.patch_embed.num_patches\n    num_extra_tokens = visual_encoder.pos_embed.shape[-2] - num_patches\n    # height (== width) for the checkpoint position embedding\n    orig_size = int((pos_embed_checkpoint.shape[-2] - num_extra_tokens) ** 0.5)\n    # height (== width) for the new position embedding\n    new_size = int(num_patches ** 0.5)\n    if orig_size!=new_size:",
+        "detail": "venv.src.blip.models.vit",
+        "documentation": {}
+    },
+    {
+        "label": "RandomAugment",
+        "kind": 6,
+        "importPath": "venv.src.blip.transform.randaugment",
+        "description": "venv.src.blip.transform.randaugment",
+        "peekOfCode": "class RandomAugment(object):\n    def __init__(self, N=2, M=10, isPIL=False, augs=[]):\n        self.N = N\n        self.M = M\n        self.isPIL = isPIL\n        if augs:\n            self.augs = augs       \n        else:\n            self.augs = list(arg_dict.keys())\n    def get_random_ops(self):",
+        "detail": "venv.src.blip.transform.randaugment",
+        "documentation": {}
+    },
+    {
+        "label": "identity_func",
+        "kind": 2,
+        "importPath": "venv.src.blip.transform.randaugment",
+        "description": "venv.src.blip.transform.randaugment",
+        "peekOfCode": "def identity_func(img):\n    return img\ndef autocontrast_func(img, cutoff=0):\n    '''\n        same output as PIL.ImageOps.autocontrast\n    '''\n    n_bins = 256\n    def tune_channel(ch):\n        n = ch.size\n        cut = cutoff * n // 100",
+        "detail": "venv.src.blip.transform.randaugment",
+        "documentation": {}
+    },
+    {
+        "label": "autocontrast_func",
+        "kind": 2,
+        "importPath": "venv.src.blip.transform.randaugment",
+        "description": "venv.src.blip.transform.randaugment",
+        "peekOfCode": "def autocontrast_func(img, cutoff=0):\n    '''\n        same output as PIL.ImageOps.autocontrast\n    '''\n    n_bins = 256\n    def tune_channel(ch):\n        n = ch.size\n        cut = cutoff * n // 100\n        if cut == 0:\n            high, low = ch.max(), ch.min()",
+        "detail": "venv.src.blip.transform.randaugment",
+        "documentation": {}
+    },
+    {
+        "label": "equalize_func",
+        "kind": 2,
+        "importPath": "venv.src.blip.transform.randaugment",
+        "description": "venv.src.blip.transform.randaugment",
+        "peekOfCode": "def equalize_func(img):\n    '''\n        same output as PIL.ImageOps.equalize\n        PIL's implementation is different from cv2.equalize\n    '''\n    n_bins = 256\n    def tune_channel(ch):\n        hist = cv2.calcHist([ch], [0], None, [n_bins], [0, n_bins])\n        non_zero_hist = hist[hist != 0].reshape(-1)\n        step = np.sum(non_zero_hist[:-1]) // (n_bins - 1)",
+        "detail": "venv.src.blip.transform.randaugment",
+        "documentation": {}
+    },
+    {
+        "label": "rotate_func",
+        "kind": 2,
+        "importPath": "venv.src.blip.transform.randaugment",
+        "description": "venv.src.blip.transform.randaugment",
+        "peekOfCode": "def rotate_func(img, degree, fill=(0, 0, 0)):\n    '''\n    like PIL, rotate by degree, not radians\n    '''\n    H, W = img.shape[0], img.shape[1]\n    center = W / 2, H / 2\n    M = cv2.getRotationMatrix2D(center, degree, 1)\n    out = cv2.warpAffine(img, M, (W, H), borderValue=fill)\n    return out\ndef solarize_func(img, thresh=128):",
+        "detail": "venv.src.blip.transform.randaugment",
+        "documentation": {}
+    },
+    {
+        "label": "solarize_func",
+        "kind": 2,
+        "importPath": "venv.src.blip.transform.randaugment",
+        "description": "venv.src.blip.transform.randaugment",
+        "peekOfCode": "def solarize_func(img, thresh=128):\n    '''\n        same output as PIL.ImageOps.posterize\n    '''\n    table = np.array([el if el < thresh else 255 - el for el in range(256)])\n    table = table.clip(0, 255).astype(np.uint8)\n    out = table[img]\n    return out\ndef color_func(img, factor):\n    '''",
+        "detail": "venv.src.blip.transform.randaugment",
+        "documentation": {}
+    },
+    {
+        "label": "color_func",
+        "kind": 2,
+        "importPath": "venv.src.blip.transform.randaugment",
+        "description": "venv.src.blip.transform.randaugment",
+        "peekOfCode": "def color_func(img, factor):\n    '''\n        same output as PIL.ImageEnhance.Color\n    '''\n    ## implementation according to PIL definition, quite slow\n    #  degenerate = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)[:, :, np.newaxis]\n    #  out = blend(degenerate, img, factor)\n    #  M = (\n    #      np.eye(3) * factor\n    #      + np.float32([0.114, 0.587, 0.299]).reshape(3, 1) * (1. - factor)",
+        "detail": "venv.src.blip.transform.randaugment",
+        "documentation": {}
+    },
+    {
+        "label": "contrast_func",
+        "kind": 2,
+        "importPath": "venv.src.blip.transform.randaugment",
+        "description": "venv.src.blip.transform.randaugment",
+        "peekOfCode": "def contrast_func(img, factor):\n    \"\"\"\n        same output as PIL.ImageEnhance.Contrast\n    \"\"\"\n    mean = np.sum(np.mean(img, axis=(0, 1)) * np.array([0.114, 0.587, 0.299]))\n    table = np.array([(\n        el - mean) * factor + mean\n        for el in range(256)\n    ]).clip(0, 255).astype(np.uint8)\n    out = table[img]",
+        "detail": "venv.src.blip.transform.randaugment",
+        "documentation": {}
+    },
+    {
+        "label": "brightness_func",
+        "kind": 2,
+        "importPath": "venv.src.blip.transform.randaugment",
+        "description": "venv.src.blip.transform.randaugment",
+        "peekOfCode": "def brightness_func(img, factor):\n    '''\n        same output as PIL.ImageEnhance.Contrast\n    '''\n    table = (np.arange(256, dtype=np.float32) * factor).clip(0, 255).astype(np.uint8)\n    out = table[img]\n    return out\ndef sharpness_func(img, factor):\n    '''\n    The differences the this result and PIL are all on the 4 boundaries, the center",
+        "detail": "venv.src.blip.transform.randaugment",
+        "documentation": {}
+    },
+    {
+        "label": "sharpness_func",
+        "kind": 2,
+        "importPath": "venv.src.blip.transform.randaugment",
+        "description": "venv.src.blip.transform.randaugment",
+        "peekOfCode": "def sharpness_func(img, factor):\n    '''\n    The differences the this result and PIL are all on the 4 boundaries, the center\n    areas are same\n    '''\n    kernel = np.ones((3, 3), dtype=np.float32)\n    kernel[1][1] = 5\n    kernel /= 13\n    degenerate = cv2.filter2D(img, -1, kernel)\n    if factor == 0.0:",
+        "detail": "venv.src.blip.transform.randaugment",
+        "documentation": {}
+    },
+    {
+        "label": "shear_x_func",
+        "kind": 2,
+        "importPath": "venv.src.blip.transform.randaugment",
+        "description": "venv.src.blip.transform.randaugment",
+        "peekOfCode": "def shear_x_func(img, factor, fill=(0, 0, 0)):\n    H, W = img.shape[0], img.shape[1]\n    M = np.float32([[1, factor, 0], [0, 1, 0]])\n    out = cv2.warpAffine(img, M, (W, H), borderValue=fill, flags=cv2.INTER_LINEAR).astype(np.uint8)\n    return out\ndef translate_x_func(img, offset, fill=(0, 0, 0)):\n    '''\n        same output as PIL.Image.transform\n    '''\n    H, W = img.shape[0], img.shape[1]",
+        "detail": "venv.src.blip.transform.randaugment",
+        "documentation": {}
+    },
+    {
+        "label": "translate_x_func",
+        "kind": 2,
+        "importPath": "venv.src.blip.transform.randaugment",
+        "description": "venv.src.blip.transform.randaugment",
+        "peekOfCode": "def translate_x_func(img, offset, fill=(0, 0, 0)):\n    '''\n        same output as PIL.Image.transform\n    '''\n    H, W = img.shape[0], img.shape[1]\n    M = np.float32([[1, 0, -offset], [0, 1, 0]])\n    out = cv2.warpAffine(img, M, (W, H), borderValue=fill, flags=cv2.INTER_LINEAR).astype(np.uint8)\n    return out\ndef translate_y_func(img, offset, fill=(0, 0, 0)):\n    '''",
+        "detail": "venv.src.blip.transform.randaugment",
+        "documentation": {}
+    },
+    {
+        "label": "translate_y_func",
+        "kind": 2,
+        "importPath": "venv.src.blip.transform.randaugment",
+        "description": "venv.src.blip.transform.randaugment",
+        "peekOfCode": "def translate_y_func(img, offset, fill=(0, 0, 0)):\n    '''\n        same output as PIL.Image.transform\n    '''\n    H, W = img.shape[0], img.shape[1]\n    M = np.float32([[1, 0, 0], [0, 1, -offset]])\n    out = cv2.warpAffine(img, M, (W, H), borderValue=fill, flags=cv2.INTER_LINEAR).astype(np.uint8)\n    return out\ndef posterize_func(img, bits):\n    '''",
+        "detail": "venv.src.blip.transform.randaugment",
+        "documentation": {}
+    },
+    {
+        "label": "posterize_func",
+        "kind": 2,
+        "importPath": "venv.src.blip.transform.randaugment",
+        "description": "venv.src.blip.transform.randaugment",
+        "peekOfCode": "def posterize_func(img, bits):\n    '''\n        same output as PIL.ImageOps.posterize\n    '''\n    out = np.bitwise_and(img, np.uint8(255 << (8 - bits)))\n    return out\ndef shear_y_func(img, factor, fill=(0, 0, 0)):\n    H, W = img.shape[0], img.shape[1]\n    M = np.float32([[1, 0, 0], [factor, 1, 0]])\n    out = cv2.warpAffine(img, M, (W, H), borderValue=fill, flags=cv2.INTER_LINEAR).astype(np.uint8)",
+        "detail": "venv.src.blip.transform.randaugment",
+        "documentation": {}
+    },
+    {
+        "label": "shear_y_func",
+        "kind": 2,
+        "importPath": "venv.src.blip.transform.randaugment",
+        "description": "venv.src.blip.transform.randaugment",
+        "peekOfCode": "def shear_y_func(img, factor, fill=(0, 0, 0)):\n    H, W = img.shape[0], img.shape[1]\n    M = np.float32([[1, 0, 0], [factor, 1, 0]])\n    out = cv2.warpAffine(img, M, (W, H), borderValue=fill, flags=cv2.INTER_LINEAR).astype(np.uint8)\n    return out\ndef cutout_func(img, pad_size, replace=(0, 0, 0)):\n    replace = np.array(replace, dtype=np.uint8)\n    H, W = img.shape[0], img.shape[1]\n    rh, rw = np.random.random(2)\n    pad_size = pad_size // 2",
+        "detail": "venv.src.blip.transform.randaugment",
+        "documentation": {}
+    },
+    {
+        "label": "cutout_func",
+        "kind": 2,
+        "importPath": "venv.src.blip.transform.randaugment",
+        "description": "venv.src.blip.transform.randaugment",
+        "peekOfCode": "def cutout_func(img, pad_size, replace=(0, 0, 0)):\n    replace = np.array(replace, dtype=np.uint8)\n    H, W = img.shape[0], img.shape[1]\n    rh, rw = np.random.random(2)\n    pad_size = pad_size // 2\n    ch, cw = int(rh * H), int(rw * W)\n    x1, x2 = max(ch - pad_size, 0), min(ch + pad_size, H)\n    y1, y2 = max(cw - pad_size, 0), min(cw + pad_size, W)\n    out = img.copy()\n    out[x1:x2, y1:y2, :] = replace",
+        "detail": "venv.src.blip.transform.randaugment",
+        "documentation": {}
+    },
+    {
+        "label": "enhance_level_to_args",
+        "kind": 2,
+        "importPath": "venv.src.blip.transform.randaugment",
+        "description": "venv.src.blip.transform.randaugment",
+        "peekOfCode": "def enhance_level_to_args(MAX_LEVEL):\n    def level_to_args(level):\n        return ((level / MAX_LEVEL) * 1.8 + 0.1,)\n    return level_to_args\ndef shear_level_to_args(MAX_LEVEL, replace_value):\n    def level_to_args(level):\n        level = (level / MAX_LEVEL) * 0.3\n        if np.random.random() > 0.5: level = -level\n        return (level, replace_value)\n    return level_to_args",
+        "detail": "venv.src.blip.transform.randaugment",
+        "documentation": {}
+    },
+    {
+        "label": "shear_level_to_args",
+        "kind": 2,
+        "importPath": "venv.src.blip.transform.randaugment",
+        "description": "venv.src.blip.transform.randaugment",
+        "peekOfCode": "def shear_level_to_args(MAX_LEVEL, replace_value):\n    def level_to_args(level):\n        level = (level / MAX_LEVEL) * 0.3\n        if np.random.random() > 0.5: level = -level\n        return (level, replace_value)\n    return level_to_args\ndef translate_level_to_args(translate_const, MAX_LEVEL, replace_value):\n    def level_to_args(level):\n        level = (level / MAX_LEVEL) * float(translate_const)\n        if np.random.random() > 0.5: level = -level",
+        "detail": "venv.src.blip.transform.randaugment",
+        "documentation": {}
+    },
+    {
+        "label": "translate_level_to_args",
+        "kind": 2,
+        "importPath": "venv.src.blip.transform.randaugment",
+        "description": "venv.src.blip.transform.randaugment",
+        "peekOfCode": "def translate_level_to_args(translate_const, MAX_LEVEL, replace_value):\n    def level_to_args(level):\n        level = (level / MAX_LEVEL) * float(translate_const)\n        if np.random.random() > 0.5: level = -level\n        return (level, replace_value)\n    return level_to_args\ndef cutout_level_to_args(cutout_const, MAX_LEVEL, replace_value):\n    def level_to_args(level):\n        level = int((level / MAX_LEVEL) * cutout_const)\n        return (level, replace_value)",
+        "detail": "venv.src.blip.transform.randaugment",
+        "documentation": {}
+    },
+    {
+        "label": "cutout_level_to_args",
+        "kind": 2,
+        "importPath": "venv.src.blip.transform.randaugment",
+        "description": "venv.src.blip.transform.randaugment",
+        "peekOfCode": "def cutout_level_to_args(cutout_const, MAX_LEVEL, replace_value):\n    def level_to_args(level):\n        level = int((level / MAX_LEVEL) * cutout_const)\n        return (level, replace_value)\n    return level_to_args\ndef solarize_level_to_args(MAX_LEVEL):\n    def level_to_args(level):\n        level = int((level / MAX_LEVEL) * 256)\n        return (level, )\n    return level_to_args",
+        "detail": "venv.src.blip.transform.randaugment",
+        "documentation": {}
+    },
+    {
+        "label": "solarize_level_to_args",
+        "kind": 2,
+        "importPath": "venv.src.blip.transform.randaugment",
+        "description": "venv.src.blip.transform.randaugment",
+        "peekOfCode": "def solarize_level_to_args(MAX_LEVEL):\n    def level_to_args(level):\n        level = int((level / MAX_LEVEL) * 256)\n        return (level, )\n    return level_to_args\ndef none_level_to_args(level):\n    return ()\ndef posterize_level_to_args(MAX_LEVEL):\n    def level_to_args(level):\n        level = int((level / MAX_LEVEL) * 4)",
+        "detail": "venv.src.blip.transform.randaugment",
+        "documentation": {}
+    },
+    {
+        "label": "none_level_to_args",
+        "kind": 2,
+        "importPath": "venv.src.blip.transform.randaugment",
+        "description": "venv.src.blip.transform.randaugment",
+        "peekOfCode": "def none_level_to_args(level):\n    return ()\ndef posterize_level_to_args(MAX_LEVEL):\n    def level_to_args(level):\n        level = int((level / MAX_LEVEL) * 4)\n        return (level, )\n    return level_to_args\ndef rotate_level_to_args(MAX_LEVEL, replace_value):\n    def level_to_args(level):\n        level = (level / MAX_LEVEL) * 30",
+        "detail": "venv.src.blip.transform.randaugment",
+        "documentation": {}
+    },
+    {
+        "label": "posterize_level_to_args",
+        "kind": 2,
+        "importPath": "venv.src.blip.transform.randaugment",
+        "description": "venv.src.blip.transform.randaugment",
+        "peekOfCode": "def posterize_level_to_args(MAX_LEVEL):\n    def level_to_args(level):\n        level = int((level / MAX_LEVEL) * 4)\n        return (level, )\n    return level_to_args\ndef rotate_level_to_args(MAX_LEVEL, replace_value):\n    def level_to_args(level):\n        level = (level / MAX_LEVEL) * 30\n        if np.random.random() < 0.5:\n            level = -level",
+        "detail": "venv.src.blip.transform.randaugment",
+        "documentation": {}
+    },
+    {
+        "label": "rotate_level_to_args",
+        "kind": 2,
+        "importPath": "venv.src.blip.transform.randaugment",
+        "description": "venv.src.blip.transform.randaugment",
+        "peekOfCode": "def rotate_level_to_args(MAX_LEVEL, replace_value):\n    def level_to_args(level):\n        level = (level / MAX_LEVEL) * 30\n        if np.random.random() < 0.5:\n            level = -level\n        return (level, replace_value)\n    return level_to_args\nfunc_dict = {\n    'Identity': identity_func,\n    'AutoContrast': autocontrast_func,",
+        "detail": "venv.src.blip.transform.randaugment",
+        "documentation": {}
+    },
+    {
+        "label": "func_dict",
+        "kind": 5,
+        "importPath": "venv.src.blip.transform.randaugment",
+        "description": "venv.src.blip.transform.randaugment",
+        "peekOfCode": "func_dict = {\n    'Identity': identity_func,\n    'AutoContrast': autocontrast_func,\n    'Equalize': equalize_func,\n    'Rotate': rotate_func,\n    'Solarize': solarize_func,\n    'Color': color_func,\n    'Contrast': contrast_func,\n    'Brightness': brightness_func,\n    'Sharpness': sharpness_func,",
+        "detail": "venv.src.blip.transform.randaugment",
+        "documentation": {}
+    },
+    {
+        "label": "translate_const",
+        "kind": 5,
+        "importPath": "venv.src.blip.transform.randaugment",
+        "description": "venv.src.blip.transform.randaugment",
+        "peekOfCode": "translate_const = 10\nMAX_LEVEL = 10\nreplace_value = (128, 128, 128)\narg_dict = {\n    'Identity': none_level_to_args,\n    'AutoContrast': none_level_to_args,\n    'Equalize': none_level_to_args,\n    'Rotate': rotate_level_to_args(MAX_LEVEL, replace_value),\n    'Solarize': solarize_level_to_args(MAX_LEVEL),\n    'Color': enhance_level_to_args(MAX_LEVEL),",
+        "detail": "venv.src.blip.transform.randaugment",
+        "documentation": {}
+    },
+    {
+        "label": "MAX_LEVEL",
+        "kind": 5,
+        "importPath": "venv.src.blip.transform.randaugment",
+        "description": "venv.src.blip.transform.randaugment",
+        "peekOfCode": "MAX_LEVEL = 10\nreplace_value = (128, 128, 128)\narg_dict = {\n    'Identity': none_level_to_args,\n    'AutoContrast': none_level_to_args,\n    'Equalize': none_level_to_args,\n    'Rotate': rotate_level_to_args(MAX_LEVEL, replace_value),\n    'Solarize': solarize_level_to_args(MAX_LEVEL),\n    'Color': enhance_level_to_args(MAX_LEVEL),\n    'Contrast': enhance_level_to_args(MAX_LEVEL),",
+        "detail": "venv.src.blip.transform.randaugment",
+        "documentation": {}
+    },
+    {
+        "label": "replace_value",
+        "kind": 5,
+        "importPath": "venv.src.blip.transform.randaugment",
+        "description": "venv.src.blip.transform.randaugment",
+        "peekOfCode": "replace_value = (128, 128, 128)\narg_dict = {\n    'Identity': none_level_to_args,\n    'AutoContrast': none_level_to_args,\n    'Equalize': none_level_to_args,\n    'Rotate': rotate_level_to_args(MAX_LEVEL, replace_value),\n    'Solarize': solarize_level_to_args(MAX_LEVEL),\n    'Color': enhance_level_to_args(MAX_LEVEL),\n    'Contrast': enhance_level_to_args(MAX_LEVEL),\n    'Brightness': enhance_level_to_args(MAX_LEVEL),",
+        "detail": "venv.src.blip.transform.randaugment",
+        "documentation": {}
+    },
+    {
+        "label": "arg_dict",
+        "kind": 5,
+        "importPath": "venv.src.blip.transform.randaugment",
+        "description": "venv.src.blip.transform.randaugment",
+        "peekOfCode": "arg_dict = {\n    'Identity': none_level_to_args,\n    'AutoContrast': none_level_to_args,\n    'Equalize': none_level_to_args,\n    'Rotate': rotate_level_to_args(MAX_LEVEL, replace_value),\n    'Solarize': solarize_level_to_args(MAX_LEVEL),\n    'Color': enhance_level_to_args(MAX_LEVEL),\n    'Contrast': enhance_level_to_args(MAX_LEVEL),\n    'Brightness': enhance_level_to_args(MAX_LEVEL),\n    'Sharpness': enhance_level_to_args(MAX_LEVEL),",
+        "detail": "venv.src.blip.transform.randaugment",
+        "documentation": {}
+    },
+    {
+        "label": "evaluate",
+        "kind": 2,
+        "importPath": "venv.src.blip.eval_nocaps",
+        "description": "venv.src.blip.eval_nocaps",
+        "peekOfCode": "def evaluate(model, data_loader, device, config):\n    # evaluate\n    model.eval() \n    metric_logger = utils.MetricLogger(delimiter=\"  \")\n    header = 'Evaluation:'\n    print_freq = 10\n    result = []\n    for image, image_id in metric_logger.log_every(data_loader, print_freq, header): \n        image = image.to(device)       \n        captions = model.generate(image, sample=False, num_beams=config['num_beams'], max_length=config['max_length'], ",
+        "detail": "venv.src.blip.eval_nocaps",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "venv.src.blip.eval_nocaps",
+        "description": "venv.src.blip.eval_nocaps",
+        "peekOfCode": "def main(args, config):\n    utils.init_distributed_mode(args)    \n    device = torch.device(args.device)\n    # fix the seed for reproducibility\n    seed = args.seed + utils.get_rank()\n    torch.manual_seed(seed)\n    np.random.seed(seed)\n    random.seed(seed)\n    cudnn.benchmark = True\n    #### Dataset #### ",
+        "detail": "venv.src.blip.eval_nocaps",
+        "documentation": {}
+    },
+    {
+        "label": "evaluation",
+        "kind": 2,
+        "importPath": "venv.src.blip.eval_retrieval_video",
+        "description": "venv.src.blip.eval_retrieval_video",
+        "peekOfCode": "def evaluation(model, data_loader, tokenizer, device, config):\n    # test\n    model.eval() \n    metric_logger = utils.MetricLogger(delimiter=\"  \")\n    header = 'Evaluation:'    \n    print('Computing features for evaluation...')\n    start_time = time.time()  \n    texts = data_loader.dataset.text   \n    num_text = len(texts)\n    text_bs = 256",
+        "detail": "venv.src.blip.eval_retrieval_video",
+        "documentation": {}
+    },
+    {
+        "label": "itm_eval",
+        "kind": 2,
+        "importPath": "venv.src.blip.eval_retrieval_video",
+        "description": "venv.src.blip.eval_retrieval_video",
+        "peekOfCode": "def itm_eval(scores_v2t, scores_t2v, txt2vmg, vid2txt):\n    #Video->Text \n    ranks = np.zeros(scores_v2t.shape[0])\n    for index,score in enumerate(scores_v2t):\n        inds = np.argsort(score)[::-1]\n        ranks[index] = np.where(inds == vid2txt[index])[0][0]\n    # Compute metrics\n    tr1 = 100.0 * len(np.where(ranks < 1)[0]) / len(ranks)\n    tr5 = 100.0 * len(np.where(ranks < 5)[0]) / len(ranks)\n    tr10 = 100.0 * len(np.where(ranks < 10)[0]) / len(ranks)",
+        "detail": "venv.src.blip.eval_retrieval_video",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "venv.src.blip.eval_retrieval_video",
+        "description": "venv.src.blip.eval_retrieval_video",
+        "peekOfCode": "def main(args, config):\n    utils.init_distributed_mode(args)    \n    device = torch.device(args.device)\n    # fix the seed for reproducibility\n    seed = args.seed + utils.get_rank()\n    torch.manual_seed(seed)\n    np.random.seed(seed)\n    random.seed(seed)\n    cudnn.benchmark = True\n    #### Dataset #### ",
+        "detail": "venv.src.blip.eval_retrieval_video",
+        "documentation": {}
+    },
+    {
+        "label": "Predictor",
+        "kind": 6,
+        "importPath": "venv.src.blip.predict",
+        "description": "venv.src.blip.predict",
+        "peekOfCode": "class Predictor(cog.Predictor):\n    def setup(self):\n        self.device = \"cuda:0\"\n        self.models = {\n            'image_captioning': blip_decoder(pretrained='checkpoints/model*_base_caption.pth',\n                                             image_size=384, vit='base'),\n            'visual_question_answering': blip_vqa(pretrained='checkpoints/model*_vqa.pth',\n                                                  image_size=480, vit='base'),\n            'image_text_matching': blip_itm(pretrained='checkpoints/model_base_retrieval_coco.pth',\n                                            image_size=384, vit='base')",
+        "detail": "venv.src.blip.predict",
+        "documentation": {}
+    },
+    {
+        "label": "load_image",
+        "kind": 2,
+        "importPath": "venv.src.blip.predict",
+        "description": "venv.src.blip.predict",
+        "peekOfCode": "def load_image(image, image_size, device):\n    raw_image = Image.open(str(image)).convert('RGB')\n    w, h = raw_image.size\n    transform = transforms.Compose([\n        transforms.Resize((image_size, image_size), interpolation=InterpolationMode.BICUBIC),\n        transforms.ToTensor(),\n        transforms.Normalize((0.48145466, 0.4578275, 0.40821073), (0.26862954, 0.26130258, 0.27577711))\n    ])\n    image = transform(raw_image).unsqueeze(0).to(device)\n    return image",
+        "detail": "venv.src.blip.predict",
+        "documentation": {}
+    },
+    {
+        "label": "train",
+        "kind": 2,
+        "importPath": "venv.src.blip.pretrain",
+        "description": "venv.src.blip.pretrain",
+        "peekOfCode": "def train(model, data_loader, optimizer, epoch, device, config):\n    # train\n    model.train()  \n    metric_logger = utils.MetricLogger(delimiter=\"  \")\n    metric_logger.add_meter('lr', utils.SmoothedValue(window_size=50, fmt='{value:.6f}'))\n    metric_logger.add_meter('loss_ita', utils.SmoothedValue(window_size=50, fmt='{value:.4f}'))\n    metric_logger.add_meter('loss_itm', utils.SmoothedValue(window_size=50, fmt='{value:.4f}'))    \n    metric_logger.add_meter('loss_lm', utils.SmoothedValue(window_size=50, fmt='{value:.4f}'))\n    header = 'Train Epoch: [{}]'.format(epoch)\n    print_freq = 50   ",
+        "detail": "venv.src.blip.pretrain",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "venv.src.blip.pretrain",
+        "description": "venv.src.blip.pretrain",
+        "peekOfCode": "def main(args, config):\n    utils.init_distributed_mode(args)    \n    device = torch.device(args.device)\n    # fix the seed for reproducibility\n    seed = args.seed + utils.get_rank()\n    torch.manual_seed(seed)\n    np.random.seed(seed)\n    random.seed(seed)\n    cudnn.benchmark = True\n    #### Dataset #### ",
+        "detail": "venv.src.blip.pretrain",
+        "documentation": {}
+    },
+    {
+        "label": "train",
+        "kind": 2,
+        "importPath": "venv.src.blip.train_caption",
+        "description": "venv.src.blip.train_caption",
+        "peekOfCode": "def train(model, data_loader, optimizer, epoch, device):\n    # train\n    model.train()  \n    metric_logger = utils.MetricLogger(delimiter=\"  \")\n    metric_logger.add_meter('lr', utils.SmoothedValue(window_size=1, fmt='{value:.6f}'))\n    metric_logger.add_meter('loss', utils.SmoothedValue(window_size=1, fmt='{value:.4f}'))\n    header = 'Train Caption Epoch: [{}]'.format(epoch)\n    print_freq = 50\n    for i, (image, caption, _) in enumerate(metric_logger.log_every(data_loader, print_freq, header)):\n        image = image.to(device)       ",
+        "detail": "venv.src.blip.train_caption",
+        "documentation": {}
+    },
+    {
+        "label": "evaluate",
+        "kind": 2,
+        "importPath": "venv.src.blip.train_caption",
+        "description": "venv.src.blip.train_caption",
+        "peekOfCode": "def evaluate(model, data_loader, device, config):\n    # evaluate\n    model.eval() \n    metric_logger = utils.MetricLogger(delimiter=\"  \")\n    header = 'Caption generation:'\n    print_freq = 10\n    result = []\n    for image, image_id in metric_logger.log_every(data_loader, print_freq, header): \n        image = image.to(device)       \n        captions = model.generate(image, sample=False, num_beams=config['num_beams'], max_length=config['max_length'], ",
+        "detail": "venv.src.blip.train_caption",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "venv.src.blip.train_caption",
+        "description": "venv.src.blip.train_caption",
+        "peekOfCode": "def main(args, config):\n    utils.init_distributed_mode(args)    \n    device = torch.device(args.device)\n    # fix the seed for reproducibility\n    seed = args.seed + utils.get_rank()\n    torch.manual_seed(seed)\n    np.random.seed(seed)\n    random.seed(seed)\n    cudnn.benchmark = True\n    #### Dataset #### ",
+        "detail": "venv.src.blip.train_caption",
+        "documentation": {}
+    },
+    {
+        "label": "train",
+        "kind": 2,
+        "importPath": "venv.src.blip.train_nlvr",
+        "description": "venv.src.blip.train_nlvr",
+        "peekOfCode": "def train(model, data_loader, optimizer, epoch, device, config):\n    # train\n    model.train()  \n    metric_logger = utils.MetricLogger(delimiter=\"  \")\n    metric_logger.add_meter('lr', utils.SmoothedValue(window_size=50, fmt='{value:.6f}'))\n    metric_logger.add_meter('loss', utils.SmoothedValue(window_size=50, fmt='{value:.4f}'))\n    header = 'Train Epoch: [{}]'.format(epoch)\n    print_freq = 50   \n    step_size = 10\n    for i,(image0, image1, text, targets) in enumerate(metric_logger.log_every(data_loader, print_freq, header)):",
+        "detail": "venv.src.blip.train_nlvr",
+        "documentation": {}
+    },
+    {
+        "label": "evaluate",
+        "kind": 2,
+        "importPath": "venv.src.blip.train_nlvr",
+        "description": "venv.src.blip.train_nlvr",
+        "peekOfCode": "def evaluate(model, data_loader, device, config):\n    # test\n    model.eval()\n    metric_logger = utils.MetricLogger(delimiter=\"  \")\n    header = 'Evaluation:'\n    print_freq = 50\n    for image0, image1, text, targets in metric_logger.log_every(data_loader, print_freq, header):\n        images = torch.cat([image0, image1], dim=0)\n        images, targets = images.to(device), targets.to(device)   \n        prediction = model(images, text, targets=targets, train=False)  ",
+        "detail": "venv.src.blip.train_nlvr",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "venv.src.blip.train_nlvr",
+        "description": "venv.src.blip.train_nlvr",
+        "peekOfCode": "def main(args, config):\n    utils.init_distributed_mode(args)    \n    device = torch.device(args.device)\n    # fix the seed for reproducibility\n    seed = args.seed + utils.get_rank()\n    torch.manual_seed(seed)\n    np.random.seed(seed)\n    random.seed(seed)\n    cudnn.benchmark = True\n    #### Dataset #### ",
+        "detail": "venv.src.blip.train_nlvr",
+        "documentation": {}
+    },
+    {
+        "label": "train",
+        "kind": 2,
+        "importPath": "venv.src.blip.train_retrieval",
+        "description": "venv.src.blip.train_retrieval",
+        "peekOfCode": "def train(model, data_loader, optimizer, epoch, device, config):\n    # train\n    model.train()  \n    metric_logger = utils.MetricLogger(delimiter=\"  \")\n    metric_logger.add_meter('lr', utils.SmoothedValue(window_size=1, fmt='{value:.6f}'))\n    metric_logger.add_meter('loss_itm', utils.SmoothedValue(window_size=1, fmt='{value:.4f}'))\n    metric_logger.add_meter('loss_ita', utils.SmoothedValue(window_size=1, fmt='{value:.4f}'))\n    header = 'Train Epoch: [{}]'.format(epoch)\n    print_freq = 50\n    for i,(image, caption, idx) in enumerate(metric_logger.log_every(data_loader, print_freq, header)):",
+        "detail": "venv.src.blip.train_retrieval",
+        "documentation": {}
+    },
+    {
+        "label": "evaluation",
+        "kind": 2,
+        "importPath": "venv.src.blip.train_retrieval",
+        "description": "venv.src.blip.train_retrieval",
+        "peekOfCode": "def evaluation(model, data_loader, device, config):\n    # test\n    model.eval() \n    metric_logger = utils.MetricLogger(delimiter=\"  \")\n    header = 'Evaluation:'    \n    print('Computing features for evaluation...')\n    start_time = time.time()  \n    texts = data_loader.dataset.text   \n    num_text = len(texts)\n    text_bs = 256",
+        "detail": "venv.src.blip.train_retrieval",
+        "documentation": {}
+    },
+    {
+        "label": "itm_eval",
+        "kind": 2,
+        "importPath": "venv.src.blip.train_retrieval",
+        "description": "venv.src.blip.train_retrieval",
+        "peekOfCode": "def itm_eval(scores_i2t, scores_t2i, txt2img, img2txt):\n    #Images->Text \n    ranks = np.zeros(scores_i2t.shape[0])\n    for index,score in enumerate(scores_i2t):\n        inds = np.argsort(score)[::-1]\n        # Score\n        rank = 1e20\n        for i in img2txt[index]:\n            tmp = np.where(inds == i)[0][0]\n            if tmp < rank:",
+        "detail": "venv.src.blip.train_retrieval",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "venv.src.blip.train_retrieval",
+        "description": "venv.src.blip.train_retrieval",
+        "peekOfCode": "def main(args, config):\n    utils.init_distributed_mode(args)    \n    device = torch.device(args.device)\n    # fix the seed for reproducibility\n    seed = args.seed + utils.get_rank()\n    torch.manual_seed(seed)\n    np.random.seed(seed)\n    random.seed(seed)\n    cudnn.benchmark = True\n    #### Dataset #### ",
+        "detail": "venv.src.blip.train_retrieval",
+        "documentation": {}
+    },
+    {
+        "label": "train",
+        "kind": 2,
+        "importPath": "venv.src.blip.train_vqa",
+        "description": "venv.src.blip.train_vqa",
+        "peekOfCode": "def train(model, data_loader, optimizer, epoch, device):\n    # train\n    model.train()  \n    metric_logger = utils.MetricLogger(delimiter=\"  \")\n    metric_logger.add_meter('lr', utils.SmoothedValue(window_size=1, fmt='{value:.6f}'))\n    metric_logger.add_meter('loss', utils.SmoothedValue(window_size=1, fmt='{value:.4f}'))\n    header = 'Train Epoch: [{}]'.format(epoch)\n    print_freq = 50    \n    for i,(image, question, answer, weights, n) in enumerate(metric_logger.log_every(data_loader, print_freq, header)):\n        image, weights = image.to(device,non_blocking=True), weights.to(device,non_blocking=True)      ",
+        "detail": "venv.src.blip.train_vqa",
+        "documentation": {}
+    },
+    {
+        "label": "evaluation",
+        "kind": 2,
+        "importPath": "venv.src.blip.train_vqa",
+        "description": "venv.src.blip.train_vqa",
+        "peekOfCode": "def evaluation(model, data_loader, device, config) :\n    # test\n    model.eval()\n    metric_logger = utils.MetricLogger(delimiter=\"  \")\n    header = 'Generate VQA test result:'\n    print_freq = 50\n    result = []\n    if config['inference']=='rank':   \n        answer_list = data_loader.dataset.answer_list\n        answer_candidates = model.tokenizer(answer_list, padding='longest', return_tensors='pt').to(device)    ",
+        "detail": "venv.src.blip.train_vqa",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "venv.src.blip.train_vqa",
+        "description": "venv.src.blip.train_vqa",
+        "peekOfCode": "def main(args, config):\n    utils.init_distributed_mode(args)    \n    device = torch.device(args.device)\n    # fix the seed for reproducibility\n    seed = args.seed + utils.get_rank()\n    torch.manual_seed(seed)\n    np.random.seed(seed)\n    random.seed(seed)\n    cudnn.benchmark = True\n    #### Dataset #### ",
+        "detail": "venv.src.blip.train_vqa",
+        "documentation": {}
+    },
+    {
+        "label": "SmoothedValue",
+        "kind": 6,
+        "importPath": "venv.src.blip.utils",
+        "description": "venv.src.blip.utils",
+        "peekOfCode": "class SmoothedValue(object):\n    \"\"\"Track a series of values and provide access to smoothed values over a\n    window or the global series average.\n    \"\"\"\n    def __init__(self, window_size=20, fmt=None):\n        if fmt is None:\n            fmt = \"{median:.4f} ({global_avg:.4f})\"\n        self.deque = deque(maxlen=window_size)\n        self.total = 0.0\n        self.count = 0",
+        "detail": "venv.src.blip.utils",
+        "documentation": {}
+    },
+    {
+        "label": "MetricLogger",
+        "kind": 6,
+        "importPath": "venv.src.blip.utils",
+        "description": "venv.src.blip.utils",
+        "peekOfCode": "class MetricLogger(object):\n    def __init__(self, delimiter=\"\\t\"):\n        self.meters = defaultdict(SmoothedValue)\n        self.delimiter = delimiter\n    def update(self, **kwargs):\n        for k, v in kwargs.items():\n            if isinstance(v, torch.Tensor):\n                v = v.item()\n            assert isinstance(v, (float, int))\n            self.meters[k].update(v)",
+        "detail": "venv.src.blip.utils",
+        "documentation": {}
+    },
+    {
+        "label": "AttrDict",
+        "kind": 6,
+        "importPath": "venv.src.blip.utils",
+        "description": "venv.src.blip.utils",
+        "peekOfCode": "class AttrDict(dict):\n    def __init__(self, *args, **kwargs):\n        super(AttrDict, self).__init__(*args, **kwargs)\n        self.__dict__ = self\ndef compute_acc(logits, label, reduction='mean'):\n    ret = (torch.argmax(logits, dim=1) == label).float()\n    if reduction == 'none':\n        return ret.detach()\n    elif reduction == 'mean':\n        return ret.mean().item()",
+        "detail": "venv.src.blip.utils",
+        "documentation": {}
+    },
+    {
+        "label": "cosine_lr_schedule",
+        "kind": 2,
+        "importPath": "venv.src.blip.utils",
+        "description": "venv.src.blip.utils",
+        "peekOfCode": "def cosine_lr_schedule(optimizer, epoch, max_epoch, init_lr, min_lr):\n    \"\"\"Decay the learning rate\"\"\"\n    lr = (init_lr - min_lr) * 0.5 * (1. + math.cos(math.pi * epoch / max_epoch)) + min_lr\n    for param_group in optimizer.param_groups:\n        param_group['lr'] = lr\ndef warmup_lr_schedule(optimizer, step, max_step, init_lr, max_lr):\n    \"\"\"Warmup the learning rate\"\"\"\n    lr = min(max_lr, init_lr + (max_lr - init_lr) * step / max_step)\n    for param_group in optimizer.param_groups:\n        param_group['lr'] = lr    ",
+        "detail": "venv.src.blip.utils",
+        "documentation": {}
+    },
+    {
+        "label": "warmup_lr_schedule",
+        "kind": 2,
+        "importPath": "venv.src.blip.utils",
+        "description": "venv.src.blip.utils",
+        "peekOfCode": "def warmup_lr_schedule(optimizer, step, max_step, init_lr, max_lr):\n    \"\"\"Warmup the learning rate\"\"\"\n    lr = min(max_lr, init_lr + (max_lr - init_lr) * step / max_step)\n    for param_group in optimizer.param_groups:\n        param_group['lr'] = lr    \ndef step_lr_schedule(optimizer, epoch, init_lr, min_lr, decay_rate):        \n    \"\"\"Decay the learning rate\"\"\"\n    lr = max(min_lr, init_lr * (decay_rate**epoch))\n    for param_group in optimizer.param_groups:\n        param_group['lr'] = lr    ",
+        "detail": "venv.src.blip.utils",
+        "documentation": {}
+    },
+    {
+        "label": "step_lr_schedule",
+        "kind": 2,
+        "importPath": "venv.src.blip.utils",
+        "description": "venv.src.blip.utils",
+        "peekOfCode": "def step_lr_schedule(optimizer, epoch, init_lr, min_lr, decay_rate):        \n    \"\"\"Decay the learning rate\"\"\"\n    lr = max(min_lr, init_lr * (decay_rate**epoch))\n    for param_group in optimizer.param_groups:\n        param_group['lr'] = lr    \nimport numpy as np\nimport io\nimport os\nimport time\nfrom collections import defaultdict, deque",
+        "detail": "venv.src.blip.utils",
+        "documentation": {}
+    },
+    {
+        "label": "compute_acc",
+        "kind": 2,
+        "importPath": "venv.src.blip.utils",
+        "description": "venv.src.blip.utils",
+        "peekOfCode": "def compute_acc(logits, label, reduction='mean'):\n    ret = (torch.argmax(logits, dim=1) == label).float()\n    if reduction == 'none':\n        return ret.detach()\n    elif reduction == 'mean':\n        return ret.mean().item()\ndef compute_n_params(model, return_str=True):\n    tot = 0\n    for p in model.parameters():\n        w = 1",
+        "detail": "venv.src.blip.utils",
+        "documentation": {}
+    },
+    {
+        "label": "compute_n_params",
+        "kind": 2,
+        "importPath": "venv.src.blip.utils",
+        "description": "venv.src.blip.utils",
+        "peekOfCode": "def compute_n_params(model, return_str=True):\n    tot = 0\n    for p in model.parameters():\n        w = 1\n        for x in p.shape:\n            w *= x\n        tot += w\n    if return_str:\n        if tot >= 1e6:\n            return '{:.1f}M'.format(tot / 1e6)",
+        "detail": "venv.src.blip.utils",
+        "documentation": {}
+    },
+    {
+        "label": "setup_for_distributed",
+        "kind": 2,
+        "importPath": "venv.src.blip.utils",
+        "description": "venv.src.blip.utils",
+        "peekOfCode": "def setup_for_distributed(is_master):\n    \"\"\"\n    This function disables printing when not in master process\n    \"\"\"\n    import builtins as __builtin__\n    builtin_print = __builtin__.print\n    def print(*args, **kwargs):\n        force = kwargs.pop('force', False)\n        if is_master or force:\n            builtin_print(*args, **kwargs)",
+        "detail": "venv.src.blip.utils",
+        "documentation": {}
+    },
+    {
+        "label": "is_dist_avail_and_initialized",
+        "kind": 2,
+        "importPath": "venv.src.blip.utils",
+        "description": "venv.src.blip.utils",
+        "peekOfCode": "def is_dist_avail_and_initialized():\n    if not dist.is_available():\n        return False\n    if not dist.is_initialized():\n        return False\n    return True\ndef get_world_size():\n    if not is_dist_avail_and_initialized():\n        return 1\n    return dist.get_world_size()",
+        "detail": "venv.src.blip.utils",
+        "documentation": {}
+    },
+    {
+        "label": "get_world_size",
+        "kind": 2,
+        "importPath": "venv.src.blip.utils",
+        "description": "venv.src.blip.utils",
+        "peekOfCode": "def get_world_size():\n    if not is_dist_avail_and_initialized():\n        return 1\n    return dist.get_world_size()\ndef get_rank():\n    if not is_dist_avail_and_initialized():\n        return 0\n    return dist.get_rank()\ndef is_main_process():\n    return get_rank() == 0",
+        "detail": "venv.src.blip.utils",
+        "documentation": {}
+    },
+    {
+        "label": "get_rank",
+        "kind": 2,
+        "importPath": "venv.src.blip.utils",
+        "description": "venv.src.blip.utils",
+        "peekOfCode": "def get_rank():\n    if not is_dist_avail_and_initialized():\n        return 0\n    return dist.get_rank()\ndef is_main_process():\n    return get_rank() == 0\ndef save_on_master(*args, **kwargs):\n    if is_main_process():\n        torch.save(*args, **kwargs)\ndef init_distributed_mode(args):",
+        "detail": "venv.src.blip.utils",
+        "documentation": {}
+    },
+    {
+        "label": "is_main_process",
+        "kind": 2,
+        "importPath": "venv.src.blip.utils",
+        "description": "venv.src.blip.utils",
+        "peekOfCode": "def is_main_process():\n    return get_rank() == 0\ndef save_on_master(*args, **kwargs):\n    if is_main_process():\n        torch.save(*args, **kwargs)\ndef init_distributed_mode(args):\n    if 'RANK' in os.environ and 'WORLD_SIZE' in os.environ:\n        args.rank = int(os.environ[\"RANK\"])\n        args.world_size = int(os.environ['WORLD_SIZE'])\n        args.gpu = int(os.environ['LOCAL_RANK'])",
+        "detail": "venv.src.blip.utils",
+        "documentation": {}
+    },
+    {
+        "label": "save_on_master",
+        "kind": 2,
+        "importPath": "venv.src.blip.utils",
+        "description": "venv.src.blip.utils",
+        "peekOfCode": "def save_on_master(*args, **kwargs):\n    if is_main_process():\n        torch.save(*args, **kwargs)\ndef init_distributed_mode(args):\n    if 'RANK' in os.environ and 'WORLD_SIZE' in os.environ:\n        args.rank = int(os.environ[\"RANK\"])\n        args.world_size = int(os.environ['WORLD_SIZE'])\n        args.gpu = int(os.environ['LOCAL_RANK'])\n    elif 'SLURM_PROCID' in os.environ:\n        args.rank = int(os.environ['SLURM_PROCID'])",
+        "detail": "venv.src.blip.utils",
+        "documentation": {}
+    },
+    {
+        "label": "init_distributed_mode",
+        "kind": 2,
+        "importPath": "venv.src.blip.utils",
+        "description": "venv.src.blip.utils",
+        "peekOfCode": "def init_distributed_mode(args):\n    if 'RANK' in os.environ and 'WORLD_SIZE' in os.environ:\n        args.rank = int(os.environ[\"RANK\"])\n        args.world_size = int(os.environ['WORLD_SIZE'])\n        args.gpu = int(os.environ['LOCAL_RANK'])\n    elif 'SLURM_PROCID' in os.environ:\n        args.rank = int(os.environ['SLURM_PROCID'])\n        args.gpu = args.rank % torch.cuda.device_count()\n    else:\n        print('Not using distributed mode')",
+        "detail": "venv.src.blip.utils",
+        "documentation": {}
+    }
+]
