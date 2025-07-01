@@ -23,8 +23,7 @@ def run_flux(prompt: str):
         if error_output:
             print(f"STDERR:\n{error_output}")
 
-        # ✅ Parse image path from output like: OUTPUT::/path/to/image.png
-        match = re.search(r'OUTPUT::\s*(.+\.png)', output)
+        match = re.search(r'Image saved to (.+\.png)', output)
         if match:
             image_path = match.group(1).strip()
             return {

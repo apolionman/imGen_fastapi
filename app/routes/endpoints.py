@@ -120,10 +120,12 @@ async def transcribe_audio(
 
 def delete_file(file_path: str):
     try:
-        if os.path.exists(file_path):
-            os.remove(file_path)
+        os.remove(file_path)
+        print(f"✅ Deleted {file_path}")
+    except FileNotFoundError:
+        print(f"⚠️ File {file_path} not found for deletion.")
     except Exception as e:
-        print(f"Error deleting file {file_path}: {e}")
+        print(f"❌ Error deleting file {file_path}: {e}")
 
 @router.get("/generate-flux")
 async def generate_flux(prompt: str, return_base64: bool = False, background_tasks: BackgroundTasks = None):
