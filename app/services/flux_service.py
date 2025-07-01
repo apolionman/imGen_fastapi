@@ -2,6 +2,7 @@ import subprocess
 import os
 import re
 
+
 def run_flux(prompt: str):
     python_exec = "/app/flux_venv/bin/python"
     script_path = "/app/app/scripts/flux_run.py"
@@ -16,15 +17,34 @@ def run_flux(prompt: str):
         )
 
         output = result.stdout
-        print(output)
+        error_output = result.stderr
 
-        # Parse image path
-        match = re.search(r'OUTPUT::(.+\.png)', output)
+        print(f"STDOUT:\n{output}")
+        if error_output:
+            print(f"STDERR:\n{error_output}")
+
+        # ✅ Parse image path from output like: OUTPUT::/path/to/image.png
+        match = re.search(r'OUTPUT::\s*(.+\.png)', output)
         if match:
             image_path = match.group(1).strip()
-            return {"status": "success", "image_path": image_path}
+            return {
+                "status": "success",
+                "image_path": image_path,
+                "stdout": output,
+                "stderr": error_output
+            }
 
-        return {"status": "error", "message": "Image path not found"}
+        return {
+            "status": "error",
+            "message": "Image path not found in output",
+            "stdout": output,
+            "stderr": error_output
+        }
 
     except subprocess.CalledProcessError as e:
-        return {"status": "error", "error": e.stderr}
+        return {
+            "status": "error",
+            "message": "Subprocess failed",
+            "stdout": e.stdout or "",
+            "stderr": e.stderr or ""
+        }
