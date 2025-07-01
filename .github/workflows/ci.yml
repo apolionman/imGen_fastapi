@@ -15,18 +15,18 @@ jobs:
 
       - name: Build Image
         run: |
-          docker build -t imGen:dev .
+          docker build -t imgen:dev .
       
       - name: Remove Existing Docker
         run: |
-          docker stop imGen || true
-          docker rm imGen || true
+          docker stop imgen || true
+          docker rm imgen || true
     
       - name: Deploy to Docker
         run: |
           docker run -d --gpus all --privileged\
             -e HUGGINGFACE_TOKEN=${{ secrets.HUGGINGFACE_TOKEN }} \
-            -p 8016:8000 --name imGen imGen:dev
+            -p 8016:8000 --name imgen imgen:dev
 
     environment:
       name: env
