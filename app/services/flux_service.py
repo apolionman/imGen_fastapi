@@ -9,7 +9,7 @@ def run_flux(prompt: str):
     try:
         result = subprocess.run(
             [python_exec, script_path, "--prompt", prompt],
-            cwd="/app/flux_runner",
+            cwd="/app/app/scripts",
             check=True,
             capture_output=True,
             text=True
