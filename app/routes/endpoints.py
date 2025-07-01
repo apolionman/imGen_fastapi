@@ -14,7 +14,7 @@ router = APIRouter()
 async def health():
     return {"status": "ok"}
 
-@router.get("/generate-flux")
+@router.post("/generate-flux")
 async def generate_flux(prompt: str, return_base64: bool = False):
     loop = asyncio.get_event_loop()
     result = await loop.run_in_executor(None, generate_image_task, prompt)
