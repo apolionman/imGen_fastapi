@@ -4,7 +4,7 @@ import re
 
 def run_flux(prompt: str):
     python_exec = "/app/flux_venv/bin/python"
-    script_path = "/app/flux_runner/flux_run.py"
+    script_path = "/app/app/scripts/flux_run.py"
 
     try:
         result = subprocess.run(
