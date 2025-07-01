@@ -33,12 +33,13 @@ def run_flux(prompt: str):
                 "stderr": error_output
             }
 
-        return {
-            "status": "error",
-            "message": "Image path not found in output",
-            "stdout": output,
-            "stderr": error_output
-        }
+        if not match:
+            return {
+                "status": "error",
+                "message": "Image path not found in script output",
+                "stdout": output,
+                "stderr": error_output
+            }
 
     except subprocess.CalledProcessError as e:
         return {

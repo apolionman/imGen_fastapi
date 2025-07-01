@@ -7,7 +7,7 @@ ENV TORCH_DTYPE=float32
 ENV OPEN_CLIP_FORCE_FLOAT32=1
 ENV BLIP_NUM_BEAMS=16
 ENV BLIP_OFFLOAD=True
-ENV PYTORCH_CUDA_ALLOC_CONF=max_split_size_mb:128
+# ENV PYTORCH_CUDA_ALLOC_CONF=max_split_size_mb:128
 
 WORKDIR /app
 
@@ -36,8 +36,6 @@ RUN apt-get update && apt-get install -y \
 # Install Python dependencies
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
-RUN pip install -e 'git+https://github.com/pharmapsychotic/BLIP.git@lib#egg=blip' --no-deps
-RUN git clone -b open-clip https://github.com/pharmapsychotic/clip-interrogator.git
 
 # Copy application code
 COPY . .

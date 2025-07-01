@@ -256,11 +256,11 @@
         "documentation": {}
     },
     {
-        "label": "run_flux",
-        "importPath": "app.services.flux_service",
-        "description": "app.services.flux_service",
+        "label": "*",
+        "importPath": "app.scripts.flux_run",
+        "description": "app.scripts.flux_run",
         "isExtraImport": true,
-        "detail": "app.services.flux_service",
+        "detail": "app.scripts.flux_run",
         "documentation": {}
     },
     {
@@ -279,56 +279,6 @@
         "importPath": "base64",
         "description": "base64",
         "detail": "base64",
-        "documentation": {}
-    },
-    {
-        "label": "Config",
-        "importPath": "clip_interrogator",
-        "description": "clip_interrogator",
-        "isExtraImport": true,
-        "detail": "clip_interrogator",
-        "documentation": {}
-    },
-    {
-        "label": "Interrogator",
-        "importPath": "clip_interrogator",
-        "description": "clip_interrogator",
-        "isExtraImport": true,
-        "detail": "clip_interrogator",
-        "documentation": {}
-    },
-    {
-        "label": "Config",
-        "importPath": "clip_interrogator",
-        "description": "clip_interrogator",
-        "isExtraImport": true,
-        "detail": "clip_interrogator",
-        "documentation": {}
-    },
-    {
-        "label": "Interrogator",
-        "importPath": "clip_interrogator",
-        "description": "clip_interrogator",
-        "isExtraImport": true,
-        "detail": "clip_interrogator",
-        "documentation": {}
-    },
-    {
-        "label": "sys",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "sys",
-        "description": "sys",
-        "detail": "sys",
-        "documentation": {}
-    },
-    {
-        "label": "gradio",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "gradio",
-        "description": "gradio",
-        "detail": "gradio",
         "documentation": {}
     },
     {
@@ -2153,164 +2103,20 @@
         "documentation": {}
     },
     {
-        "label": "delete_file",
-        "kind": 2,
-        "importPath": "app.routes.endpoints",
-        "description": "app.routes.endpoints",
-        "peekOfCode": "def delete_file(file_path: str):\n    try:\n        os.remove(file_path)\n        print(f\"✅ Deleted {file_path}\")\n    except FileNotFoundError:\n        print(f\"⚠️ File {file_path} not found for deletion.\")\n    except Exception as e:\n        print(f\"❌ Error deleting file {file_path}: {e}\")\n@router.get(\"/generate-flux\")\nasync def generate_flux(prompt: str, return_base64: bool = False, background_tasks: BackgroundTasks = None):",
-        "detail": "app.routes.endpoints",
-        "documentation": {}
-    },
-    {
-        "label": "stt",
-        "kind": 5,
-        "importPath": "app.routes.endpoints",
-        "description": "app.routes.endpoints",
-        "peekOfCode": "stt = whisper.load_model(\"large\")\nsys.path.append('src/blip')\nsys.path.append('clip-interrogator')\nfrom clip_interrogator import Config, Interrogator\n# --- CONFIGURATION FIX ---\nconfig = Config()\nconfig.device = \"cuda\"\nconfig.clip_model_name = \"ViT-H-14/laion2b_s32b_b79k\"\nconfig.precision = 'full'  \nci = Interrogator(config)",
-        "detail": "app.routes.endpoints",
-        "documentation": {}
-    },
-    {
-        "label": "config",
-        "kind": 5,
-        "importPath": "app.routes.endpoints",
-        "description": "app.routes.endpoints",
-        "peekOfCode": "config = Config()\nconfig.device = \"cuda\"\nconfig.clip_model_name = \"ViT-H-14/laion2b_s32b_b79k\"\nconfig.precision = 'full'  \nci = Interrogator(config)\nrouter = APIRouter()\n@router.get(\"/health\")\nasync def health():\n    return {\"status\": \"ok\"}\n@router.post(\"/interrogate\")",
-        "detail": "app.routes.endpoints",
-        "documentation": {}
-    },
-    {
-        "label": "config.device",
-        "kind": 5,
-        "importPath": "app.routes.endpoints",
-        "description": "app.routes.endpoints",
-        "peekOfCode": "config.device = \"cuda\"\nconfig.clip_model_name = \"ViT-H-14/laion2b_s32b_b79k\"\nconfig.precision = 'full'  \nci = Interrogator(config)\nrouter = APIRouter()\n@router.get(\"/health\")\nasync def health():\n    return {\"status\": \"ok\"}\n@router.post(\"/interrogate\")\nasync def interrogate_image(",
-        "detail": "app.routes.endpoints",
-        "documentation": {}
-    },
-    {
-        "label": "config.clip_model_name",
-        "kind": 5,
-        "importPath": "app.routes.endpoints",
-        "description": "app.routes.endpoints",
-        "peekOfCode": "config.clip_model_name = \"ViT-H-14/laion2b_s32b_b79k\"\nconfig.precision = 'full'  \nci = Interrogator(config)\nrouter = APIRouter()\n@router.get(\"/health\")\nasync def health():\n    return {\"status\": \"ok\"}\n@router.post(\"/interrogate\")\nasync def interrogate_image(\n    image_file: Optional[UploadFile] = File(None),",
-        "detail": "app.routes.endpoints",
-        "documentation": {}
-    },
-    {
-        "label": "config.precision",
-        "kind": 5,
-        "importPath": "app.routes.endpoints",
-        "description": "app.routes.endpoints",
-        "peekOfCode": "config.precision = 'full'  \nci = Interrogator(config)\nrouter = APIRouter()\n@router.get(\"/health\")\nasync def health():\n    return {\"status\": \"ok\"}\n@router.post(\"/interrogate\")\nasync def interrogate_image(\n    image_file: Optional[UploadFile] = File(None),\n    image_url: Optional[str] = Form(None)",
-        "detail": "app.routes.endpoints",
-        "documentation": {}
-    },
-    {
-        "label": "ci",
-        "kind": 5,
-        "importPath": "app.routes.endpoints",
-        "description": "app.routes.endpoints",
-        "peekOfCode": "ci = Interrogator(config)\nrouter = APIRouter()\n@router.get(\"/health\")\nasync def health():\n    return {\"status\": \"ok\"}\n@router.post(\"/interrogate\")\nasync def interrogate_image(\n    image_file: Optional[UploadFile] = File(None),\n    image_url: Optional[str] = Form(None)\n):",
-        "detail": "app.routes.endpoints",
-        "documentation": {}
-    },
-    {
         "label": "router",
         "kind": 5,
         "importPath": "app.routes.endpoints",
         "description": "app.routes.endpoints",
-        "peekOfCode": "router = APIRouter()\n@router.get(\"/health\")\nasync def health():\n    return {\"status\": \"ok\"}\n@router.post(\"/interrogate\")\nasync def interrogate_image(\n    image_file: Optional[UploadFile] = File(None),\n    image_url: Optional[str] = Form(None)\n):\n    # Check if either file or URL is provided",
+        "peekOfCode": "router = APIRouter()\n@router.get(\"/health\")\nasync def health():\n    return {\"status\": \"ok\"}\n@router.get(\"/generate-flux\")\nasync def generate_flux(prompt: str, return_base64: bool = False):\n    loop = asyncio.get_event_loop()\n    result = await loop.run_in_executor(None, generate_image_task, prompt)\n    if result[\"status\"] != \"success\":\n        raise HTTPException(status_code=500, detail=result.get(\"error\", \"Unknown error\"))",
         "detail": "app.routes.endpoints",
         "documentation": {}
     },
     {
-        "label": "ALLOWED_TYPES",
-        "kind": 5,
-        "importPath": "app.routes.endpoints",
-        "description": "app.routes.endpoints",
-        "peekOfCode": "ALLOWED_TYPES = {\n    \"audio/mpeg\", \"audio/webm\", \"video/mp4\",\n    \"audio/mp4\", \"video/webm\", \"audio/x-m4a\", \n    \"audio/m4a\",  \"audio/ogg\"\n}\nMIME_EXTENSION_MAP = {\n    \"audio/mpeg\": \".mp3\",\n    \"audio/webm\": \".webm\",\n    \"video/webm\": \".webm\",\n    \"video/mp4\": \".mp4\",",
-        "detail": "app.routes.endpoints",
-        "documentation": {}
-    },
-    {
-        "label": "MIME_EXTENSION_MAP",
-        "kind": 5,
-        "importPath": "app.routes.endpoints",
-        "description": "app.routes.endpoints",
-        "peekOfCode": "MIME_EXTENSION_MAP = {\n    \"audio/mpeg\": \".mp3\",\n    \"audio/webm\": \".webm\",\n    \"video/webm\": \".webm\",\n    \"video/mp4\": \".mp4\",\n    \"audio/mp4\": \".mp4\",\n    \"audio/x-m4a\": \".m4a\",\n    \"audio/m4a\": \".m4a\",\n    \"audio/ogg\": \".ogg\"\n}",
-        "detail": "app.routes.endpoints",
-        "documentation": {}
-    },
-    {
-        "label": "config",
-        "kind": 5,
-        "importPath": "app.scripts.clip",
-        "description": "app.scripts.clip",
-        "peekOfCode": "config = Config()\nconfig.blip_offload = True\nconfig.chunk_size = 2048\nconfig.flavor_intermediate_count = 512\nconfig.blip_num_beams = 64\nci = Interrogator(config)\nasync def inference(image, mode, best_max_flavors):\n    image = image.convert('RGB')\n    if mode == 'best':\n        return ci.interrogate(image, max_flavors=int(best_max_flavors))",
-        "detail": "app.scripts.clip",
-        "documentation": {}
-    },
-    {
-        "label": "config.blip_offload",
-        "kind": 5,
-        "importPath": "app.scripts.clip",
-        "description": "app.scripts.clip",
-        "peekOfCode": "config.blip_offload = True\nconfig.chunk_size = 2048\nconfig.flavor_intermediate_count = 512\nconfig.blip_num_beams = 64\nci = Interrogator(config)\nasync def inference(image, mode, best_max_flavors):\n    image = image.convert('RGB')\n    if mode == 'best':\n        return ci.interrogate(image, max_flavors=int(best_max_flavors))\n    elif mode == 'classic':",
-        "detail": "app.scripts.clip",
-        "documentation": {}
-    },
-    {
-        "label": "config.chunk_size",
-        "kind": 5,
-        "importPath": "app.scripts.clip",
-        "description": "app.scripts.clip",
-        "peekOfCode": "config.chunk_size = 2048\nconfig.flavor_intermediate_count = 512\nconfig.blip_num_beams = 64\nci = Interrogator(config)\nasync def inference(image, mode, best_max_flavors):\n    image = image.convert('RGB')\n    if mode == 'best':\n        return ci.interrogate(image, max_flavors=int(best_max_flavors))\n    elif mode == 'classic':\n        return ci.interrogate_classic(image)",
-        "detail": "app.scripts.clip",
-        "documentation": {}
-    },
-    {
-        "label": "config.flavor_intermediate_count",
-        "kind": 5,
-        "importPath": "app.scripts.clip",
-        "description": "app.scripts.clip",
-        "peekOfCode": "config.flavor_intermediate_count = 512\nconfig.blip_num_beams = 64\nci = Interrogator(config)\nasync def inference(image, mode, best_max_flavors):\n    image = image.convert('RGB')\n    if mode == 'best':\n        return ci.interrogate(image, max_flavors=int(best_max_flavors))\n    elif mode == 'classic':\n        return ci.interrogate_classic(image)\n    else:",
-        "detail": "app.scripts.clip",
-        "documentation": {}
-    },
-    {
-        "label": "config.blip_num_beams",
-        "kind": 5,
-        "importPath": "app.scripts.clip",
-        "description": "app.scripts.clip",
-        "peekOfCode": "config.blip_num_beams = 64\nci = Interrogator(config)\nasync def inference(image, mode, best_max_flavors):\n    image = image.convert('RGB')\n    if mode == 'best':\n        return ci.interrogate(image, max_flavors=int(best_max_flavors))\n    elif mode == 'classic':\n        return ci.interrogate_classic(image)\n    else:\n        return ci.interrogate_fast(image)",
-        "detail": "app.scripts.clip",
-        "documentation": {}
-    },
-    {
-        "label": "ci",
-        "kind": 5,
-        "importPath": "app.scripts.clip",
-        "description": "app.scripts.clip",
-        "peekOfCode": "ci = Interrogator(config)\nasync def inference(image, mode, best_max_flavors):\n    image = image.convert('RGB')\n    if mode == 'best':\n        return ci.interrogate(image, max_flavors=int(best_max_flavors))\n    elif mode == 'classic':\n        return ci.interrogate_classic(image)\n    else:\n        return ci.interrogate_fast(image)",
-        "detail": "app.scripts.clip",
-        "documentation": {}
-    },
-    {
-        "label": "parser",
-        "kind": 5,
+        "label": "generate_image_task",
+        "kind": 2,
         "importPath": "app.scripts.flux_run",
         "description": "app.scripts.flux_run",
-        "peekOfCode": "parser = argparse.ArgumentParser()\nparser.add_argument('--prompt', type=str, required=True)\nargs = parser.parse_args()\n# Load pipeline\npipe = FluxPipeline.from_pretrained(\n    \"black-forest-labs/FLUX.1-dev\",\n    torch_dtype=torch.bfloat16,\n    device_map=\"balanced\"\n)\n# Generate image",
-        "detail": "app.scripts.flux_run",
-        "documentation": {}
-    },
-    {
-        "label": "args",
-        "kind": 5,
-        "importPath": "app.scripts.flux_run",
-        "description": "app.scripts.flux_run",
-        "peekOfCode": "args = parser.parse_args()\n# Load pipeline\npipe = FluxPipeline.from_pretrained(\n    \"black-forest-labs/FLUX.1-dev\",\n    torch_dtype=torch.bfloat16,\n    device_map=\"balanced\"\n)\n# Generate image\nimage = pipe(\n    args.prompt,",
+        "peekOfCode": "def generate_image_task(prompt: str) -> dict:\n    try:\n        image = pipe(\n            prompt,\n            height=1024,\n            width=1024,\n            guidance_scale=3.5,\n            num_inference_steps=50,\n            max_sequence_length=512,\n            generator=torch.manual_seed(0)",
         "detail": "app.scripts.flux_run",
         "documentation": {}
     },
@@ -2319,34 +2125,7 @@
         "kind": 5,
         "importPath": "app.scripts.flux_run",
         "description": "app.scripts.flux_run",
-        "peekOfCode": "pipe = FluxPipeline.from_pretrained(\n    \"black-forest-labs/FLUX.1-dev\",\n    torch_dtype=torch.bfloat16,\n    device_map=\"balanced\"\n)\n# Generate image\nimage = pipe(\n    args.prompt,\n    guidance_scale=3.5,\n    num_inference_steps=50,",
-        "detail": "app.scripts.flux_run",
-        "documentation": {}
-    },
-    {
-        "label": "image",
-        "kind": 5,
-        "importPath": "app.scripts.flux_run",
-        "description": "app.scripts.flux_run",
-        "peekOfCode": "image = pipe(\n    args.prompt,\n    guidance_scale=3.5,\n    num_inference_steps=50,\n    max_sequence_length=512,\n    generator=torch.manual_seed(0)\n).images[0]\n# Save image\noutput_dir = \"./output\"\nos.makedirs(output_dir, exist_ok=True)",
-        "detail": "app.scripts.flux_run",
-        "documentation": {}
-    },
-    {
-        "label": "output_dir",
-        "kind": 5,
-        "importPath": "app.scripts.flux_run",
-        "description": "app.scripts.flux_run",
-        "peekOfCode": "output_dir = \"./output\"\nos.makedirs(output_dir, exist_ok=True)\ngenI_name = os.path.join(output_dir, f\"{str(uuid.uuid4())[:8]}.png\")\nimage.save(genI_name)\nprint(f\"✅ Image saved to {genI_name}\")",
-        "detail": "app.scripts.flux_run",
-        "documentation": {}
-    },
-    {
-        "label": "genI_name",
-        "kind": 5,
-        "importPath": "app.scripts.flux_run",
-        "description": "app.scripts.flux_run",
-        "peekOfCode": "genI_name = os.path.join(output_dir, f\"{str(uuid.uuid4())[:8]}.png\")\nimage.save(genI_name)\nprint(f\"✅ Image saved to {genI_name}\")",
+        "peekOfCode": "pipe = FluxPipeline.from_pretrained(\n    \"black-forest-labs/FLUX.1-dev\",\n    torch_dtype=torch.bfloat16,\n    device_map=\"balanced\"\n)\ndef generate_image_task(prompt: str) -> dict:\n    try:\n        image = pipe(\n            prompt,\n            height=1024,",
         "detail": "app.scripts.flux_run",
         "documentation": {}
     },

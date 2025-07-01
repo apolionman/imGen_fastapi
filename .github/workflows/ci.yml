@@ -15,20 +15,18 @@ jobs:
 
       - name: Build Image
         run: |
-          docker build -t gblr:dev .
+          docker build -t imGen:dev .
       
       - name: Remove Existing Docker
         run: |
-          docker stop gblr || true
-          docker rm gblr || true
+          docker stop imGen || true
+          docker rm imGen || true
     
       - name: Deploy to Docker
         run: |
           docker run -d --gpus all --privileged\
-            -v /home/prepaire/clip/models/pkl:/app/cache/pkl \
-            -v /home/prepaire/ttm/venv:/app/flux_venv \
             -e HUGGINGFACE_TOKEN=${{ secrets.HUGGINGFACE_TOKEN }} \
-            -p 8015:8000 --name gblr gblr:dev
+            -p 8016:8000 --name imGen imGen:dev
 
     environment:
       name: env
