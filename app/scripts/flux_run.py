@@ -4,7 +4,7 @@ from diffusers import FluxPipeline
 # Load pipeline
 pipe = FluxPipeline.from_pretrained(
     "black-forest-labs/FLUX.1-dev",
-    torch_dtype=torch.bfloat16,
+    torch_dtype=torch.float16,
     device_map="balanced"
 )
 
