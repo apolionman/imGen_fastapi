@@ -26,6 +26,7 @@ jobs:
         run: |
           docker run -d --gpus all --privileged\
             -v /home/prepaire/clip/models/pkl:/app/cache/pkl \
+            -v /home/prepaire/ttm/venv:/app/flux_venv \
             -e HUGGINGFACE_TOKEN=${{ secrets.HUGGINGFACE_TOKEN }} \
             -p 8015:8000 --name gblr gblr:dev
 

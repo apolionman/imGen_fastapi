@@ -2,6 +2,7 @@ from fastapi import APIRouter, HTTPException, UploadFile, File, Form
 from fastapi.responses import JSONResponse, FileResponse
 from typing import Optional
 from PIL import Image
+from app.services.flux_service import run_flux
 import tempfile, os, httpx, asyncio, subprocess, whisper, requests, sys, torch, io
 # from diffusers import FluxPipeline
 # from app.scripts.flux_run import *
@@ -117,12 +118,29 @@ async def transcribe_audio(
             if path and os.path.exists(path):
                 os.remove(path)
 
-# @router.post("/generate-image")
-# async def generate_image(prompt: str):
-#     image_path = await generate_image_task(prompt=prompt)
-#     with open(image_path, "rb") as img_file:
-#         encoded_string = base64.b64encode(img_file.read()).decode('utf-8')
+@router.get("/generate-flux")
+async def generate_flux(prompt: str, return_base64: bool = False):
+    result = run_flux(prompt)
 
-#     return JSONResponse({
-#         "image_base64": f"data:image/png;base64,{encoded_string}"
-#     })
+    if result["status"] != "success":
+        raise HTTPException(status_code=500, detail=result.get("error", "Unknown error"))
+
+    image_path = result["image_path"]
+
+    if not os.path.exists(image_path):
+        raise HTTPException(status_code=404, detail="Generated image not found")
+
+    if return_base64:
+        import base64
+        with open(image_path, "rb") as img_file:
+            encoded_string = base64.b64encode(img_file.read()).decode('utf-8')
+        return JSONResponse(content={
+            "image_base64": f"data:image/png;base64,{encoded_string}"
+        })
+
+    # Default: return as file
+    return FileResponse(
+        path=image_path,
+        media_type="image/png",
+        filename=os.path.basename(image_path)
+    )
