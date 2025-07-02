@@ -1,5 +1,6 @@
-import torch, uuid, os, sys, argparse
+import torch, uuid, os
 from diffusers import FluxPipeline
+import random
 
 # Load pipeline
 pipe = FluxPipeline.from_pretrained(
@@ -8,8 +9,12 @@ pipe = FluxPipeline.from_pretrained(
     device_map="balanced"
 )
 
-def generate_image_task(prompt: str) -> dict:
+def generate_image_task(prompt: str, seed: int = None) -> dict:
     try:
+        if seed is None:
+            seed = random.randint(0, 999999)
+        generator = torch.manual_seed(seed)
+
         image = pipe(
             prompt,
             height=1024,
@@ -17,16 +22,20 @@ def generate_image_task(prompt: str) -> dict:
             guidance_scale=3.5,
             num_inference_steps=50,
             max_sequence_length=512,
-            generator=torch.manual_seed(0)
+            generator=generator
         ).images[0]
 
         output_dir = "./output"
         os.makedirs(output_dir, exist_ok=True)
         genI_name = os.path.join(output_dir, f"{str(uuid.uuid4())[:8]}.png")
         image.save(genI_name)
-        print(f"✅ Image saved to {genI_name}")
+        print(f"✅ Image saved to {genI_name} (Seed: {seed})")
 
-        return {"status": "success", "image_path": genI_name}
+        return {
+            "status": "success",
+            "image_path": genI_name,
+            "seed": seed  # Return seed info optionally
+        }
 
     except Exception as e:
         return {"status": "error", "error": str(e)}

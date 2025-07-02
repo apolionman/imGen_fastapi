@@ -16,38 +16,6 @@
         "documentation": {}
     },
     {
-        "label": "UploadFile",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
-        "label": "File",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
-        "label": "Form",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
-        "label": "BackgroundTasks",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
         "label": "FastAPI",
         "importPath": "fastapi",
         "description": "fastapi",
@@ -128,6 +96,14 @@
         "documentation": {}
     },
     {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
         "label": "Optional",
         "importPath": "typing",
         "description": "typing",
@@ -176,109 +152,20 @@
         "documentation": {}
     },
     {
-        "label": "Image",
-        "importPath": "PIL",
-        "description": "PIL",
+        "label": "asyncio,",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "PIL",
+        "importPath": "asyncio.",
+        "description": "asyncio.",
+        "detail": "asyncio.",
         "documentation": {}
     },
     {
-        "label": "Image",
-        "importPath": "PIL",
-        "description": "PIL",
-        "isExtraImport": true,
-        "detail": "PIL",
-        "documentation": {}
-    },
-    {
-        "label": "Image",
-        "importPath": "PIL",
-        "description": "PIL",
-        "isExtraImport": true,
-        "detail": "PIL",
-        "documentation": {}
-    },
-    {
-        "label": "Image",
-        "importPath": "PIL",
-        "description": "PIL",
-        "isExtraImport": true,
-        "detail": "PIL",
-        "documentation": {}
-    },
-    {
-        "label": "Image",
-        "importPath": "PIL",
-        "description": "PIL",
-        "isExtraImport": true,
-        "detail": "PIL",
-        "documentation": {}
-    },
-    {
-        "label": "Image",
-        "importPath": "PIL",
-        "description": "PIL",
-        "isExtraImport": true,
-        "detail": "PIL",
-        "documentation": {}
-    },
-    {
-        "label": "ImageFile",
-        "importPath": "PIL",
-        "description": "PIL",
-        "isExtraImport": true,
-        "detail": "PIL",
-        "documentation": {}
-    },
-    {
-        "label": "Image",
-        "importPath": "PIL",
-        "description": "PIL",
-        "isExtraImport": true,
-        "detail": "PIL",
-        "documentation": {}
-    },
-    {
-        "label": "Image",
-        "importPath": "PIL",
-        "description": "PIL",
-        "isExtraImport": true,
-        "detail": "PIL",
-        "documentation": {}
-    },
-    {
-        "label": "Image",
-        "importPath": "PIL",
-        "description": "PIL",
-        "isExtraImport": true,
-        "detail": "PIL",
-        "documentation": {}
-    },
-    {
-        "label": "*",
+        "label": "generate_image_task",
         "importPath": "app.scripts.flux_run",
         "description": "app.scripts.flux_run",
         "isExtraImport": true,
         "detail": "app.scripts.flux_run",
-        "documentation": {}
-    },
-    {
-        "label": "tempfile,",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "tempfile.",
-        "description": "tempfile.",
-        "detail": "tempfile.",
-        "documentation": {}
-    },
-    {
-        "label": "base64",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "base64",
-        "description": "base64",
-        "detail": "base64",
         "documentation": {}
     },
     {
@@ -296,6 +183,15 @@
         "description": "diffusers",
         "isExtraImport": true,
         "detail": "diffusers",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
         "documentation": {}
     },
     {
@@ -544,6 +440,78 @@
         "documentation": {}
     },
     {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "ImageFile",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
         "label": "pre_caption",
         "importPath": "data.utils",
         "description": "data.utils",
@@ -621,15 +589,6 @@
         "description": "data.utils",
         "isExtraImport": true,
         "detail": "data.utils",
-        "documentation": {}
-    },
-    {
-        "label": "random",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "random",
-        "description": "random",
-        "detail": "random",
         "documentation": {}
     },
     {
@@ -2103,11 +2062,20 @@
         "documentation": {}
     },
     {
+        "label": "FluxRequest",
+        "kind": 6,
+        "importPath": "app.routes.endpoints",
+        "description": "app.routes.endpoints",
+        "peekOfCode": "class FluxRequest(BaseModel):\n    prompt: str\n    return_base64: Optional[bool] = True\n    seed: Optional[int] = None\n@router.post(\"/generate-flux\")\nasync def generate_flux(req: FluxRequest):\n    loop = asyncio.get_event_loop()\n    result = await loop.run_in_executor(None, generate_image_task, req.prompt, req.seed)\n    if result[\"status\"] != \"success\":\n        raise HTTPException(status_code=500, detail=result.get(\"error\", \"Unknown error\"))",
+        "detail": "app.routes.endpoints",
+        "documentation": {}
+    },
+    {
         "label": "router",
         "kind": 5,
         "importPath": "app.routes.endpoints",
         "description": "app.routes.endpoints",
-        "peekOfCode": "router = APIRouter()\n@router.get(\"/health\")\nasync def health():\n    return {\"status\": \"ok\"}\n@router.get(\"/generate-flux\")\nasync def generate_flux(prompt: str, return_base64: bool = False):\n    loop = asyncio.get_event_loop()\n    result = await loop.run_in_executor(None, generate_image_task, prompt)\n    if result[\"status\"] != \"success\":\n        raise HTTPException(status_code=500, detail=result.get(\"error\", \"Unknown error\"))",
+        "peekOfCode": "router = APIRouter()\n@router.get(\"/health\")\nasync def health():\n    return {\"status\": \"ok\"}\n# Request body model\nclass FluxRequest(BaseModel):\n    prompt: str\n    return_base64: Optional[bool] = True\n    seed: Optional[int] = None\n@router.post(\"/generate-flux\")",
         "detail": "app.routes.endpoints",
         "documentation": {}
     },
@@ -2116,7 +2084,7 @@
         "kind": 2,
         "importPath": "app.scripts.flux_run",
         "description": "app.scripts.flux_run",
-        "peekOfCode": "def generate_image_task(prompt: str) -> dict:\n    try:\n        image = pipe(\n            prompt,\n            height=1024,\n            width=1024,\n            guidance_scale=3.5,\n            num_inference_steps=50,\n            max_sequence_length=512,\n            generator=torch.manual_seed(0)",
+        "peekOfCode": "def generate_image_task(prompt: str, seed: int = None) -> dict:\n    try:\n        if seed is None:\n            seed = random.randint(0, 999999)\n        generator = torch.manual_seed(seed)\n        image = pipe(\n            prompt,\n            height=1024,\n            width=1024,\n            guidance_scale=3.5,",
         "detail": "app.scripts.flux_run",
         "documentation": {}
     },
@@ -2125,7 +2093,7 @@
         "kind": 5,
         "importPath": "app.scripts.flux_run",
         "description": "app.scripts.flux_run",
-        "peekOfCode": "pipe = FluxPipeline.from_pretrained(\n    \"black-forest-labs/FLUX.1-dev\",\n    torch_dtype=torch.float16,\n    device_map=\"balanced\"\n)\ndef generate_image_task(prompt: str) -> dict:\n    try:\n        image = pipe(\n            prompt,\n            height=1024,",
+        "peekOfCode": "pipe = FluxPipeline.from_pretrained(\n    \"black-forest-labs/FLUX.1-dev\",\n    torch_dtype=torch.float16,\n    device_map=\"balanced\"\n)\ndef generate_image_task(prompt: str, seed: int = None) -> dict:\n    try:\n        if seed is None:\n            seed = random.randint(0, 999999)\n        generator = torch.manual_seed(seed)",
         "detail": "app.scripts.flux_run",
         "documentation": {}
     },
