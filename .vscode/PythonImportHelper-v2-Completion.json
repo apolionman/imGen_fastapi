@@ -2107,7 +2107,7 @@
         "kind": 5,
         "importPath": "app.routes.endpoints",
         "description": "app.routes.endpoints",
-        "peekOfCode": "router = APIRouter()\n@router.get(\"/health\")\nasync def health():\n    return {\"status\": \"ok\"}\n@router.post(\"/generate-flux\")\nasync def generate_flux(prompt: str, return_base64: bool = False):\n    loop = asyncio.get_event_loop()\n    result = await loop.run_in_executor(None, generate_image_task, prompt)\n    if result[\"status\"] != \"success\":\n        raise HTTPException(status_code=500, detail=result.get(\"error\", \"Unknown error\"))",
+        "peekOfCode": "router = APIRouter()\n@router.get(\"/health\")\nasync def health():\n    return {\"status\": \"ok\"}\n@router.get(\"/generate-flux\")\nasync def generate_flux(prompt: str, return_base64: bool = False):\n    loop = asyncio.get_event_loop()\n    result = await loop.run_in_executor(None, generate_image_task, prompt)\n    if result[\"status\"] != \"success\":\n        raise HTTPException(status_code=500, detail=result.get(\"error\", \"Unknown error\"))",
         "detail": "app.routes.endpoints",
         "documentation": {}
     },
