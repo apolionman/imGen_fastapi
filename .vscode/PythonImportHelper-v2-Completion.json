@@ -2144,20 +2144,11 @@
         "documentation": {}
     },
     {
-        "label": "load_pipeline",
-        "kind": 2,
-        "importPath": "app.scripts.flux_im2im",
-        "description": "app.scripts.flux_im2im",
-        "peekOfCode": "def load_pipeline():\n    return FluxKontextPipeline.from_pretrained(\n        \"black-forest-labs/FLUX.1-Kontext-dev\",\n        torch_dtype=torch.float16,\n        device_map=\"balanced\"\n    )\ndef generate_im2im_task(prompt: str, image_path: str, seed: int = None) -> dict:\n    try:\n        if seed is None:\n            seed = random.randint(0, 999999)",
-        "detail": "app.scripts.flux_im2im",
-        "documentation": {}
-    },
-    {
         "label": "generate_im2im_task",
         "kind": 2,
         "importPath": "app.scripts.flux_im2im",
         "description": "app.scripts.flux_im2im",
-        "peekOfCode": "def generate_im2im_task(prompt: str, image_path: str, seed: int = None) -> dict:\n    try:\n        if seed is None:\n            seed = random.randint(0, 999999)\n        generator = torch.manual_seed(seed)\n        # Load image\n        image = load_image(image_path)\n        # Load pipeline\n        pipe = load_pipeline()\n        # Generate image",
+        "peekOfCode": "def generate_im2im_task(prompt: str, image_path: str, seed: int = None) -> dict:\n    # Load pipeline\n    pipe = FluxKontextPipeline.from_pretrained(\n        \"black-forest-labs/FLUX.1-Kontext-dev\",\n        torch_dtype=\"torch.float16\",\n        device_map=\"balanced\"\n    )\n    try:\n        if seed is None:\n            seed = random.randint(0, 999999)",
         "detail": "app.scripts.flux_im2im",
         "documentation": {}
     },
@@ -2166,16 +2157,7 @@
         "kind": 2,
         "importPath": "app.scripts.flux_tx2im",
         "description": "app.scripts.flux_tx2im",
-        "peekOfCode": "def generate_image_task(prompt: str, seed: int = None) -> dict:\n    try:\n        if seed is None:\n            seed = random.randint(0, 999999)\n        generator = torch.manual_seed(seed)\n        image = pipe(\n            prompt,\n            height=1024,\n            width=1024,\n            guidance_scale=3.5,",
-        "detail": "app.scripts.flux_tx2im",
-        "documentation": {}
-    },
-    {
-        "label": "pipe",
-        "kind": 5,
-        "importPath": "app.scripts.flux_tx2im",
-        "description": "app.scripts.flux_tx2im",
-        "peekOfCode": "pipe = FluxPipeline.from_pretrained(\n    \"black-forest-labs/FLUX.1-dev\",\n    torch_dtype=torch.float16,\n    device_map=\"balanced\"\n)\ndef generate_image_task(prompt: str, seed: int = None) -> dict:\n    try:\n        if seed is None:\n            seed = random.randint(0, 999999)\n        generator = torch.manual_seed(seed)",
+        "peekOfCode": "def generate_image_task(prompt: str, seed: int = None) -> dict:\n    # Load pipeline\n    pipe = FluxPipeline.from_pretrained(\n        \"black-forest-labs/FLUX.1-dev\",\n        torch_dtype=torch.float16,\n        device_map=\"balanced\"\n    )\n    try:\n        if seed is None:\n            seed = random.randint(0, 999999)",
         "detail": "app.scripts.flux_tx2im",
         "documentation": {}
     },

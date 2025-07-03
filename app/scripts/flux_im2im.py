@@ -3,42 +3,36 @@ from diffusers import FluxKontextPipeline
 from diffusers.utils import load_image
 import random
 
-# Load pipeline
-def load_pipeline():
-    return FluxKontextPipeline.from_pretrained(
+def generate_im2im_task(prompt: str, image_path: str, seed: int = None) -> dict:
+    # Load pipeline
+    pipe = FluxKontextPipeline.from_pretrained(
         "black-forest-labs/FLUX.1-Kontext-dev",
-        torch_dtype=torch.float16,
+        torch_dtype="torch.float16",
         device_map="balanced"
     )
-
-def generate_im2im_task(prompt: str, image_path: str, seed: int = None) -> dict:
     try:
         if seed is None:
             seed = random.randint(0, 999999)
-
         generator = torch.manual_seed(seed)
-        
-        # Load image
-        image = load_image(image_path)
+        input_image = load_image(image_path)
+        image = pipe(
+            image=input_image,
+            prompt=prompt,
+            guidance_scale=2.5,
+            generator=generator
+        ).images[0]
 
-        # Load pipeline
-        pipe = load_pipeline()
+        output_dir = "./output"
+        os.makedirs(output_dir, exist_ok=True)
+        genI_name = os.path.join(output_dir, f"{str(uuid.uuid4())[:8]}.png")
+        image.save(genI_name)
+        print(f"✅ Image saved to {genI_name} (Seed: {seed})")
 
-        # Generate image
-        result = pipe(prompt=prompt, image=image, generator=generator).images[0]
-
-        # Save result
-        image_id = str(uuid.uuid4())
-        output_path = os.path.join("./output", f"{image_id}.png")
-        result.save(output_path)
-
-        # Clean up
-        del pipe
-        torch.cuda.empty_cache()
-        gc.collect()
-
-        return {"image_id": image_id, "image_path": output_path}
+        return {
+            "status": "success",
+            "image_path": genI_name,
+            "seed": seed  # Return seed info optionally
+        }
 
     except Exception as e:
-        print(f"❌ Error in generate_im2im_task: {e}")
-        return {"error": str(e)}
+        return {"status": "error", "error": str(e)}

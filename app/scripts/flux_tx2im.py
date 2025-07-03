@@ -2,14 +2,15 @@ import torch, uuid, os, gc
 from diffusers import FluxPipeline
 import random
 
-# Load pipeline
-pipe = FluxPipeline.from_pretrained(
-    "black-forest-labs/FLUX.1-dev",
-    torch_dtype=torch.float16,
-    device_map="balanced"
-)
+
 
 def generate_image_task(prompt: str, seed: int = None) -> dict:
+    # Load pipeline
+    pipe = FluxPipeline.from_pretrained(
+        "black-forest-labs/FLUX.1-dev",
+        torch_dtype=torch.float16,
+        device_map="balanced"
+    )
     try:
         if seed is None:
             seed = random.randint(0, 999999)
@@ -30,11 +31,6 @@ def generate_image_task(prompt: str, seed: int = None) -> dict:
         genI_name = os.path.join(output_dir, f"{str(uuid.uuid4())[:8]}.png")
         image.save(genI_name)
         print(f"✅ Image saved to {genI_name} (Seed: {seed})")
-
-        del pipe
-        torch.cuda.empty_cache()
-        gc.collect()
-
 
         return {
             "status": "success",
