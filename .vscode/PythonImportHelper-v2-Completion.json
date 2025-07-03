@@ -32,6 +32,14 @@
         "documentation": {}
     },
     {
+        "label": "Form",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
         "label": "FastAPI",
         "importPath": "fastapi",
         "description": "fastapi",
@@ -2106,16 +2114,7 @@
         "kind": 6,
         "importPath": "app.routes.endpoints",
         "description": "app.routes.endpoints",
-        "peekOfCode": "class FluxRequest(BaseModel):\n    prompt: str\n    return_base64: Optional[bool] = True\n    seed: Optional[int] = None\nclass FluxRequest2im(BaseModel):\n    prompt: str\n    input_image: UploadFile = File(...),\n    return_base64: Optional[bool] = True\n    seed: Optional[int] = None\n@router.post(\"/generate-flux\")",
-        "detail": "app.routes.endpoints",
-        "documentation": {}
-    },
-    {
-        "label": "FluxRequest2im",
-        "kind": 6,
-        "importPath": "app.routes.endpoints",
-        "description": "app.routes.endpoints",
-        "peekOfCode": "class FluxRequest2im(BaseModel):\n    prompt: str\n    input_image: UploadFile = File(...),\n    return_base64: Optional[bool] = True\n    seed: Optional[int] = None\n@router.post(\"/generate-flux\")\nasync def generate_flux(req: FluxRequest):\n    loop = asyncio.get_event_loop()\n    result = await loop.run_in_executor(None, generate_image_task, req.prompt, req.seed)\n    if result[\"status\"] != \"success\":",
+        "peekOfCode": "class FluxRequest(BaseModel):\n    prompt: str\n    return_base64: Optional[bool] = True\n    seed: Optional[int] = None\n@router.post(\"/generate-flux\")\nasync def generate_flux(req: FluxRequest):\n    loop = asyncio.get_event_loop()\n    result = await loop.run_in_executor(None, generate_image_task, req.prompt, req.seed)\n    if result[\"status\"] != \"success\":\n        raise HTTPException(status_code=500, detail=result.get(\"error\", \"Unknown error\"))",
         "detail": "app.routes.endpoints",
         "documentation": {}
     },
@@ -2124,7 +2123,7 @@
         "kind": 5,
         "importPath": "app.routes.endpoints",
         "description": "app.routes.endpoints",
-        "peekOfCode": "router = APIRouter()\n@router.get(\"/health\")\nasync def health():\n    return {\"status\": \"ok\"}\n# Request body model\nclass FluxRequest(BaseModel):\n    prompt: str\n    return_base64: Optional[bool] = True\n    seed: Optional[int] = None\nclass FluxRequest2im(BaseModel):",
+        "peekOfCode": "router = APIRouter()\n@router.get(\"/health\")\nasync def health():\n    return {\"status\": \"ok\"}\n# Request body model\nclass FluxRequest(BaseModel):\n    prompt: str\n    return_base64: Optional[bool] = True\n    seed: Optional[int] = None\n@router.post(\"/generate-flux\")",
         "detail": "app.routes.endpoints",
         "documentation": {}
     },

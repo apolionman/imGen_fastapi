@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException, UploadFile, File
+from fastapi import APIRouter, HTTPException, UploadFile, File, Form
 from fastapi.responses import JSONResponse, FileResponse
 from pydantic import BaseModel
 from typing import Optional
@@ -17,12 +17,6 @@ async def health():
 # Request body model
 class FluxRequest(BaseModel):
     prompt: str
-    return_base64: Optional[bool] = True
-    seed: Optional[int] = None
-
-class FluxRequest2im(BaseModel):
-    prompt: str
-    input_image: UploadFile = File(...),
     return_base64: Optional[bool] = True
     seed: Optional[int] = None
 
@@ -50,20 +44,28 @@ async def generate_flux(req: FluxRequest):
     )
 
 @router.post("/generate-flux-im2im")
-async def generate_flux_im2im(req: FluxRequest2im):
+async def generate_flux_im2im(
+    prompt: str = Form(...),
+    input_image: UploadFile = File(...),
+    return_base64: Optional[bool] = Form(True),
+    seed: Optional[int] = Form(None)
+):
+    # Run sync function in a thread pool
     loop = asyncio.get_event_loop()
-    result = await loop.run_in_executor(None, generate_im2im_task, req.prompt, req.input_image, req.seed)
+    result = await loop.run_in_executor(None, generate_im2im_task, prompt, input_image, seed)
 
     if result["status"] != "success":
         raise HTTPException(status_code=500, detail=result.get("error", "Unknown error"))
 
     image_path = result["image_path"]
 
-    if req.return_base64:
+    if return_base64:
         with open(image_path, "rb") as img_file:
             encoded_string = base64.b64encode(img_file.read()).decode('utf-8')
         return JSONResponse(content={
-            "image_base64": f"data:image/png;base64,{encoded_string}"
+            "status": "success",
+            "image_base64": f"data:image/png;base64,{encoded_string}",
+            "seed": result["seed"]
         })
 
     return FileResponse(
