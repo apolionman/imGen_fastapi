@@ -2144,20 +2144,20 @@
         "documentation": {}
     },
     {
-        "label": "generate_im2im_task",
+        "label": "load_pipeline",
         "kind": 2,
         "importPath": "app.scripts.flux_im2im",
         "description": "app.scripts.flux_im2im",
-        "peekOfCode": "def generate_im2im_task(prompt: str, image_path: str, seed: int = None) -> dict:\n    print(f\"🧐 Check Prompt: {prompt} and image: {image_path}\")\n    try:\n        if seed is None:\n            seed = random.randint(0, 999999)\n        generator = torch.manual_seed(seed)\n        input_image = load_image(image_path)\n        image = pipe(\n            image=input_image,\n            prompt=prompt,",
+        "peekOfCode": "def load_pipeline():\n    return FluxKontextPipeline.from_pretrained(\n        \"black-forest-labs/FLUX.1-Kontext-dev\",\n        torch_dtype=torch.float16,\n        device_map=\"balanced\"\n    )\ndef generate_im2im_task(prompt: str, image_path: str, seed: int = None) -> dict:\n    try:\n        if seed is None:\n            seed = random.randint(0, 999999)",
         "detail": "app.scripts.flux_im2im",
         "documentation": {}
     },
     {
-        "label": "pipe",
-        "kind": 5,
+        "label": "generate_im2im_task",
+        "kind": 2,
         "importPath": "app.scripts.flux_im2im",
         "description": "app.scripts.flux_im2im",
-        "peekOfCode": "pipe = FluxKontextPipeline.from_pretrained(\n    \"black-forest-labs/FLUX.1-Kontext-dev\",\n    torch_dtype=\"torch.float16\",\n    device_map=\"balanced\"\n)\ndef generate_im2im_task(prompt: str, image_path: str, seed: int = None) -> dict:\n    print(f\"🧐 Check Prompt: {prompt} and image: {image_path}\")\n    try:\n        if seed is None:\n            seed = random.randint(0, 999999)",
+        "peekOfCode": "def generate_im2im_task(prompt: str, image_path: str, seed: int = None) -> dict:\n    try:\n        if seed is None:\n            seed = random.randint(0, 999999)\n        generator = torch.manual_seed(seed)\n        # Load image\n        image = load_image(image_path)\n        # Load pipeline\n        pipe = load_pipeline()\n        # Generate image",
         "detail": "app.scripts.flux_im2im",
         "documentation": {}
     },

@@ -1,4 +1,4 @@
-import torch, uuid, os
+import torch, uuid, os, gc
 from diffusers import FluxPipeline
 import random
 
@@ -30,6 +30,11 @@ def generate_image_task(prompt: str, seed: int = None) -> dict:
         genI_name = os.path.join(output_dir, f"{str(uuid.uuid4())[:8]}.png")
         image.save(genI_name)
         print(f"✅ Image saved to {genI_name} (Seed: {seed})")
+
+        del pipe
+        torch.cuda.empty_cache()
+        gc.collect()
+
 
         return {
             "status": "success",
