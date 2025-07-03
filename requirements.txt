@@ -9,6 +9,8 @@ python-multipart
 jinja2
 aiofiles
 httpx
+pillow
+cairosvg
 
 #clip
 transformers
