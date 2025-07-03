@@ -16,6 +16,22 @@
         "documentation": {}
     },
     {
+        "label": "UploadFile",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "File",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
         "label": "FastAPI",
         "importPath": "fastapi",
         "description": "fastapi",
@@ -162,10 +178,18 @@
     },
     {
         "label": "generate_image_task",
-        "importPath": "app.scripts.flux_run",
-        "description": "app.scripts.flux_run",
+        "importPath": "app.scripts.flux_tx2im",
+        "description": "app.scripts.flux_tx2im",
         "isExtraImport": true,
-        "detail": "app.scripts.flux_run",
+        "detail": "app.scripts.flux_tx2im",
+        "documentation": {}
+    },
+    {
+        "label": "generate_im2im_task",
+        "importPath": "app.scripts.flux_im2im",
+        "description": "app.scripts.flux_im2im",
+        "isExtraImport": true,
+        "detail": "app.scripts.flux_im2im",
         "documentation": {}
     },
     {
@@ -178,11 +202,27 @@
         "documentation": {}
     },
     {
+        "label": "FluxKontextPipeline",
+        "importPath": "diffusers",
+        "description": "diffusers",
+        "isExtraImport": true,
+        "detail": "diffusers",
+        "documentation": {}
+    },
+    {
         "label": "FluxPipeline",
         "importPath": "diffusers",
         "description": "diffusers",
         "isExtraImport": true,
         "detail": "diffusers",
+        "documentation": {}
+    },
+    {
+        "label": "load_image",
+        "importPath": "diffusers.utils",
+        "description": "diffusers.utils",
+        "isExtraImport": true,
+        "detail": "diffusers.utils",
         "documentation": {}
     },
     {
@@ -2066,7 +2106,16 @@
         "kind": 6,
         "importPath": "app.routes.endpoints",
         "description": "app.routes.endpoints",
-        "peekOfCode": "class FluxRequest(BaseModel):\n    prompt: str\n    return_base64: Optional[bool] = True\n    seed: Optional[int] = None\n@router.post(\"/generate-flux\")\nasync def generate_flux(req: FluxRequest):\n    loop = asyncio.get_event_loop()\n    result = await loop.run_in_executor(None, generate_image_task, req.prompt, req.seed)\n    if result[\"status\"] != \"success\":\n        raise HTTPException(status_code=500, detail=result.get(\"error\", \"Unknown error\"))",
+        "peekOfCode": "class FluxRequest(BaseModel):\n    prompt: str\n    return_base64: Optional[bool] = True\n    seed: Optional[int] = None\nclass FluxRequest2im(BaseModel):\n    prompt: str\n    input_image: UploadFile = File(...),\n    return_base64: Optional[bool] = True\n    seed: Optional[int] = None\n@router.post(\"/generate-flux\")",
+        "detail": "app.routes.endpoints",
+        "documentation": {}
+    },
+    {
+        "label": "FluxRequest2im",
+        "kind": 6,
+        "importPath": "app.routes.endpoints",
+        "description": "app.routes.endpoints",
+        "peekOfCode": "class FluxRequest2im(BaseModel):\n    prompt: str\n    input_image: UploadFile = File(...),\n    return_base64: Optional[bool] = True\n    seed: Optional[int] = None\n@router.post(\"/generate-flux\")\nasync def generate_flux(req: FluxRequest):\n    loop = asyncio.get_event_loop()\n    result = await loop.run_in_executor(None, generate_image_task, req.prompt, req.seed)\n    if result[\"status\"] != \"success\":",
         "detail": "app.routes.endpoints",
         "documentation": {}
     },
@@ -2075,26 +2124,44 @@
         "kind": 5,
         "importPath": "app.routes.endpoints",
         "description": "app.routes.endpoints",
-        "peekOfCode": "router = APIRouter()\n@router.get(\"/health\")\nasync def health():\n    return {\"status\": \"ok\"}\n# Request body model\nclass FluxRequest(BaseModel):\n    prompt: str\n    return_base64: Optional[bool] = True\n    seed: Optional[int] = None\n@router.post(\"/generate-flux\")",
+        "peekOfCode": "router = APIRouter()\n@router.get(\"/health\")\nasync def health():\n    return {\"status\": \"ok\"}\n# Request body model\nclass FluxRequest(BaseModel):\n    prompt: str\n    return_base64: Optional[bool] = True\n    seed: Optional[int] = None\nclass FluxRequest2im(BaseModel):",
         "detail": "app.routes.endpoints",
         "documentation": {}
     },
     {
-        "label": "generate_image_task",
+        "label": "generate_im2im_task",
         "kind": 2,
-        "importPath": "app.scripts.flux_run",
-        "description": "app.scripts.flux_run",
-        "peekOfCode": "def generate_image_task(prompt: str, seed: int = None) -> dict:\n    try:\n        if seed is None:\n            seed = random.randint(0, 999999)\n        generator = torch.manual_seed(seed)\n        image = pipe(\n            prompt,\n            height=1024,\n            width=1024,\n            guidance_scale=3.5,",
-        "detail": "app.scripts.flux_run",
+        "importPath": "app.scripts.flux_im2im",
+        "description": "app.scripts.flux_im2im",
+        "peekOfCode": "def generate_im2im_task(prompt: str, image_path: str, seed: int = None) -> dict:\n    try:\n        if seed is None:\n            seed = random.randint(0, 999999)\n        generator = torch.manual_seed(seed)\n        input_image = load_image(image_path)\n        image = pipe(\n            image=input_image,\n            prompt=prompt,\n            guidance_scale=2.5,",
+        "detail": "app.scripts.flux_im2im",
         "documentation": {}
     },
     {
         "label": "pipe",
         "kind": 5,
-        "importPath": "app.scripts.flux_run",
-        "description": "app.scripts.flux_run",
+        "importPath": "app.scripts.flux_im2im",
+        "description": "app.scripts.flux_im2im",
+        "peekOfCode": "pipe = FluxKontextPipeline.from_pretrained(\n    \"black-forest-labs/FLUX.1-Kontext-dev\",\n    torch_dtype=torch.float16,\n    device_map=\"balanced\"\n)\ndef generate_im2im_task(prompt: str, image_path: str, seed: int = None) -> dict:\n    try:\n        if seed is None:\n            seed = random.randint(0, 999999)\n        generator = torch.manual_seed(seed)",
+        "detail": "app.scripts.flux_im2im",
+        "documentation": {}
+    },
+    {
+        "label": "generate_image_task",
+        "kind": 2,
+        "importPath": "app.scripts.flux_tx2im",
+        "description": "app.scripts.flux_tx2im",
+        "peekOfCode": "def generate_image_task(prompt: str, seed: int = None) -> dict:\n    try:\n        if seed is None:\n            seed = random.randint(0, 999999)\n        generator = torch.manual_seed(seed)\n        image = pipe(\n            prompt,\n            height=1024,\n            width=1024,\n            guidance_scale=3.5,",
+        "detail": "app.scripts.flux_tx2im",
+        "documentation": {}
+    },
+    {
+        "label": "pipe",
+        "kind": 5,
+        "importPath": "app.scripts.flux_tx2im",
+        "description": "app.scripts.flux_tx2im",
         "peekOfCode": "pipe = FluxPipeline.from_pretrained(\n    \"black-forest-labs/FLUX.1-dev\",\n    torch_dtype=torch.float16,\n    device_map=\"balanced\"\n)\ndef generate_image_task(prompt: str, seed: int = None) -> dict:\n    try:\n        if seed is None:\n            seed = random.randint(0, 999999)\n        generator = torch.manual_seed(seed)",
-        "detail": "app.scripts.flux_run",
+        "detail": "app.scripts.flux_tx2im",
         "documentation": {}
     },
     {
