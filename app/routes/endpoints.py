@@ -72,12 +72,14 @@ async def generate_flux_im2im(
 
             with tempfile.NamedTemporaryFile(delete=False, suffix=".png") as tmp:
                 image.save(tmp.name, format="PNG")
+                print(f"Input image saved at: {tmp.name}")
                 temp_path = tmp.name
 
         # Run sync function
         loop = asyncio.get_event_loop()
+        print(f"Calling generate_im2im_task with prompt: {prompt} and seed: {seed}")
         result = await loop.run_in_executor(None, generate_im2im_task, prompt, temp_path, seed)
-
+        print(f"Result from generate_im2im_task: {result}")
         if result["status"] != "success":
             raise HTTPException(status_code=500, detail=result.get("error", "Unknown error"))
 
