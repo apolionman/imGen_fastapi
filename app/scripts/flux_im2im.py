@@ -11,6 +11,9 @@ pipe = FluxKontextPipeline.from_pretrained(
 )
 
 def generate_im2im_task(prompt: str, image_path: str, seed: int = None) -> dict:
+    input_image = load_image(image_path)
+    input_image.save("debug_input.png")  # Save for visual inspection
+    print(f"🧐 Input image loaded and saved as debug_input.png")
     try:
         if seed is None:
             seed = random.randint(0, 999999)

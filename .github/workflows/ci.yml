@@ -25,7 +25,8 @@ jobs:
       - name: Deploy to Docker
         run: |
           docker run -d --gpus all --privileged\
-            -e HUGGINGFACE_TOKEN=${{ secrets.HUGGINGFACE_TOKEN }} \
+            -e HUGGINGFACE_TOKEN=${{ secrets.HUGGINGFACE_TOKEN }}\
+            -v /home/prepaire/ttm/output:/app/output\
             -p 8016:8000 --name imgen imgen:dev
 
     environment:
