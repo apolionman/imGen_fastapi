@@ -542,14 +542,6 @@
         "documentation": {}
     },
     {
-        "label": "Connection",
-        "importPath": "rq.connections",
-        "description": "rq.connections",
-        "isExtraImport": true,
-        "detail": "rq.connections",
-        "documentation": {}
-    },
-    {
         "label": "json",
         "kind": 6,
         "isExtraImport": true,
@@ -2362,7 +2354,7 @@
         "kind": 5,
         "importPath": "app.worker",
         "description": "app.worker",
-        "peekOfCode": "listen = ['flux_image_gen']\nredis_conn = Redis(host='redis', port=6379)\nif __name__ == '__main__':\n    with Connection(redis_conn):\n        queues = [Queue(name, connection=redis_conn) for name in listen]\n        worker = Worker(queues)\n        worker.work()",
+        "peekOfCode": "listen = ['flux_image_gen']\nredis_conn = Redis(host='redis', port=6379)\nif __name__ == '__main__':\n    queues = [Queue(name, connection=redis_conn) for name in listen]\n    worker = Worker(queues, connection=redis_conn)\n    worker.work()",
         "detail": "app.worker",
         "documentation": {}
     },
@@ -2371,7 +2363,7 @@
         "kind": 5,
         "importPath": "app.worker",
         "description": "app.worker",
-        "peekOfCode": "redis_conn = Redis(host='redis', port=6379)\nif __name__ == '__main__':\n    with Connection(redis_conn):\n        queues = [Queue(name, connection=redis_conn) for name in listen]\n        worker = Worker(queues)\n        worker.work()",
+        "peekOfCode": "redis_conn = Redis(host='redis', port=6379)\nif __name__ == '__main__':\n    queues = [Queue(name, connection=redis_conn) for name in listen]\n    worker = Worker(queues, connection=redis_conn)\n    worker.work()",
         "detail": "app.worker",
         "documentation": {}
     },
