@@ -441,6 +441,22 @@
         "documentation": {}
     },
     {
+        "label": "login",
+        "importPath": "huggingface_hub",
+        "description": "huggingface_hub",
+        "isExtraImport": true,
+        "detail": "huggingface_hub",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "importPath": "huggingface_hub",
+        "description": "huggingface_hub",
+        "isExtraImport": true,
+        "detail": "huggingface_hub",
+        "documentation": {}
+    },
+    {
         "label": "torch,",
         "kind": 6,
         "isExtraImport": true,
@@ -523,14 +539,6 @@
         "description": "uuid",
         "isExtraImport": true,
         "detail": "uuid",
-        "documentation": {}
-    },
-    {
-        "label": "login",
-        "importPath": "huggingface_hub",
-        "description": "huggingface_hub",
-        "isExtraImport": true,
-        "detail": "huggingface_hub",
         "documentation": {}
     },
     {

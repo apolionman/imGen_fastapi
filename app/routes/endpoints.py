@@ -9,6 +9,9 @@ from rq import Queue
 from rq.job import Job
 from app.scripts.flux_tx2im import generate_image_task
 from app.scripts.flux_im2im import generate_im2im_task
+from huggingface_hub import login
+login(token=os.environ["HUGGINGFACE_TOKEN"])
+
 
 router = APIRouter()
 
