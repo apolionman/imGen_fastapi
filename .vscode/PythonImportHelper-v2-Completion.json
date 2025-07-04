@@ -2282,7 +2282,7 @@
         "kind": 6,
         "importPath": "app.routes.endpoints",
         "description": "app.routes.endpoints",
-        "peekOfCode": "class FluxRequest(BaseModel):\n    prompt: str\n    return_base64: Optional[bool] = True\n    seed: Optional[int] = None\n@router.post(\"/generate-flux\")\nasync def enqueue_flux_task(req: FluxRequest):\n    job = queue.enqueue(generate_image_task, req.prompt, req.seed)\n    return {\"task_id\": job.get_id(), \"status\": \"queued\"}\n@router.get(\"/generate-flux/status/{task_id}\")\nasync def flux_task_status(task_id: str, return_base64: Optional[bool] = True):",
+        "peekOfCode": "class FluxRequest(BaseModel):\n    prompt: str\n    return_base64: Optional[bool] = True\n    seed: Optional[int] = None\n@router.post(\"/generate-flux\")\nasync def enqueue_flux_task(req: FluxRequest):\n    job = queue.enqueue(generate_image_task, req.prompt, req.seed, timeout=1300)\n    return {\"task_id\": job.get_id(), \"status\": \"queued\"}\n@router.get(\"/generate-flux/status/{task_id}\")\nasync def flux_task_status(task_id: str, return_base64: Optional[bool] = True):",
         "detail": "app.routes.endpoints",
         "documentation": {}
     },
@@ -2354,7 +2354,7 @@
         "kind": 5,
         "importPath": "app.worker",
         "description": "app.worker",
-        "peekOfCode": "listen = ['flux_image_gen']\nredis_conn = Redis(host='redis', port=6379)\nif __name__ == '__main__':\n    queues = [Queue(name, connection=redis_conn) for name in listen]\n    worker = Worker(queues, connection=redis_conn, default_job_timeout=1200)\n    worker.work()",
+        "peekOfCode": "listen = ['flux_image_gen']\nredis_conn = Redis(host='redis', port=6379)\nif __name__ == '__main__':\n    queues = [Queue(name, connection=redis_conn) for name in listen]\n    worker = Worker(queues, connection=redis_conn)\n    worker.work()",
         "detail": "app.worker",
         "documentation": {}
     },
@@ -2363,7 +2363,7 @@
         "kind": 5,
         "importPath": "app.worker",
         "description": "app.worker",
-        "peekOfCode": "redis_conn = Redis(host='redis', port=6379)\nif __name__ == '__main__':\n    queues = [Queue(name, connection=redis_conn) for name in listen]\n    worker = Worker(queues, connection=redis_conn, default_job_timeout=1200)\n    worker.work()",
+        "peekOfCode": "redis_conn = Redis(host='redis', port=6379)\nif __name__ == '__main__':\n    queues = [Queue(name, connection=redis_conn) for name in listen]\n    worker = Worker(queues, connection=redis_conn)\n    worker.work()",
         "detail": "app.worker",
         "documentation": {}
     },

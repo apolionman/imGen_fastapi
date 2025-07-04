@@ -27,7 +27,7 @@ class FluxRequest(BaseModel):
 
 @router.post("/generate-flux")
 async def enqueue_flux_task(req: FluxRequest):
-    job = queue.enqueue(generate_image_task, req.prompt, req.seed)
+    job = queue.enqueue(generate_image_task, req.prompt, req.seed, timeout=1300)
     return {"task_id": job.get_id(), "status": "queued"}
 
 @router.get("/generate-flux/status/{task_id}")
@@ -89,7 +89,7 @@ async def enqueue_flux_im2im(
                 temp_path = tmp.name
 
         # Enqueue the task
-        job = queue.enqueue(generate_im2im_task, prompt, temp_path, seed)
+        job = queue.enqueue(generate_im2im_task, prompt, temp_path, seed, timeout=1300)
         return {"task_id": job.get_id(), "status": "queued"}
 
     except Exception as e:
