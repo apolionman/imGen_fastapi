@@ -13,21 +13,38 @@ jobs:
       - name: Checkout latest code
         uses: actions/checkout@v4
 
-      - name: Build Image
+      - name: Stop existing containers
+        run: |
+          docker stop imgen redis rq_worker || true
+          docker rm imgen redis rq_worker || true
+
+      - name: Start Redis
+        run: |
+          docker run -d --name redis -p 6379:6379 redis:7
+
+      - name: Build FastAPI App Image
         run: |
           docker build -t imgen:dev .
-      
-      - name: Remove Existing Docker
+
+      - name: Run FastAPI App
         run: |
-          docker stop imgen || true
-          docker rm imgen || true
-    
-      - name: Deploy to Docker
+          docker run -d --gpus all --privileged \
+            --name imgen \
+            -e HUGGINGFACE_TOKEN=${{ secrets.HUGGINGFACE_TOKEN }} \
+            --link redis \
+            -v /home/prepaire/ttm/output:/app/output \
+            -p 8016:8000 \
+            imgen:dev
+
+      - name: Run RQ Worker
         run: |
-          docker run -d --gpus all --privileged\
-            -e HUGGINGFACE_TOKEN=${{ secrets.HUGGINGFACE_TOKEN }}\
-            -v /home/prepaire/ttm/output:/app/output\
-            -p 8016:8000 --name imgen imgen:dev
+          docker run -d --gpus all --privileged \
+            --name rq_worker \
+            -e HUGGINGFACE_TOKEN=${{ secrets.HUGGINGFACE_TOKEN }} \
+            --link redis \
+            -v /home/prepaire/ttm/output:/app/output \
+            imgen:dev \
+            python worker.py
 
     environment:
       name: env

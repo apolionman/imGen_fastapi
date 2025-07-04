@@ -264,12 +264,68 @@
         "documentation": {}
     },
     {
-        "label": "asyncio,",
+        "label": "os,",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "asyncio.",
-        "description": "asyncio.",
-        "detail": "asyncio.",
+        "importPath": "os.",
+        "description": "os.",
+        "detail": "os.",
+        "documentation": {}
+    },
+    {
+        "label": "Redis",
+        "importPath": "redis",
+        "description": "redis",
+        "isExtraImport": true,
+        "detail": "redis",
+        "documentation": {}
+    },
+    {
+        "label": "Redis",
+        "importPath": "redis",
+        "description": "redis",
+        "isExtraImport": true,
+        "detail": "redis",
+        "documentation": {}
+    },
+    {
+        "label": "Queue",
+        "importPath": "rq",
+        "description": "rq",
+        "isExtraImport": true,
+        "detail": "rq",
+        "documentation": {}
+    },
+    {
+        "label": "Job",
+        "importPath": "rq",
+        "description": "rq",
+        "isExtraImport": true,
+        "detail": "rq",
+        "documentation": {}
+    },
+    {
+        "label": "Worker",
+        "importPath": "rq",
+        "description": "rq",
+        "isExtraImport": true,
+        "detail": "rq",
+        "documentation": {}
+    },
+    {
+        "label": "Queue",
+        "importPath": "rq",
+        "description": "rq",
+        "isExtraImport": true,
+        "detail": "rq",
+        "documentation": {}
+    },
+    {
+        "label": "Connection",
+        "importPath": "rq",
+        "description": "rq",
+        "isExtraImport": true,
+        "detail": "rq",
         "documentation": {}
     },
     {
@@ -363,15 +419,6 @@
         "description": "fastapi.middleware.cors",
         "isExtraImport": true,
         "detail": "fastapi.middleware.cors",
-        "documentation": {}
-    },
-    {
-        "label": "os,",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "os.",
-        "description": "os.",
-        "detail": "os.",
         "documentation": {}
     },
     {
@@ -2130,7 +2177,7 @@
         "kind": 6,
         "importPath": "app.routes.endpoints",
         "description": "app.routes.endpoints",
-        "peekOfCode": "class FluxRequest(BaseModel):\n    prompt: str\n    return_base64: Optional[bool] = True\n    seed: Optional[int] = None\n@router.post(\"/generate-flux\")\nasync def generate_flux(req: FluxRequest):\n    loop = asyncio.get_event_loop()\n    result = await loop.run_in_executor(None, generate_image_task, req.prompt, req.seed)\n    if result[\"status\"] != \"success\":\n        raise HTTPException(status_code=500, detail=result.get(\"error\", \"Unknown error\"))",
+        "peekOfCode": "class FluxRequest(BaseModel):\n    prompt: str\n    return_base64: Optional[bool] = True\n    seed: Optional[int] = None\n@router.post(\"/generate-flux\")\nasync def enqueue_flux_task(req: FluxRequest):\n    job = queue.enqueue(generate_image_task, req.prompt, req.seed)\n    return {\"task_id\": job.get_id(), \"status\": \"queued\"}\n@router.get(\"/generate-flux/status/{task_id}\")\nasync def flux_task_status(task_id: str, return_base64: Optional[bool] = True):",
         "detail": "app.routes.endpoints",
         "documentation": {}
     },
@@ -2139,7 +2186,25 @@
         "kind": 5,
         "importPath": "app.routes.endpoints",
         "description": "app.routes.endpoints",
-        "peekOfCode": "router = APIRouter()\n@router.get(\"/health\")\nasync def health():\n    return {\"status\": \"ok\"}\n# Request body model\nclass FluxRequest(BaseModel):\n    prompt: str\n    return_base64: Optional[bool] = True\n    seed: Optional[int] = None\n@router.post(\"/generate-flux\")",
+        "peekOfCode": "router = APIRouter()\n# Redis setup\nredis_conn = Redis(host=\"localhost\", port=6379)\nqueue = Queue(\"flux_image_gen\", connection=redis_conn)\n@router.get(\"/health\")\nasync def health():\n    return {\"status\": \"ok\"}\nclass FluxRequest(BaseModel):\n    prompt: str\n    return_base64: Optional[bool] = True",
+        "detail": "app.routes.endpoints",
+        "documentation": {}
+    },
+    {
+        "label": "redis_conn",
+        "kind": 5,
+        "importPath": "app.routes.endpoints",
+        "description": "app.routes.endpoints",
+        "peekOfCode": "redis_conn = Redis(host=\"localhost\", port=6379)\nqueue = Queue(\"flux_image_gen\", connection=redis_conn)\n@router.get(\"/health\")\nasync def health():\n    return {\"status\": \"ok\"}\nclass FluxRequest(BaseModel):\n    prompt: str\n    return_base64: Optional[bool] = True\n    seed: Optional[int] = None\n@router.post(\"/generate-flux\")",
+        "detail": "app.routes.endpoints",
+        "documentation": {}
+    },
+    {
+        "label": "queue",
+        "kind": 5,
+        "importPath": "app.routes.endpoints",
+        "description": "app.routes.endpoints",
+        "peekOfCode": "queue = Queue(\"flux_image_gen\", connection=redis_conn)\n@router.get(\"/health\")\nasync def health():\n    return {\"status\": \"ok\"}\nclass FluxRequest(BaseModel):\n    prompt: str\n    return_base64: Optional[bool] = True\n    seed: Optional[int] = None\n@router.post(\"/generate-flux\")\nasync def enqueue_flux_task(req: FluxRequest):",
         "detail": "app.routes.endpoints",
         "documentation": {}
     },
@@ -2177,6 +2242,24 @@
         "description": "app.main",
         "peekOfCode": "app = FastAPI()\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"*\"],\n    allow_credentials=True,\n    allow_methods=[\"*\"],\n    allow_headers=[\"*\"],\n)\napp.include_router(endpoints_router, prefix=\"/api/v1\", tags=[\"Backend Endpoints\"])",
         "detail": "app.main",
+        "documentation": {}
+    },
+    {
+        "label": "listen",
+        "kind": 5,
+        "importPath": "app.worker",
+        "description": "app.worker",
+        "peekOfCode": "listen = ['flux_image_gen']\nredis_conn = Redis(host='redis', port=6379)\nif __name__ == '__main__':\n    with Connection(redis_conn):\n        worker = Worker(map(Queue, listen))\n        worker.work()",
+        "detail": "app.worker",
+        "documentation": {}
+    },
+    {
+        "label": "redis_conn",
+        "kind": 5,
+        "importPath": "app.worker",
+        "description": "app.worker",
+        "peekOfCode": "redis_conn = Redis(host='redis', port=6379)\nif __name__ == '__main__':\n    with Connection(redis_conn):\n        worker = Worker(map(Queue, listen))\n        worker.work()",
+        "detail": "app.worker",
         "documentation": {}
     },
     {

@@ -1,6 +1,8 @@
 # Core settings and validation
 pydantic
 pydantic-settings
+redis
+rq
 
 # FastAPI web server
 fastapi

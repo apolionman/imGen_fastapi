@@ -27,7 +27,7 @@ def generate_im2im_task(prompt: str, image_path: str, seed: int = None) -> dict:
         genI_name = os.path.join(output_dir, f"{str(uuid.uuid4())[:8]}.png")
         image.save(genI_name)
         print(f"✅ Image saved to {genI_name} (Seed: {seed})")
-
+        
         return {
             "status": "success",
             "image_path": genI_name,

@@ -3,87 +3,44 @@ from fastapi.responses import JSONResponse, FileResponse
 from PIL import Image, UnidentifiedImageError
 from pydantic import BaseModel
 from typing import Optional
-import asyncio, os, base64, io, tempfile
+import os, base64, io, tempfile, json
+from redis import Redis
+from rq import Queue, Job
 from app.scripts.flux_tx2im import generate_image_task
 from app.scripts.flux_im2im import generate_im2im_task
 
 router = APIRouter()
 
+# Redis setup
+redis_conn = Redis(host="localhost", port=6379)
+queue = Queue("flux_image_gen", connection=redis_conn)
 
 @router.get("/health")
 async def health():
     return {"status": "ok"}
 
-
-# Request body model
 class FluxRequest(BaseModel):
     prompt: str
     return_base64: Optional[bool] = True
     seed: Optional[int] = None
 
 @router.post("/generate-flux")
-async def generate_flux(req: FluxRequest):
-    loop = asyncio.get_event_loop()
-    result = await loop.run_in_executor(None, generate_image_task, req.prompt, req.seed)
+async def enqueue_flux_task(req: FluxRequest):
+    job = queue.enqueue(generate_image_task, req.prompt, req.seed)
+    return {"task_id": job.get_id(), "status": "queued"}
 
-    if result["status"] != "success":
-        raise HTTPException(status_code=500, detail=result.get("error", "Unknown error"))
-
-    image_path = result["image_path"]
-
-    if req.return_base64:
-        with open(image_path, "rb") as img_file:
-            encoded_string = base64.b64encode(img_file.read()).decode('utf-8')
-        return JSONResponse(content={
-            "image_base64": f"data:image/png;base64,{encoded_string}"
-        })
-
-    return FileResponse(
-        path=image_path,
-        media_type="image/png",
-        filename=os.path.basename(image_path)
-    )
-
-@router.post("/generate-flux-im2im")
-async def generate_flux_im2im(
-    prompt: str = Form(...),
-    input_image: UploadFile = File(...),
-    return_base64: Optional[bool] = Form(True),
-    seed: Optional[int] = Form(None)
-):
+@router.get("/generate-flux/status/{task_id}")
+async def flux_task_status(task_id: str, return_base64: Optional[bool] = True):
     try:
-        # Read raw image bytes
-        contents = await input_image.read()
+        job = Job.fetch(task_id, connection=redis_conn)
+    except Exception:
+        raise HTTPException(status_code=404, detail="Task not found")
 
-        # Detect file type
-        filename = input_image.filename.lower()
-        if filename.endswith(".svg"):
-            # Optional: Convert SVG to PNG using cairosvg
-            import cairosvg
-            with tempfile.NamedTemporaryFile(delete=False, suffix=".png") as tmp:
-                cairosvg.svg2png(bytestring=contents, write_to=tmp.name)
-                temp_path = tmp.name
-        else:
-            # Handle common raster images
-            try:
-                image = Image.open(io.BytesIO(contents)).convert("RGB")
-            except UnidentifiedImageError:
-                raise HTTPException(status_code=400, detail="Unsupported image format.")
-
-            with tempfile.NamedTemporaryFile(delete=False, suffix=".png") as tmp:
-                image.save(tmp.name, format="PNG")
-                print(f"Input image saved at: {tmp.name}")
-                temp_path = tmp.name
-
-        # Run sync function
-        loop = asyncio.get_event_loop()
-        print(f"Calling generate_im2im_task with prompt: {prompt} and seed: {seed}")
-        result = await loop.run_in_executor(None, generate_im2im_task, prompt, temp_path, seed)
-        print(f"Result from generate_im2im_task: {result}")
-        if result["status"] != "success":
-            raise HTTPException(status_code=500, detail=result.get("error", "Unknown error"))
-
-        image_path = result["image_path"]
+    if job.is_finished:
+        result = job.result
+        image_path = result.get("image_path")
+        if not image_path or not os.path.exists(image_path):
+            raise HTTPException(status_code=500, detail="Image not found")
 
         if return_base64:
             with open(image_path, "rb") as img_file:
@@ -91,7 +48,7 @@ async def generate_flux_im2im(
             return JSONResponse(content={
                 "status": "success",
                 "image_base64": f"data:image/png;base64,{encoded_string}",
-                "seed": result["seed"]
+                "seed": result.get("seed")
             })
 
         return FileResponse(
@@ -99,5 +56,72 @@ async def generate_flux_im2im(
             media_type="image/png",
             filename=os.path.basename(image_path)
         )
+    elif job.is_failed:
+        return {"status": "failed"}
+    else:
+        return {"status": job.get_status()}
+
+@router.post("/generate-flux-im2im")
+async def enqueue_flux_im2im(
+    prompt: str = Form(...),
+    input_image: UploadFile = File(...),
+    return_base64: Optional[bool] = Form(True),
+    seed: Optional[int] = Form(None)
+):
+    try:
+        contents = await input_image.read()
+        filename = input_image.filename.lower()
+
+        if filename.endswith(".svg"):
+            import cairosvg
+            with tempfile.NamedTemporaryFile(delete=False, suffix=".png") as tmp:
+                cairosvg.svg2png(bytestring=contents, write_to=tmp.name)
+                temp_path = tmp.name
+        else:
+            try:
+                image = Image.open(io.BytesIO(contents)).convert("RGB")
+            except UnidentifiedImageError:
+                raise HTTPException(status_code=400, detail="Unsupported image format.")
+
+            with tempfile.NamedTemporaryFile(delete=False, suffix=".png") as tmp:
+                image.save(tmp.name, format="PNG")
+                temp_path = tmp.name
+
+        # Enqueue the task
+        job = queue.enqueue(generate_im2im_task, prompt, temp_path, seed)
+        return {"task_id": job.get_id(), "status": "queued"}
+
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+@router.get("/generate-flux-im2im/status/{task_id}")
+async def flux_im2im_task_status(task_id: str, return_base64: Optional[bool] = True):
+    try:
+        job = Job.fetch(task_id, connection=redis_conn)
+    except Exception:
+        raise HTTPException(status_code=404, detail="Task not found")
+
+    if job.is_finished:
+        result = job.result
+        image_path = result.get("image_path")
+        if not image_path or not os.path.exists(image_path):
+            raise HTTPException(status_code=500, detail="Image not found")
+
+        if return_base64:
+            with open(image_path, "rb") as img_file:
+                encoded_string = base64.b64encode(img_file.read()).decode('utf-8')
+            return JSONResponse(content={
+                "status": "success",
+                "image_base64": f"data:image/png;base64,{encoded_string}",
+                "seed": result.get("seed")
+            })
+
+        return FileResponse(
+            path=image_path,
+            media_type="image/png",
+            filename=os.path.basename(image_path)
+        )
+    elif job.is_failed:
+        return {"status": "failed"}
+    else:
+        return {"status": job.get_status()}
