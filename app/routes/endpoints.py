@@ -10,6 +10,7 @@ from rq.job import Job
 from app.scripts.flux_tx2im import generate_image_task
 from app.scripts.flux_im2im import generate_im2im_task
 import cairosvg
+import uuid
 
 router = APIRouter()
 
@@ -71,23 +72,27 @@ async def enqueue_flux_im2im(
     seed: Optional[int] = Form(None)
 ):
     try:
-        contents = await input_image.read()
-        filename = input_image.filename.lower()
+        # Create input folder if it doesn't exist
+        input_dir = "/app/input_images"
+        os.makedirs(input_dir, exist_ok=True)
 
-        if filename.endswith(".svg"):
-            with tempfile.NamedTemporaryFile(delete=False, suffix=".png") as tmp:
-                cairosvg.svg2png(bytestring=contents, write_to=tmp.name)
-                temp_path = tmp.name
+        # Read image content and generate a unique filename
+        contents = await input_image.read()
+        ext = ".png"  # final format
+        input_id = str(uuid.uuid4())[:8]
+        saved_path = os.path.join(input_dir, f"{input_id}{ext}")
+
+        if input_image.filename.lower().endswith(".svg"):
+            cairosvg.svg2png(bytestring=contents, write_to=saved_path)
         else:
             try:
                 image = Image.open(io.BytesIO(contents)).convert("RGB")
             except UnidentifiedImageError:
                 raise HTTPException(status_code=400, detail="Unsupported image format.")
-            with tempfile.NamedTemporaryFile(delete=False, suffix=".png") as tmp:
-                image.save(tmp.name, format="PNG")
-                temp_path = tmp.name
+            image.save(saved_path, format="PNG")
 
-        job = queue.enqueue(generate_im2im_task, prompt, temp_path, seed)
+        # Enqueue job with path (not raw file)
+        job = queue.enqueue(generate_im2im_task, prompt, saved_path, seed)
         return {"task_id": job.get_id(), "status": "queued"}
 
     except Exception as e:

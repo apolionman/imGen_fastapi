@@ -18,13 +18,16 @@ def generate_im2im_task(prompt: str, image_path: str, seed: int = None) -> dict:
             seed = random.randint(0, 999999)
         generator = torch.manual_seed(seed)
         input_image = load_image(image_path)
+        print(f"🔍 Starting inference with prompt: '{prompt}', seed: {seed}")
         image = pipe(
             image=input_image,
             prompt=prompt,
             guidance_scale=2.5,
             generator=generator
         ).images[0]
-
+        if not image or not image.images or image.images[0] is None:
+            raise ValueError("❌ Image generation returned empty result.")
+        
         output_dir = "./output"
         os.makedirs(output_dir, exist_ok=True)
         genI_name = os.path.join(output_dir, f"{str(uuid.uuid4())[:8]}.png")
