@@ -5,7 +5,8 @@ from pydantic import BaseModel
 from typing import Optional
 import os, base64, io, tempfile, json
 from redis import Redis
-from rq import Queue, Job
+from rq import Queue
+from rq.job import Job
 from app.scripts.flux_tx2im import generate_image_task
 from app.scripts.flux_im2im import generate_im2im_task
 
