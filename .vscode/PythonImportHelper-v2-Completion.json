@@ -441,6 +441,15 @@
         "documentation": {}
     },
     {
+        "label": "cairosvg",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "cairosvg",
+        "description": "cairosvg",
+        "detail": "cairosvg",
+        "documentation": {}
+    },
+    {
         "label": "torch,",
         "kind": 6,
         "isExtraImport": true,

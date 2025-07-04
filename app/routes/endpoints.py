@@ -9,6 +9,7 @@ from rq import Queue
 from rq.job import Job
 from app.scripts.flux_tx2im import generate_image_task
 from app.scripts.flux_im2im import generate_im2im_task
+import cairosvg
 
 router = APIRouter()
 
@@ -69,31 +70,28 @@ async def enqueue_flux_im2im(
     return_base64: Optional[bool] = Form(True),
     seed: Optional[int] = Form(None)
 ):
-    # try:
-    #     contents = await input_image.read()
-    #     filename = input_image.filename.lower()
+    try:
+        contents = await input_image.read()
+        filename = input_image.filename.lower()
 
-    #     if filename.endswith(".svg"):
-    #         import cairosvg
-    #         with tempfile.NamedTemporaryFile(delete=False, suffix=".png") as tmp:
-    #             cairosvg.svg2png(bytestring=contents, write_to=tmp.name)
-    #             temp_path = tmp.name
-    #     else:
-    #         try:
-    #             image = Image.open(io.BytesIO(contents)).convert("RGB")
-    #         except UnidentifiedImageError:
-    #             raise HTTPException(status_code=400, detail="Unsupported image format.")
+        if filename.endswith(".svg"):
+            with tempfile.NamedTemporaryFile(delete=False, suffix=".png") as tmp:
+                cairosvg.svg2png(bytestring=contents, write_to=tmp.name)
+                temp_path = tmp.name
+        else:
+            try:
+                image = Image.open(io.BytesIO(contents)).convert("RGB")
+            except UnidentifiedImageError:
+                raise HTTPException(status_code=400, detail="Unsupported image format.")
+            with tempfile.NamedTemporaryFile(delete=False, suffix=".png") as tmp:
+                image.save(tmp.name, format="PNG")
+                temp_path = tmp.name
 
-    #         with tempfile.NamedTemporaryFile(delete=False, suffix=".png") as tmp:
-    #             image.save(tmp.name, format="PNG")
-    #             temp_path = tmp.name
+        job = queue.enqueue(generate_im2im_task, prompt, temp_path, seed)
+        return {"task_id": job.get_id(), "status": "queued"}
 
-        # Enqueue the task
-    job = queue.enqueue(generate_im2im_task, prompt, input_image, seed)
-    return {"task_id": job.get_id(), "status": "queued"}
-
-    # except Exception as e:
-    #     raise HTTPException(status_code=500, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 @router.get("/generate-flux-im2im/status/{task_id}")
 async def flux_im2im_task_status(task_id: str, return_base64: Optional[bool] = True):
