@@ -1,5 +1,6 @@
 from redis import Redis
-from rq import Worker, Queue, Connection
+from rq import Worker, Queue
+from rq.connections import Connection
 
 listen = ['flux_image_gen']
 redis_conn = Redis(host='redis', port=6379)

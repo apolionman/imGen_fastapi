@@ -401,14 +401,6 @@
         "documentation": {}
     },
     {
-        "label": "Connection",
-        "importPath": "rq",
-        "description": "rq",
-        "isExtraImport": true,
-        "detail": "rq",
-        "documentation": {}
-    },
-    {
         "label": "Job",
         "importPath": "rq.job",
         "description": "rq.job",
@@ -547,6 +539,14 @@
         "description": "app.routes.endpoints",
         "isExtraImport": true,
         "detail": "app.routes.endpoints",
+        "documentation": {}
+    },
+    {
+        "label": "Connection",
+        "importPath": "rq.connections",
+        "description": "rq.connections",
+        "isExtraImport": true,
+        "detail": "rq.connections",
         "documentation": {}
     },
     {
