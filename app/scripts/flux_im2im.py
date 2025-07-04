@@ -6,22 +6,27 @@ import random
 def generate_im2im_task(prompt: str, image_path: str, seed: int = None) -> dict:
     from huggingface_hub import login
     login(token=os.environ["HUGGINGFACE_TOKEN"])
-    # Load pipeline
+    
+    print("Start loading pipeline!")
     pipe = FluxKontextPipeline.from_pretrained(
         "black-forest-labs/FLUX.1-Kontext-dev",
         torch_dtype="torch.float16",
-        device_map="balanced",
-        use_auth_token=os.environ["HUGGINGFACE_TOKEN"]
+        device_map="balanced"
     )
+    print("Pipe loaded starting generating image")
     try:
+        print(f"Went inside try")
         if seed is None:
             seed = random.randint(0, 999999)
+            print(f"seed#{seed}")
         generator = torch.manual_seed(seed)
         input_image = load_image(image_path)
         print(f"🔍 Starting inference with prompt: '{prompt}', seed: {seed}")
         image = pipe(
+            prompt,
+            height=1024,
+            width=1024,
             image=input_image,
-            prompt=prompt,
             guidance_scale=2.5,
             generator=generator
         ).images[0]

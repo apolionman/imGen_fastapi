@@ -2,18 +2,17 @@ import torch, uuid, os, gc
 from diffusers import FluxPipeline
 import random
 
-
-
 def generate_image_task(prompt: str, seed: int = None) -> dict:
     from huggingface_hub import login
     login(token=os.environ["HUGGINGFACE_TOKEN"])
     # Load pipeline
+    print("Start loading pipeline!")
     pipe = FluxPipeline.from_pretrained(
         "black-forest-labs/FLUX.1-dev",
         torch_dtype=torch.float16,
-        device_map="balanced",
-        use_auth_token=os.environ["HUGGINGFACE_TOKEN"]
+        device_map="balanced"
     )
+    print("Pipe loaded starting generating image")
     try:
         if seed is None:
             seed = random.randint(0, 999999)
