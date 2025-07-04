@@ -2,6 +2,7 @@ import torch, uuid, os, gc
 from diffusers import FluxKontextPipeline
 from diffusers.utils import load_image
 import random
+from PIL import Image
 
 def generate_im2im_task(prompt: str, image_path: str, seed: int = None) -> dict:
     from huggingface_hub import login
@@ -13,13 +14,14 @@ def generate_im2im_task(prompt: str, image_path: str, seed: int = None) -> dict:
         torch_dtype=torch.float16,
         device_map="balanced"
     )
-   
+
     print(f"image here: {image_path}")
     if seed is None:
         seed = random.randint(0, 999999)
 
     generator = torch.manual_seed(seed)
-    input_image = load_image(image_path).convert("RGB").resize((1024, 1024))
+    input_image = Image.open(image_path).convert("RGB").resize((1024, 1024))
+    # input_image = load_image(image_path).convert("RGB").resize((1024, 1024))
     input_image.save("debug_input.png")
 
     print(f"🧐 Input image loaded: {image_path}")
