@@ -11,7 +11,8 @@ def generate_image_task(prompt: str, seed: int = None) -> dict:
     pipe = FluxPipeline.from_pretrained(
         "black-forest-labs/FLUX.1-dev",
         torch_dtype=torch.float16,
-        device_map="balanced"
+        device_map="balanced",
+        use_auth_token=os.environ["HUGGINGFACE_TOKEN"]
     )
     try:
         if seed is None:

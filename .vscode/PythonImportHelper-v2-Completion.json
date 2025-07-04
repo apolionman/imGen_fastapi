@@ -2327,7 +2327,7 @@
         "kind": 2,
         "importPath": "app.scripts.flux_im2im",
         "description": "app.scripts.flux_im2im",
-        "peekOfCode": "def generate_im2im_task(prompt: str, image_path: str, seed: int = None) -> dict:\n    # Load pipeline\n    pipe = FluxKontextPipeline.from_pretrained(\n        \"black-forest-labs/FLUX.1-Kontext-dev\",\n        torch_dtype=\"torch.float16\",\n        device_map=\"balanced\"\n    )\n    try:\n        if seed is None:\n            seed = random.randint(0, 999999)",
+        "peekOfCode": "def generate_im2im_task(prompt: str, image_path: str, seed: int = None) -> dict:\n    from huggingface_hub import login\n    login(token=os.environ[\"HUGGINGFACE_TOKEN\"])\n    # Load pipeline\n    pipe = FluxKontextPipeline.from_pretrained(\n        \"black-forest-labs/FLUX.1-Kontext-dev\",\n        torch_dtype=\"torch.float16\",\n        device_map=\"balanced\",\n        use_auth_token=os.environ[\"HUGGINGFACE_TOKEN\"]\n    )",
         "detail": "app.scripts.flux_im2im",
         "documentation": {}
     },
@@ -2336,7 +2336,7 @@
         "kind": 2,
         "importPath": "app.scripts.flux_tx2im",
         "description": "app.scripts.flux_tx2im",
-        "peekOfCode": "def generate_image_task(prompt: str, seed: int = None) -> dict:\n    from huggingface_hub import login\n    login(token=os.environ[\"HUGGINGFACE_TOKEN\"])\n    # Load pipeline\n    pipe = FluxPipeline.from_pretrained(\n        \"black-forest-labs/FLUX.1-dev\",\n        torch_dtype=torch.float16,\n        device_map=\"balanced\"\n    )\n    try:",
+        "peekOfCode": "def generate_image_task(prompt: str, seed: int = None) -> dict:\n    from huggingface_hub import login\n    login(token=os.environ[\"HUGGINGFACE_TOKEN\"])\n    # Load pipeline\n    pipe = FluxPipeline.from_pretrained(\n        \"black-forest-labs/FLUX.1-dev\",\n        torch_dtype=torch.float16,\n        device_map=\"balanced\",\n        use_auth_token=os.environ[\"HUGGINGFACE_TOKEN\"]\n    )",
         "detail": "app.scripts.flux_tx2im",
         "documentation": {}
     },
