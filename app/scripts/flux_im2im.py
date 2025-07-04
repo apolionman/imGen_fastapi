@@ -10,7 +10,7 @@ def generate_im2im_task(prompt: str, image_path: str, seed: int = None) -> dict:
     print("Start loading pipeline!")
     pipe = FluxKontextPipeline.from_pretrained(
         "black-forest-labs/FLUX.1-Kontext-dev",
-        torch_dtype="torch.float16",
+        torch_dtype=torch.float16,
         device_map="balanced"
     )
     try:

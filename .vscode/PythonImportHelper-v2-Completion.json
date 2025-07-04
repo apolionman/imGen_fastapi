@@ -2336,7 +2336,7 @@
         "kind": 2,
         "importPath": "app.scripts.flux_im2im",
         "description": "app.scripts.flux_im2im",
-        "peekOfCode": "def generate_im2im_task(prompt: str, image_path: str, seed: int = None) -> dict:\n    from huggingface_hub import login\n    login(token=os.environ[\"HUGGINGFACE_TOKEN\"])\n    print(\"Start loading pipeline!\")\n    pipe = FluxKontextPipeline.from_pretrained(\n        \"black-forest-labs/FLUX.1-Kontext-dev\",\n        torch_dtype=\"torch.float16\",\n        device_map=\"balanced\"\n    )\n    try:",
+        "peekOfCode": "def generate_im2im_task(prompt: str, image_path: str, seed: int = None) -> dict:\n    from huggingface_hub import login\n    login(token=os.environ[\"HUGGINGFACE_TOKEN\"])\n    print(\"Start loading pipeline!\")\n    pipe = FluxKontextPipeline.from_pretrained(\n        \"black-forest-labs/FLUX.1-Kontext-dev\",\n        torch_dtype=torch.float16,\n        device_map=\"balanced\"\n    )\n    try:",
         "detail": "app.scripts.flux_im2im",
         "documentation": {}
     },
