@@ -14,7 +14,7 @@ router = APIRouter()
 
 # Redis setup
 redis_conn = Redis(host="redis", port=6379)
-queue = Queue("flux_image_gen", connection=redis_conn)
+queue = Queue("flux_image_gen", connection=redis_conn, default_timeout=3600)
 
 @router.get("/health")
 async def health():
@@ -27,7 +27,7 @@ class FluxRequest(BaseModel):
 
 @router.post("/generate-flux")
 async def enqueue_flux_task(req: FluxRequest):
-    job = queue.enqueue(generate_image_task, req.prompt, req.seed, timeout=1300)
+    job = queue.enqueue(generate_image_task, req.prompt, req.seed)
     return {"task_id": job.get_id(), "status": "queued"}
 
 @router.get("/generate-flux/status/{task_id}")
@@ -89,7 +89,7 @@ async def enqueue_flux_im2im(
                 temp_path = tmp.name
 
         # Enqueue the task
-        job = queue.enqueue(generate_im2im_task, prompt, temp_path, seed, timeout=1300)
+        job = queue.enqueue(generate_im2im_task, prompt, temp_path, seed)
         return {"task_id": job.get_id(), "status": "queued"}
 
     except Exception as e:

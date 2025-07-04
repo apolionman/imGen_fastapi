@@ -2282,7 +2282,7 @@
         "kind": 6,
         "importPath": "app.routes.endpoints",
         "description": "app.routes.endpoints",
-        "peekOfCode": "class FluxRequest(BaseModel):\n    prompt: str\n    return_base64: Optional[bool] = True\n    seed: Optional[int] = None\n@router.post(\"/generate-flux\")\nasync def enqueue_flux_task(req: FluxRequest):\n    job = queue.enqueue(generate_image_task, req.prompt, req.seed, timeout=1300)\n    return {\"task_id\": job.get_id(), \"status\": \"queued\"}\n@router.get(\"/generate-flux/status/{task_id}\")\nasync def flux_task_status(task_id: str, return_base64: Optional[bool] = True):",
+        "peekOfCode": "class FluxRequest(BaseModel):\n    prompt: str\n    return_base64: Optional[bool] = True\n    seed: Optional[int] = None\n@router.post(\"/generate-flux\")\nasync def enqueue_flux_task(req: FluxRequest):\n    job = queue.enqueue(generate_image_task, req.prompt, req.seed)\n    return {\"task_id\": job.get_id(), \"status\": \"queued\"}\n@router.get(\"/generate-flux/status/{task_id}\")\nasync def flux_task_status(task_id: str, return_base64: Optional[bool] = True):",
         "detail": "app.routes.endpoints",
         "documentation": {}
     },
@@ -2291,7 +2291,7 @@
         "kind": 5,
         "importPath": "app.routes.endpoints",
         "description": "app.routes.endpoints",
-        "peekOfCode": "router = APIRouter()\n# Redis setup\nredis_conn = Redis(host=\"redis\", port=6379)\nqueue = Queue(\"flux_image_gen\", connection=redis_conn)\n@router.get(\"/health\")\nasync def health():\n    return {\"status\": \"ok\"}\nclass FluxRequest(BaseModel):\n    prompt: str\n    return_base64: Optional[bool] = True",
+        "peekOfCode": "router = APIRouter()\n# Redis setup\nredis_conn = Redis(host=\"redis\", port=6379)\nqueue = Queue(\"flux_image_gen\", connection=redis_conn, default_timeout=3600)\n@router.get(\"/health\")\nasync def health():\n    return {\"status\": \"ok\"}\nclass FluxRequest(BaseModel):\n    prompt: str\n    return_base64: Optional[bool] = True",
         "detail": "app.routes.endpoints",
         "documentation": {}
     },
@@ -2300,7 +2300,7 @@
         "kind": 5,
         "importPath": "app.routes.endpoints",
         "description": "app.routes.endpoints",
-        "peekOfCode": "redis_conn = Redis(host=\"redis\", port=6379)\nqueue = Queue(\"flux_image_gen\", connection=redis_conn)\n@router.get(\"/health\")\nasync def health():\n    return {\"status\": \"ok\"}\nclass FluxRequest(BaseModel):\n    prompt: str\n    return_base64: Optional[bool] = True\n    seed: Optional[int] = None\n@router.post(\"/generate-flux\")",
+        "peekOfCode": "redis_conn = Redis(host=\"redis\", port=6379)\nqueue = Queue(\"flux_image_gen\", connection=redis_conn, default_timeout=3600)\n@router.get(\"/health\")\nasync def health():\n    return {\"status\": \"ok\"}\nclass FluxRequest(BaseModel):\n    prompt: str\n    return_base64: Optional[bool] = True\n    seed: Optional[int] = None\n@router.post(\"/generate-flux\")",
         "detail": "app.routes.endpoints",
         "documentation": {}
     },
@@ -2309,7 +2309,7 @@
         "kind": 5,
         "importPath": "app.routes.endpoints",
         "description": "app.routes.endpoints",
-        "peekOfCode": "queue = Queue(\"flux_image_gen\", connection=redis_conn)\n@router.get(\"/health\")\nasync def health():\n    return {\"status\": \"ok\"}\nclass FluxRequest(BaseModel):\n    prompt: str\n    return_base64: Optional[bool] = True\n    seed: Optional[int] = None\n@router.post(\"/generate-flux\")\nasync def enqueue_flux_task(req: FluxRequest):",
+        "peekOfCode": "queue = Queue(\"flux_image_gen\", connection=redis_conn, default_timeout=3600)\n@router.get(\"/health\")\nasync def health():\n    return {\"status\": \"ok\"}\nclass FluxRequest(BaseModel):\n    prompt: str\n    return_base64: Optional[bool] = True\n    seed: Optional[int] = None\n@router.post(\"/generate-flux\")\nasync def enqueue_flux_task(req: FluxRequest):",
         "detail": "app.routes.endpoints",
         "documentation": {}
     },
