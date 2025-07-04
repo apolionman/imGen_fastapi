@@ -13,7 +13,7 @@ from app.scripts.flux_im2im import generate_im2im_task
 router = APIRouter()
 
 # Redis setup
-redis_conn = Redis(host="localhost", port=6379)
+redis_conn = Redis(host="redis", port=6379)
 queue = Queue("flux_image_gen", connection=redis_conn)
 
 @router.get("/health")
