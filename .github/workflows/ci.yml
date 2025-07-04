@@ -48,7 +48,7 @@ jobs:
             --network queue_net \
             -v /home/prepaire/ttm/output:/app/output \
             imgen:dev \
-            python worker.py
+            python3 worker.py
 
     environment:
       name: env
