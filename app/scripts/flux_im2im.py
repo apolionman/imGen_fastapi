@@ -30,10 +30,10 @@ def generate_im2im_task(prompt: str, image_path: str, seed: int = None) -> dict:
 
     # try:
     result = pipe(
-        prompt,
+        prompt=prompt,
+        image=input_image,
         height=1024,
         width=1024,
-        image=input_image,
         guidance_scale=2.5,
         generator=generator
     )
