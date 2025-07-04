@@ -17,10 +17,14 @@ jobs:
         run: |
           docker stop imgen redis rq_worker || true
           docker rm imgen redis rq_worker || true
+          docker network rm queue_net || true
+
+      - name: Create Docker network
+        run: docker network create queue_net
 
       - name: Start Redis
         run: |
-          docker run -d --name redis -p 6379:6379 redis:7
+          docker run -d --name redis --network queue_net -p 6379:6379 redis:7
 
       - name: Build FastAPI App Image
         run: |
@@ -31,7 +35,7 @@ jobs:
           docker run -d --gpus all --privileged \
             --name imgen \
             -e HUGGINGFACE_TOKEN=${{ secrets.HUGGINGFACE_TOKEN }} \
-            --link redis \
+            --network queue_net \
             -v /home/prepaire/ttm/output:/app/output \
             -p 8016:8000 \
             imgen:dev
@@ -41,7 +45,7 @@ jobs:
           docker run -d --gpus all --privileged \
             --name rq_worker \
             -e HUGGINGFACE_TOKEN=${{ secrets.HUGGINGFACE_TOKEN }} \
-            --link redis \
+            --network queue_net \
             -v /home/prepaire/ttm/output:/app/output \
             imgen:dev \
             python worker.py

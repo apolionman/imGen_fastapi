@@ -6,5 +6,6 @@ redis_conn = Redis(host='redis', port=6379)
 
 if __name__ == '__main__':
     with Connection(redis_conn):
-        worker = Worker(map(Queue, listen))
+        queues = [Queue(name, connection=redis_conn) for name in listen]
+        worker = Worker(queues)
         worker.work()
