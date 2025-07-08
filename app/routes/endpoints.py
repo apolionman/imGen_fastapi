@@ -12,6 +12,7 @@ from app.scripts.flux_im2im import generate_im2im_task
 import cairosvg
 import uuid
 
+
 router = APIRouter()
 
 # Redis setup
@@ -24,13 +25,24 @@ async def health():
 
 class FluxRequest(BaseModel):
     prompt: str
+    user_uuid: str
     return_base64: Optional[bool] = True
     seed: Optional[int] = None
 
 @router.post("/generate-flux")
 async def enqueue_flux_task(req: FluxRequest):
-    job = queue.enqueue(generate_image_task, req.prompt, req.seed)
-    return {"task_id": job.get_id(), "status": "queued"}
+    # Step 1: Generate a unique task ID
+    task_id = str(uuid.uuid4())
+    # Step 2: Enqueue the job with the custom task ID and additional arguments
+    job = queue.enqueue(
+        generate_image_task,
+        req.prompt,
+        req.seed,
+        req.user_uuid,
+        task_id,
+        job_id=task_id  # Set job ID explicitly
+    )
+    return {"task_id": job.id, "status": "queued"}
 
 @router.get("/generate-flux/status/{task_id}")
 async def flux_task_status(task_id: str, return_base64: Optional[bool] = True):
@@ -66,11 +78,14 @@ async def flux_task_status(task_id: str, return_base64: Optional[bool] = True):
 
 @router.post("/generate-flux-im2im")
 async def enqueue_flux_im2im(
+    user_uuid: str,
     prompt: str = Form(...),
     input_image: UploadFile = File(...),
     return_base64: Optional[bool] = Form(True),
     seed: Optional[int] = Form(None)
 ):
+    task_id = str(uuid.uuid4())
+
     try:
         # Create input folder if it doesn't exist
         input_dir = "/app/input_images"
@@ -93,7 +108,16 @@ async def enqueue_flux_im2im(
 
         # Enqueue job with path (not raw file)
         job = queue.enqueue(generate_im2im_task, prompt, saved_path, seed)
-        return {"task_id": job.get_id(), "status": "queued"}
+        job = queue.enqueue(
+        generate_im2im_task,
+        prompt,
+        seed,
+        saved_path,
+        user_uuid,
+        task_id,
+        job_id=task_id
+    )
+        return {"task_id": job.id, "status": "queued"}
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

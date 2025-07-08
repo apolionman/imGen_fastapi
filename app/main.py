@@ -1,4 +1,5 @@
 from fastapi import FastAPI, UploadFile, File, Form, Request, HTTPException
+from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse, JSONResponse
 import os, json, uuid, shutil, tempfile, httpx, re, asyncio, requests
@@ -12,6 +13,8 @@ login(token=os.getenv("HUGGINGFACE_TOKEN"))
 from app.routes.endpoints import router as endpoints_router
 
 app = FastAPI()
+
+app.mount("/generated/images", StaticFiles(directory="/app/output"), name="images")
 
 app.add_middleware(
     CORSMiddleware,
