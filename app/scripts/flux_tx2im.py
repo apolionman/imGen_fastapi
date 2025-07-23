@@ -1,6 +1,7 @@
 import torch, uuid, os, gc, random
 from diffusers import FluxPipeline
 from supabase import create_client, Client
+from io import BytesIO
 
 # Supabase setup
 SUPABASE_URL = os.getenv("SUPABASE_URL")
@@ -17,7 +18,7 @@ def generate_image_task(prompt: str,
     print("Start loading pipeline!")
     pipe = FluxPipeline.from_pretrained(
         "black-forest-labs/FLUX.1-dev",
-        torch_dtype=torch.float16,
+        torch_dtype=torch.float32,
         device_map="balanced"
     )
     print("Pipe loaded, starting image generation")
@@ -29,24 +30,37 @@ def generate_image_task(prompt: str,
 
         image = pipe(
             prompt,
-            height=1024,
-            width=1024,
+            height=768,
+            width=1360,
             guidance_scale=3.5,
             num_inference_steps=50,
             max_sequence_length=512,
-            generator=generator
+            # generator=generator
         ).images[0]
 
-        output_dir = "./output"
-        os.makedirs(output_dir, exist_ok=True)
+        img_buffer = BytesIO()
+        image.save(img_buffer, format="PNG")
+        img_buffer.seek(0)
+
+        # Define upload path
         filename = f"{uuid.uuid4().hex[:8]}.png"
-        image_path = os.path.join(output_dir, filename)
-        image.save(image_path)
+        file_path = f"thumbnails/{filename}"
 
-        backend_url = os.getenv("BACKEND_URL")
-        image_url = f"{backend_url}/generated/images/{filename}"
+        # Upload to Supabase Storage
+        upload_response = supabase.storage.from_("thumbnails").upload(
+            path=file_path,
+            file=img_buffer,
+            file_options={"upsert": True}
+        )
 
-        # Save to Supabase
+        if not upload_response or "error" in upload_response:
+            print(f"⚠️ Upload error: {upload_response.get('error')}")
+            return {"status": "error", "error": "Upload failed"}
+
+        # Use returned relative path as image_url
+        image_url = upload_response.get("path")
+
+        # Save path to Supabase DB
         try:
             supabase.table("thumbnail_tasks").upsert({
                 "task_id": task_id,
@@ -55,12 +69,13 @@ def generate_image_task(prompt: str,
             }).on_conflict(["task_id", "user_id"]).execute()
         except Exception as e:
             print(f"⚠️ Supabase insert error: {e}")
+            return {"status": "error", "error": "DB insert failed"}
 
-        print(f"✅ Image saved to {image_path} (Seed: {seed})")
+        print(f"✅ Image uploaded to Supabase at {image_url} (Seed: {seed})")
 
         return {
             "status": "success",
-            "image_path": image_path,
+            "image_url": image_url,
             "filename": filename,
             "seed": seed,
             "user_id": user_uuid,
