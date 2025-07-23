@@ -2,6 +2,7 @@ import torch, uuid, os, gc, random
 from diffusers import FluxPipeline
 from supabase import create_client, Client
 from io import BytesIO
+import mimetypes
 
 # Supabase setup
 SUPABASE_URL = os.getenv("SUPABASE_URL")
@@ -37,8 +38,9 @@ def generate_image_task(prompt: str,
             max_sequence_length=512,
             # generator=generator
         ).images[0]
-
+        print("Image generation completed")
         image = result.images[0]
+
         if image is None:
             print("⚠️ Image is None")
             return {"status": "error", "error": "Generated image is None"}
@@ -48,16 +50,23 @@ def generate_image_task(prompt: str,
         filename = f"{uuid.uuid4().hex[:8]}.png"
         genI_name = os.path.join(output_dir, filename)
         image.save(genI_name)
+        
         print('File is here ===> ', genI_name)
 
         file_path = f"thumbnails/{filename}"
         print('Output path is here ==>', file_path)
-        # Upload to Supabase Storage from disk
+        
+        content_type, _ = mimetypes.guess_type(filename)
+
+        # Fallback if not recognized
+        if content_type is None:
+            content_type = "application/octet-stream"
+
         with open(genI_name, "rb") as f:
             upload_response = supabase.storage.from_("thumbnails").upload(
                 path=file_path,
                 file=f,
-                file_options={"upsert": True}
+                file_options={"content-type": content_type}
             )
         print('Upload response ===> ', upload_response)
         if not upload_response or "error" in upload_response:

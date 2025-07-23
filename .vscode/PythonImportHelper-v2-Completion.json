@@ -445,6 +445,15 @@
         "documentation": {}
     },
     {
+        "label": "mimetypes",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "mimetypes",
+        "description": "mimetypes",
+        "detail": "mimetypes",
+        "documentation": {}
+    },
+    {
         "label": "subprocess",
         "kind": 6,
         "isExtraImport": true,

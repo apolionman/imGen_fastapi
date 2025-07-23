@@ -2,3 +2,4 @@ pe.py
 /venv
 .env
 .vscode
+/test
