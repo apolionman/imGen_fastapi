@@ -32,7 +32,7 @@ jobs:
 
       - name: Run FastAPI App
         run: |
-          docker run -d --gpus all --privileged \
+          docker run -d --gpus '"device=1,2,3"' --privileged \
             --name imgen \
             -e HUGGINGFACE_TOKEN=${{ secrets.HUGGINGFACE_TOKEN }} \
             -e BACKEND_URL=${{ secrets.BACKEND_URL }} \
@@ -46,7 +46,7 @@ jobs:
 
       - name: Run RQ Worker
         run: |
-          docker run -d --gpus all --privileged \
+          docker run -d --gpus '"device=1,2,3"' --privileged \
             --name rq_worker \
             -e HUGGINGFACE_TOKEN=${{ secrets.HUGGINGFACE_TOKEN }} \
             -e BACKEND_URL=${{ secrets.BACKEND_URL }} \
