@@ -48,9 +48,10 @@ def generate_image_task(prompt: str,
         filename = f"{uuid.uuid4().hex[:8]}.png"
         genI_name = os.path.join(output_dir, filename)
         image.save(genI_name)
+        print('File is here ===> ', genI_name)
 
         file_path = f"thumbnails/{filename}"
-
+        print('Output path is here ==>', file_path)
         # Upload to Supabase Storage from disk
         with open(genI_name, "rb") as f:
             upload_response = supabase.storage.from_("thumbnails").upload(
@@ -58,7 +59,7 @@ def generate_image_task(prompt: str,
                 file=f,
                 file_options={"upsert": True}
             )
-
+        print('Upload response ===> ', upload_response)
         if not upload_response or "error" in upload_response:
             print(f"⚠️ Upload error: {upload_response.get('error')}")
             return {"status": "error", "error": "Upload failed"}
