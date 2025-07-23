@@ -589,7 +589,7 @@
         "kind": 5,
         "importPath": "app.scripts.flux_tx2im",
         "description": "app.scripts.flux_tx2im",
-        "peekOfCode": "SUPABASE_URL = os.getenv(\"SUPABASE_URL\")\nSUPABASE_SERVICE_KEY = os.getenv(\"SUPABASE_SERVICE_ROLE_KEY\")\nsupabase: Client = create_client(SUPABASE_URL, SUPABASE_SERVICE_KEY)\ndef generate_image_task(prompt: str,\n                        user_uuid: str,\n                        task_id: str,\n                        seed: int = None) -> dict:\n    from huggingface_hub import login\n    login(token=os.environ[\"HUGGINGFACE_TOKEN\"])\n    print(\"Start loading pipeline!\")",
+        "peekOfCode": "SUPABASE_URL = os.getenv(\"SUPABASE_URL\")\nSUPABASE_SERVICE_KEY = os.getenv(\"SUPABASE_SERVICE_KEY\")\nsupabase: Client = create_client(SUPABASE_URL, SUPABASE_SERVICE_KEY)\ndef generate_image_task(prompt: str,\n                        user_uuid: str,\n                        task_id: str,\n                        seed: int = None) -> dict:\n    from huggingface_hub import login\n    login(token=os.environ[\"HUGGINGFACE_TOKEN\"])\n    print(\"Start loading pipeline!\")",
         "detail": "app.scripts.flux_tx2im",
         "documentation": {}
     },
@@ -598,7 +598,7 @@
         "kind": 5,
         "importPath": "app.scripts.flux_tx2im",
         "description": "app.scripts.flux_tx2im",
-        "peekOfCode": "SUPABASE_SERVICE_KEY = os.getenv(\"SUPABASE_SERVICE_ROLE_KEY\")\nsupabase: Client = create_client(SUPABASE_URL, SUPABASE_SERVICE_KEY)\ndef generate_image_task(prompt: str,\n                        user_uuid: str,\n                        task_id: str,\n                        seed: int = None) -> dict:\n    from huggingface_hub import login\n    login(token=os.environ[\"HUGGINGFACE_TOKEN\"])\n    print(\"Start loading pipeline!\")\n    pipe = FluxPipeline.from_pretrained(",
+        "peekOfCode": "SUPABASE_SERVICE_KEY = os.getenv(\"SUPABASE_SERVICE_KEY\")\nsupabase: Client = create_client(SUPABASE_URL, SUPABASE_SERVICE_KEY)\ndef generate_image_task(prompt: str,\n                        user_uuid: str,\n                        task_id: str,\n                        seed: int = None) -> dict:\n    from huggingface_hub import login\n    login(token=os.environ[\"HUGGINGFACE_TOKEN\"])\n    print(\"Start loading pipeline!\")\n    pipe = FluxPipeline.from_pretrained(",
         "detail": "app.scripts.flux_tx2im",
         "documentation": {}
     },

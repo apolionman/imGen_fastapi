@@ -35,6 +35,9 @@ jobs:
           docker run -d --gpus all --privileged \
             --name imgen \
             -e HUGGINGFACE_TOKEN=${{ secrets.HUGGINGFACE_TOKEN }} \
+            -e BACKEND_URL=${{ secrets.BACKEND_URL }} \
+            -e SUPABASE_SERVICE_KEY=${{ secrets.SUPABASE_SERVICE_KEY }} \
+            -e SUPABASE_URL=${{ secrets.SUPABASE_URL }} \
             --network queue_net \
             -v /home/prepaire/ttm/output:/app/output \
             -v /home/prepaire/ttm/input_images:/app/input_images \
