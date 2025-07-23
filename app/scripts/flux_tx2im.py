@@ -28,7 +28,7 @@ def generate_image_task(prompt: str,
             seed = random.randint(0, 999999)
         generator = torch.manual_seed(seed)
 
-        image = pipe(
+        result = pipe(
             prompt,
             height=768,
             width=1360,
@@ -38,18 +38,20 @@ def generate_image_task(prompt: str,
             # generator=generator
         ).images[0]
 
-        img_buffer = BytesIO()
-        image.save(img_buffer, format="PNG")
-        img_buffer.seek(0)
-
-        # Define upload path
+        image = result.images[0]
+        if image is None:
+            print("⚠️ Image is None")
+            return {"status": "error", "error": "Generated image is None"}
+        output_dir = "./output"
+        os.makedirs(output_dir, exist_ok=True)
         filename = f"{uuid.uuid4().hex[:8]}.png"
-        file_path = f"thumbnails/{filename}"
+        genI_name = os.path.join(output_dir, filename)
+        image.save(genI_name)
 
         # Upload to Supabase Storage
         upload_response = supabase.storage.from_("thumbnails").upload(
-            path=file_path,
-            file=img_buffer,
+            path=output_dir,
+            file=genI_name,
             file_options={"upsert": True}
         )
 
