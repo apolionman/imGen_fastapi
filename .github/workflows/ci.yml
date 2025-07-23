@@ -52,6 +52,7 @@ jobs:
             --network queue_net \
             -v /home/prepaire/ttm/output:/app/output \
             -v /home/prepaire/ttm/input_images:/app/input_images \
+            -p 8016:8000 \
             imgen:dev \
             python3 app/worker.py
 
