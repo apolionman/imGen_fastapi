@@ -46,17 +46,18 @@ jobs:
 
       - name: Run RQ Worker
         run: |
-          docker run -d --gpus all --privileged \
+          docker run -d --gpus '"device=1,2,3"' --privileged \
             --name rq_worker \
             -e HUGGINGFACE_TOKEN=${{ secrets.HUGGINGFACE_TOKEN }} \
             -e BACKEND_URL=${{ secrets.BACKEND_URL }} \
             -e SUPABASE_SERVICE_KEY=${{ secrets.SUPABASE_SERVICE_KEY }} \
             -e SUPABASE_URL=${{ secrets.SUPABASE_URL }} \
+            -e PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True \
             --network queue_net \
             -v /home/prepaire/ttm/output:/app/output \
             -v /home/prepaire/ttm/input_images:/app/input_images \
             imgen:dev \
-            CUDA_VISIBLE_DEVICES=1,2,3 PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True python3 app/worker.py
+            python3 app/worker.py
 
     environment:
       name: env
