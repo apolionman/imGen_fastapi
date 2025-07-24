@@ -5,6 +5,7 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 ENV PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 ENV PYTHONPATH=/app
+ENV CUDA_VISIBLE_DEVICES=1,2,3
 
 WORKDIR /app
 
@@ -34,6 +35,7 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install git+https://github.com/huggingface/diffusers.git
+RUN python3 -c "import torch; print('CUDA available:', torch.cuda.is_available()); print('CUDA devices:', torch.cuda.device_count())"
 
 # Copy application code
 COPY . .
