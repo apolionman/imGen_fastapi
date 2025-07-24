@@ -34,8 +34,6 @@ jobs:
         run: |
           docker run -d --gpus all --privileged \
             --name imgen \
-            -e CUDA_VISIBLE_DEVICES=1,2,3 \
-            -e PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True \
             -e HUGGINGFACE_TOKEN=${{ secrets.HUGGINGFACE_TOKEN }} \
             -e BACKEND_URL=${{ secrets.BACKEND_URL }} \
             -e SUPABASE_SERVICE_KEY=${{ secrets.SUPABASE_SERVICE_KEY }} \
@@ -50,8 +48,6 @@ jobs:
         run: |
           docker run -d --gpus all --privileged \
             --name rq_worker \
-            -e CUDA_VISIBLE_DEVICES=1,2,3 \
-            -e PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True \
             -e HUGGINGFACE_TOKEN=${{ secrets.HUGGINGFACE_TOKEN }} \
             -e BACKEND_URL=${{ secrets.BACKEND_URL }} \
             -e SUPABASE_SERVICE_KEY=${{ secrets.SUPABASE_SERVICE_KEY }} \
@@ -60,7 +56,7 @@ jobs:
             -v /home/prepaire/ttm/output:/app/output \
             -v /home/prepaire/ttm/input_images:/app/input_images \
             imgen:dev \
-            python3 app/worker.py
+            CUDA_VISIBLE_DEVICES=1,2,3 PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True python3 app/worker.py
 
     environment:
       name: env
