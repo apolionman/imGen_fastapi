@@ -26,10 +26,10 @@ def generate_image_task(prompt: str,
     print("Pipe loaded, starting image generation")
 
     # try:
-    if seed is None:
-        seed = random.randint(0, 999999)
-    generator = torch.manual_seed(seed)
-    # generator = torch.Generator(device="cuda:2").manual_seed(42)
+    # if seed is None:
+    #     seed = random.randint(0, 999999)
+    # generator = torch.manual_seed(seed)
+    # generator = torch.Generator(device="cuda").manual_seed(42)
     result = pipe(
         prompt,
         height=768,
@@ -37,7 +37,7 @@ def generate_image_task(prompt: str,
         guidance_scale=2.5,
         num_inference_steps=50,
         max_sequence_length=512,
-        generator=generator
+        # generator=generator
     ).images[0]
     print("Image generation completed")
     image = result.images[0]
