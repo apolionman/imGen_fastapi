@@ -16,12 +16,12 @@ def generate_image_task(prompt: str,
     from huggingface_hub import login
     login(token=os.environ["HUGGINGFACE_TOKEN"])
 
-    print("Start loading pipeline!")
     pipe = FluxPipeline.from_pretrained(
         "black-forest-labs/FLUX.1-dev",
-        torch_dtype=torch.float32,
+        torch_dtype=torch.float16,
+        device_map="balanced",
         trust_remote_code=True,
-    ).to("balanced")
+    )
 
     print("Pipe loaded, starting image generation")
 
