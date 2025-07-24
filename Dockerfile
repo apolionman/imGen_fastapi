@@ -35,6 +35,7 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install git+https://github.com/huggingface/diffusers.git
+RUN python3 -c "import torch; print('Torch version:', torch.__version__); print('CUDA available:', torch.cuda.is_available())"
 
 # Copy application code
 COPY . .
