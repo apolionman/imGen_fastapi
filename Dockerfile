@@ -35,7 +35,6 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install git+https://github.com/huggingface/diffusers.git
-RUN pip install torch==2.3.0 torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu122
 
 # Copy application code
 COPY . .
