@@ -20,9 +20,9 @@ def generate_image_task(prompt: str,
     pipe = FluxPipeline.from_pretrained(
         "black-forest-labs/FLUX.1-dev",
         torch_dtype=torch.float16,
-        device_map="cuda:2",
-        trust_remote_code=True
-    )
+        trust_remote_code=True,
+    ).to("cuda:2")
+
     print("Pipe loaded, starting image generation")
 
     # try:
