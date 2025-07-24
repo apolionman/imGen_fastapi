@@ -36,7 +36,7 @@ def generate_image_task(prompt: str,
         guidance_scale=2.5,
         num_inference_steps=50,
         max_sequence_length=512,
-        # generator=generator
+        generator=generator
     ).images[0]
     print("Image generation completed")
     image = result.images[0]
