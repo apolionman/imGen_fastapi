@@ -19,17 +19,17 @@ def generate_image_task(prompt: str,
     print("Start loading pipeline!")
     pipe = FluxPipeline.from_pretrained(
         "black-forest-labs/FLUX.1-dev",
-        torch_dtype=torch.float16,
+        torch_dtype=torch.float32,
         trust_remote_code=True,
-    ).to("cuda:2")
+    ).to("balanced")
 
     print("Pipe loaded, starting image generation")
 
     # try:
-    # if seed is None:
-    #     seed = random.randint(0, 999999)
-    # generator = torch.manual_seed(seed)
-    generator = torch.Generator(device="cuda:2").manual_seed(42)
+    if seed is None:
+        seed = random.randint(0, 999999)
+    generator = torch.manual_seed(seed)
+    # generator = torch.Generator(device="cuda:2").manual_seed(42)
     result = pipe(
         prompt,
         height=768,
