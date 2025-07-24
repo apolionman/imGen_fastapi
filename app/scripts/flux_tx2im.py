@@ -20,7 +20,6 @@ def generate_image_task(prompt: str,
         "black-forest-labs/FLUX.1-dev",
         torch_dtype=torch.float16,
         device_map="balanced",
-        trust_remote_code=True,
     )
 
     print("Pipe loaded, starting image generation")
@@ -38,7 +37,7 @@ def generate_image_task(prompt: str,
         num_inference_steps=50,
         max_sequence_length=512,
         # generator=generator
-    ).images[0]
+    )
     print("Image generation completed")
     image = result.images[0]
 
