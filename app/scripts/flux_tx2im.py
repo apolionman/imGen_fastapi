@@ -20,7 +20,7 @@ def generate_image_task(prompt: str,
     pipe = FluxPipeline.from_pretrained(
         "black-forest-labs/FLUX.1-dev",
         torch_dtype=torch.float16,
-        device_map="balanced",
+        device_map="cuda:2",
         trust_remote_code=True
     )
     print("Pipe loaded, starting image generation")
@@ -29,7 +29,7 @@ def generate_image_task(prompt: str,
     # if seed is None:
     #     seed = random.randint(0, 999999)
     # generator = torch.manual_seed(seed)
-    generator = torch.Generator(device="cuda").manual_seed(42)
+    generator = torch.Generator(device="cuda:2").manual_seed(42)
     result = pipe(
         prompt,
         height=768,
