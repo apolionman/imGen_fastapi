@@ -15,7 +15,8 @@ pillow
 cairosvg
 
 #clip
-transformers
+torch==2.7.1
+transformers==4.41.2
 accelerate
 huggingface_hub
 protobuf>=3.20.0
