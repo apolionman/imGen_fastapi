@@ -74,7 +74,7 @@ def generate_image_task(prompt: str,
         return {"status": "error", "error": "Upload failed"}
 
     # Use returned relative path as image_url
-    image_url = upload_response.get("path")
+    image_url = f'https://garfxtaapwmphxeqfrnd.supabase.co/storage/v1/object/public/thumbnails/thumbnails/{filename}'
 
     # Save path to Supabase DB
     try:
