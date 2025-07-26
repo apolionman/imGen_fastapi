@@ -68,7 +68,6 @@ def generate_image_task(prompt: str,
             file=f,
             file_options={"content-type": content_type}
         )
-    print('Upload response ===> ', upload_response)
     if not upload_response or "error" in upload_response:
         print(f"⚠️ Upload error: {upload_response.get('error')}")
         return {"status": "error", "error": "Upload failed"}
