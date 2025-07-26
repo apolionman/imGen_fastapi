@@ -68,8 +68,8 @@ def generate_image_task(prompt: str,
             file=f,
             file_options={"content-type": content_type}
         )
-    if not upload_response or "error" in upload_response:
-        print(f"⚠️ Upload error: {upload_response.get('error')}")
+    if upload_response is None or getattr(upload_response, 'error', None):
+        print(f"⚠️ Upload error: {getattr(upload_response, 'error', 'Unknown error')}")
         return {"status": "error", "error": "Upload failed"}
 
     # Use returned relative path as image_url
@@ -77,11 +77,12 @@ def generate_image_task(prompt: str,
 
     # Save path to Supabase DB
     try:
-        supabase.table("thumbnail_tasks").upsert({
-            "task_id": task_id,
-            "user_id": user_uuid,
-            "image_url": image_url
-        }).on_conflict(["task_id", "user_id"]).execute()
+        supabase.table("thumbnail_tasks").update({
+                "image_url": image_url
+            }).match({
+                "task_id": task_id,
+                "user_id": user_uuid
+            }).execute()
     except Exception as e:
         print(f"⚠️ Supabase insert error: {e}")
         return {"status": "error", "error": "DB insert failed"}
