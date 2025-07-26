@@ -25,6 +25,7 @@ async def health():
 
 class FluxRequest(BaseModel):
     prompt: str
+    task_id: str
     user_uuid: str
     return_base64: Optional[bool] = True
     seed: Optional[int] = None
@@ -32,15 +33,15 @@ class FluxRequest(BaseModel):
 @router.post("/generate-flux")
 async def enqueue_flux_task(req: FluxRequest):
     # Step 1: Generate a unique task ID
-    task_id = str(uuid.uuid4())
+    # task_id = str(uuid.uuid4())
     # Step 2: Enqueue the job with the custom task ID and additional arguments
     job = queue.enqueue(
         generate_image_task,
         req.prompt,
         req.seed,
         req.user_uuid,
-        task_id,
-        job_id=task_id  # Set job ID explicitly
+        req.task_id,
+        job_id=req.task_id  # Set job ID explicitly
     )
     return {"task_id": job.id, "status": "queued"}
 
