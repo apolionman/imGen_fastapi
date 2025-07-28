@@ -15,6 +15,7 @@ def generate_image_task(prompt: str,
                         seed: int = None) -> dict:
     from huggingface_hub import login
     login(token=os.environ["HUGGINGFACE_TOKEN"])
+    print(f"task_id: {task_id}, user_uuid: {user_uuid}")
 
     pipe = FluxPipeline.from_pretrained(
         "black-forest-labs/FLUX.1-dev",
