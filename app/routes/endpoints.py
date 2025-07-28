@@ -27,8 +27,6 @@ class FluxRequest(BaseModel):
     prompt: str
     task_id: str
     user_uuid: str
-    return_base64: Optional[bool] = True
-    seed: Optional[int] = None
 
 @router.post("/generate-flux")
 async def enqueue_flux_task(req: FluxRequest):
