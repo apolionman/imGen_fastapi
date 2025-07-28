@@ -38,7 +38,6 @@ async def enqueue_flux_task(req: FluxRequest):
     job = queue.enqueue(
         generate_image_task,
         req.prompt,
-        req.seed,
         req.user_uuid,
         req.task_id,
         job_id=req.task_id  # Set job ID explicitly
