@@ -11,8 +11,7 @@ supabase: Client = create_client(SUPABASE_URL, SUPABASE_SERVICE_KEY)
 
 def generate_image_task(prompt: str,
                         user_uuid: str,
-                        task_id: str,
-                        seed: int = None) -> dict:
+                        task_id: str) -> dict:
     from huggingface_hub import login
     login(token=os.environ["HUGGINGFACE_TOKEN"])
     print(f"task_id: {task_id}, user_uuid: {user_uuid}")
@@ -94,7 +93,6 @@ def generate_image_task(prompt: str,
         "status": "success",
         "image_url": image_url,
         "filename": filename,
-        "seed": seed,
         "user_id": user_uuid,
         "task_id": task_id
     }
