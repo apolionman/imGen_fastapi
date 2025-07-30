@@ -9,9 +9,7 @@ from rq import Queue
 from rq.job import Job
 from app.scripts.flux_tx2im import generate_image_task
 from app.scripts.flux_im2im import generate_im2im_task
-import cairosvg
-import uuid
-
+import cairosvg, requests, uuid, tempfile, shutil
 
 router = APIRouter()
 
@@ -74,39 +72,48 @@ async def flux_task_status(task_id: str, return_base64: Optional[bool] = True):
     else:
         return {"status": job.get_status()}
 
+class FluxImageRequest(BaseModel):
+    prompt: str
+    task_id: str
+    user_uuid: str
+    image_url: str
+
 @router.post("/generate-flux-im2im")
-async def enqueue_flux_im2im(
-    prompt: str = Form(...),
-    task_id: str = Form(...),
-    user_uuid: str = Form(...),
-    input_image: UploadFile = File(...)
-):
+async def enqueue_flux_im2im(req: FluxImageRequest):
+    tmp_file = None
+
     try:
-        input_dir = "/app/input_images"
-        os.makedirs(input_dir, exist_ok=True)
+        # Download image
+        response = requests.get(req.image_url)
+        if response.status_code != 200:
+            raise HTTPException(status_code=400, detail="Failed to download image from URL.")
+        contents = response.content
 
-        contents = await input_image.read()
-        ext = ".png"
-        input_id = str(uuid.uuid4())[:8]
-        saved_path = os.path.join(input_dir, f"{input_id}{ext}")
+        # Create temp file
+        tmp_file = tempfile.NamedTemporaryFile(delete=False, suffix=".png")
+        tmp_path = tmp_file.name
+        tmp_file.close()  # Close file so it can be written
 
-        if input_image.filename.lower().endswith(".svg"):
-            cairosvg.svg2png(bytestring=contents, write_to=saved_path)
+        # Handle SVG vs image
+        if req.image_url.lower().endswith(".svg"):
+            cairosvg.svg2png(bytestring=contents, write_to=tmp_path)
         else:
             try:
                 image = Image.open(io.BytesIO(contents)).convert("RGB")
             except UnidentifiedImageError:
                 raise HTTPException(status_code=400, detail="Unsupported image format.")
-            image.save(saved_path, format="PNG")
+            image.save(tmp_path, format="PNG")
 
+        # Enqueue the job
         job = queue.enqueue(
             generate_im2im_task,
-            prompt,
-            saved_path,
-            user_uuid,
-            task_id,
-            job_id=task_id
+            req.prompt,
+            tmp_path,
+            req.user_uuid,
+            req.task_id,
+            job_id=req.task_id
         )
+
         return {"task_id": job.id, "status": "queued"}
 
     except Exception as e:

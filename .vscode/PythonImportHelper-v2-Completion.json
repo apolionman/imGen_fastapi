@@ -337,29 +337,12 @@
         "documentation": {}
     },
     {
-        "label": "cairosvg",
+        "label": "cairosvg,",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "cairosvg",
-        "description": "cairosvg",
-        "detail": "cairosvg",
-        "documentation": {}
-    },
-    {
-        "label": "uuid",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "uuid",
-        "description": "uuid",
-        "detail": "uuid",
-        "documentation": {}
-    },
-    {
-        "label": "UUID",
-        "importPath": "uuid",
-        "description": "uuid",
-        "isExtraImport": true,
-        "detail": "uuid",
+        "importPath": "cairosvg.",
+        "description": "cairosvg.",
+        "detail": "cairosvg.",
         "documentation": {}
     },
     {
@@ -497,6 +480,14 @@
         "documentation": {}
     },
     {
+        "label": "UUID",
+        "importPath": "uuid",
+        "description": "uuid",
+        "isExtraImport": true,
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
         "label": "login",
         "importPath": "huggingface_hub",
         "description": "huggingface_hub",
@@ -527,6 +518,15 @@
         "importPath": "app.routes.endpoints",
         "description": "app.routes.endpoints",
         "peekOfCode": "class FluxRequest(BaseModel):\n    prompt: str\n    task_id: str\n    user_uuid: str\n@router.post(\"/generate-flux\")\nasync def enqueue_flux_task(req: FluxRequest):\n    # Step 1: Generate a unique task ID\n    # task_id = str(uuid.uuid4())\n    # Step 2: Enqueue the job with the custom task ID and additional arguments\n    job = queue.enqueue(",
+        "detail": "app.routes.endpoints",
+        "documentation": {}
+    },
+    {
+        "label": "FluxImageRequest",
+        "kind": 6,
+        "importPath": "app.routes.endpoints",
+        "description": "app.routes.endpoints",
+        "peekOfCode": "class FluxImageRequest(BaseModel):\n    prompt: str\n    task_id: str\n    user_uuid: str\n    image_url: str\n@router.post(\"/generate-flux-im2im\")\nasync def enqueue_flux_im2im(req: FluxImageRequest):\n    tmp_file = None\n    try:\n        # Download image",
         "detail": "app.routes.endpoints",
         "documentation": {}
     },
