@@ -74,26 +74,23 @@ async def flux_task_status(task_id: str, return_base64: Optional[bool] = True):
     else:
         return {"status": job.get_status()}
 
-class FluxImageRequest(BaseModel):
-    prompt: str
-    task_id: str
-    user_uuid: str
-    input_image: UploadFile = File(...)
-
 @router.post("/generate-flux-im2im")
-async def enqueue_flux_im2im(req: FluxImageRequest):
+async def enqueue_flux_im2im(
+    prompt: str = Form(...),
+    task_id: str = Form(...),
+    user_uuid: str = Form(...),
+    input_image: UploadFile = File(...)
+):
     try:
-        # Create input folder if it doesn't exist
         input_dir = "/app/input_images"
         os.makedirs(input_dir, exist_ok=True)
 
-        # Read image content and generate a unique filename
-        contents = await req.input_image.read()
-        ext = ".png"  # final format
+        contents = await input_image.read()
+        ext = ".png"
         input_id = str(uuid.uuid4())[:8]
         saved_path = os.path.join(input_dir, f"{input_id}{ext}")
 
-        if req.input_image.filename.lower().endswith(".svg"):
+        if input_image.filename.lower().endswith(".svg"):
             cairosvg.svg2png(bytestring=contents, write_to=saved_path)
         else:
             try:
@@ -102,15 +99,14 @@ async def enqueue_flux_im2im(req: FluxImageRequest):
                 raise HTTPException(status_code=400, detail="Unsupported image format.")
             image.save(saved_path, format="PNG")
 
-        # Enqueue job with path (not raw file)
         job = queue.enqueue(
-        generate_im2im_task,
-        req.prompt,
-        saved_path,
-        req.user_uuid,
-        req.task_id,
-        job_id=req.task_id
-    )
+            generate_im2im_task,
+            prompt,
+            saved_path,
+            user_uuid,
+            task_id,
+            job_id=task_id
+        )
         return {"task_id": job.id, "status": "queued"}
 
     except Exception as e:
