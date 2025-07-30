@@ -420,20 +420,20 @@
         "documentation": {}
     },
     {
-        "label": "BytesIO",
-        "importPath": "io",
-        "description": "io",
-        "isExtraImport": true,
-        "detail": "io",
-        "documentation": {}
-    },
-    {
         "label": "mimetypes",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "mimetypes",
         "description": "mimetypes",
         "detail": "mimetypes",
+        "documentation": {}
+    },
+    {
+        "label": "BytesIO",
+        "importPath": "io",
+        "description": "io",
+        "isExtraImport": true,
+        "detail": "io",
         "documentation": {}
     },
     {
@@ -562,7 +562,7 @@
         "kind": 2,
         "importPath": "app.scripts.flux_im2im",
         "description": "app.scripts.flux_im2im",
-        "peekOfCode": "def generate_im2im_task(prompt: str,\n                        user_uuid: str,\n                        task_id: str,\n                        image_path: str,\n                        ) -> dict:\n    from huggingface_hub import login\n    login(token=os.environ[\"HUGGINGFACE_TOKEN\"])\n    print(\"Start loading pipeline!\")\n    pipe = FluxKontextPipeline.from_pretrained(\n        \"black-forest-labs/FLUX.1-Kontext-dev\",",
+        "peekOfCode": "def generate_im2im_task(prompt: str,\n                        image_path: str,\n                        user_uuid: str,\n                        task_id: str,\n                        ) -> dict:\n    from huggingface_hub import login\n    login(token=os.environ[\"HUGGINGFACE_TOKEN\"])\n    try:\n        print(\"Start loading pipeline!\")\n        pipe = FluxKontextPipeline.from_pretrained(",
         "detail": "app.scripts.flux_im2im",
         "documentation": {}
     },
@@ -571,7 +571,7 @@
         "kind": 5,
         "importPath": "app.scripts.flux_im2im",
         "description": "app.scripts.flux_im2im",
-        "peekOfCode": "SUPABASE_URL = os.getenv(\"SUPABASE_URL\")\nSUPABASE_SERVICE_KEY = os.getenv(\"SUPABASE_SERVICE_KEY\")\nsupabase: Client = create_client(SUPABASE_URL, SUPABASE_SERVICE_KEY)\ndef generate_im2im_task(prompt: str,\n                        user_uuid: str,\n                        task_id: str,\n                        image_path: str,\n                        ) -> dict:\n    from huggingface_hub import login\n    login(token=os.environ[\"HUGGINGFACE_TOKEN\"])",
+        "peekOfCode": "SUPABASE_URL = os.getenv(\"SUPABASE_URL\")\nSUPABASE_SERVICE_KEY = os.getenv(\"SUPABASE_SERVICE_KEY\")\nsupabase: Client = create_client(SUPABASE_URL, SUPABASE_SERVICE_KEY)\ndef generate_im2im_task(prompt: str,\n                        image_path: str,\n                        user_uuid: str,\n                        task_id: str,\n                        ) -> dict:\n    from huggingface_hub import login\n    login(token=os.environ[\"HUGGINGFACE_TOKEN\"])",
         "detail": "app.scripts.flux_im2im",
         "documentation": {}
     },
@@ -580,7 +580,7 @@
         "kind": 5,
         "importPath": "app.scripts.flux_im2im",
         "description": "app.scripts.flux_im2im",
-        "peekOfCode": "SUPABASE_SERVICE_KEY = os.getenv(\"SUPABASE_SERVICE_KEY\")\nsupabase: Client = create_client(SUPABASE_URL, SUPABASE_SERVICE_KEY)\ndef generate_im2im_task(prompt: str,\n                        user_uuid: str,\n                        task_id: str,\n                        image_path: str,\n                        ) -> dict:\n    from huggingface_hub import login\n    login(token=os.environ[\"HUGGINGFACE_TOKEN\"])\n    print(\"Start loading pipeline!\")",
+        "peekOfCode": "SUPABASE_SERVICE_KEY = os.getenv(\"SUPABASE_SERVICE_KEY\")\nsupabase: Client = create_client(SUPABASE_URL, SUPABASE_SERVICE_KEY)\ndef generate_im2im_task(prompt: str,\n                        image_path: str,\n                        user_uuid: str,\n                        task_id: str,\n                        ) -> dict:\n    from huggingface_hub import login\n    login(token=os.environ[\"HUGGINGFACE_TOKEN\"])\n    try:",
         "detail": "app.scripts.flux_im2im",
         "documentation": {}
     },

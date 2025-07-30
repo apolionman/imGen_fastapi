@@ -1,9 +1,10 @@
-import torch, uuid, os, gc
+import torch, uuid, os, gc, shutil
 from diffusers import FluxKontextPipeline
 from diffusers.utils import load_image
 import random
 from PIL import Image
 from supabase import create_client, Client
+import mimetypes
 
 # Supabase setup
 SUPABASE_URL = os.getenv("SUPABASE_URL")
@@ -11,32 +12,23 @@ SUPABASE_SERVICE_KEY = os.getenv("SUPABASE_SERVICE_KEY")
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_SERVICE_KEY)
 
 def generate_im2im_task(prompt: str,
+                        image_path: str,
                         user_uuid: str,
                         task_id: str,
-                        image_path: str,
                         ) -> dict:
     from huggingface_hub import login
     login(token=os.environ["HUGGINGFACE_TOKEN"])
 
-    print("Start loading pipeline!")
-    pipe = FluxKontextPipeline.from_pretrained(
-        "black-forest-labs/FLUX.1-Kontext-dev",
-        torch_dtype=torch.float16,
-        device_map="balanced"
-    )
-
-    # print(f"image here: {image_path}")
-    # if seed is None:
-    #     seed = random.randint(0, 999999)
-
-    # generator = torch.manual_seed(seed)
-    input_image = Image.open(image_path).convert("RGB").resize((1024, 1024))
-    # input_image = load_image(image_path).convert("RGB").resize((1024, 1024))
-
-    # print(f"🧐 Input image loaded: {image_path}")
-    # print(f"🔍 Prompt: '{prompt}', Seed: {seed}")
-
     try:
+        print("Start loading pipeline!")
+        pipe = FluxKontextPipeline.from_pretrained(
+            "black-forest-labs/FLUX.1-Kontext-dev",
+            torch_dtype=torch.float16,
+            device_map="balanced"
+        )
+
+        input_image = Image.open(image_path).convert("RGB").resize((1024, 1024))
+
         result = pipe(
             prompt=prompt,
             image=input_image,
@@ -47,10 +39,7 @@ def generate_im2im_task(prompt: str,
             max_sequence_length=512,
         )
 
-        print(f"📦 Result keys: {result.keys()}")
         image = result.images[0]
-        print(f"🖼️ Image type: {type(image)}")
-
         if image is None:
             print("⚠️ Image is None")
             return {"status": "error", "error": "Generated image is None"}
@@ -59,34 +48,49 @@ def generate_im2im_task(prompt: str,
         os.makedirs(output_dir, exist_ok=True)
         filename = f"{uuid.uuid4().hex[:8]}.png"
         genI_name = os.path.join(output_dir, filename)
-        
-        backend_url = os.getenv("BACKEND_URL")
-        image_url = f"{backend_url}/generated/images/{filename}"
+        image.save(filename)
+
+        file_path = f"thumbnails/{filename}"
+        content_type, _ = mimetypes.guess_type(filename)
+        if content_type is None:
+            content_type = "application/octet-stream"
+
+        with open(genI_name, "rb") as f:
+            upload_response = supabase.storage.from_("thumbnails").upload(
+                path=file_path,
+                file=f,
+                file_options={"content-type": content_type}
+            )
+        if upload_response is None or getattr(upload_response, 'error', None):
+            print(f"⚠️ Upload error: {getattr(upload_response, 'error', 'Unknown error')}")
+            return {"status": "error", "error": "Upload failed"}
+
+        image_url = f'https://garfxtaapwmphxeqfrnd.supabase.co/storage/v1/object/public/thumbnails/thumbnails/{filename}'
 
         try:
-            image.save(genI_name)
-            # print(f"✅ Image saved to {genI_name} (Seed: {seed})")
-            try:
-                supabase.table("thumbnail_tasks").upsert({
-                    "task_id": task_id,
-                    "user_id": user_uuid,
-                    "image_url": image_url
-                }).on_conflict(["task_id", "user_id"]).execute()
-            except Exception as e:
-                print(f"⚠️ Supabase insert error: {e}")
+            supabase.table("thumbnail_tasks").update({
+                "im2im_image_url": image_url
+            }).match({
+                "task_id": task_id,
+                "user_id": user_uuid
+            }).execute()
         except Exception as e:
-            print(f"❌ Failed to save image: {e}")
-            return {"status": "error", "error": f"Image save failed: {e}"}
+            print(f"⚠️ Supabase insert error: {e}")
+            return {"status": "error", "error": "DB insert failed"}
 
         return {
             "status": "success",
-            "image_path": image_path,
+            "image_url": image_url,
             "filename": filename,
-            "seed": seed,
             "user_id": user_uuid,
             "task_id": task_id
         }
 
-    except Exception as e:
-        return {"status": "error", "error": str(e)}
-
+    finally:
+        # ✅ Clean up the input image
+        if os.path.exists(image_path):
+            try:
+                os.remove(image_path)
+                print(f"🧹 Deleted temp input file: {image_path}")
+            except Exception as cleanup_err:
+                print(f"⚠️ Failed to delete temp file {image_path}: {cleanup_err}")
