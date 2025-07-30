@@ -531,6 +531,15 @@
         "documentation": {}
     },
     {
+        "label": "FluxImageRequest",
+        "kind": 6,
+        "importPath": "app.routes.endpoints",
+        "description": "app.routes.endpoints",
+        "peekOfCode": "class FluxImageRequest(BaseModel):\n    prompt: str\n    task_id: str\n    user_uuid: str\n    input_image: UploadFile = File(...)\n@router.post(\"/generate-flux-im2im\")\nasync def enqueue_flux_im2im(req: FluxImageRequest):\n    try:\n        # Create input folder if it doesn't exist\n        input_dir = \"/app/input_images\"",
+        "detail": "app.routes.endpoints",
+        "documentation": {}
+    },
+    {
         "label": "router",
         "kind": 5,
         "importPath": "app.routes.endpoints",
@@ -562,7 +571,7 @@
         "kind": 2,
         "importPath": "app.scripts.flux_im2im",
         "description": "app.scripts.flux_im2im",
-        "peekOfCode": "def generate_im2im_task(prompt: str,\n                        user_uuid: str,\n                        task_id: str,\n                        image_path: str, \n                        seed: int = None\n                        ) -> dict:\n    from huggingface_hub import login\n    login(token=os.environ[\"HUGGINGFACE_TOKEN\"])\n    print(\"Start loading pipeline!\")\n    pipe = FluxKontextPipeline.from_pretrained(",
+        "peekOfCode": "def generate_im2im_task(prompt: str,\n                        user_uuid: str,\n                        task_id: str,\n                        image_path: str,\n                        ) -> dict:\n    from huggingface_hub import login\n    login(token=os.environ[\"HUGGINGFACE_TOKEN\"])\n    print(\"Start loading pipeline!\")\n    pipe = FluxKontextPipeline.from_pretrained(\n        \"black-forest-labs/FLUX.1-Kontext-dev\",",
         "detail": "app.scripts.flux_im2im",
         "documentation": {}
     },
@@ -571,7 +580,7 @@
         "kind": 5,
         "importPath": "app.scripts.flux_im2im",
         "description": "app.scripts.flux_im2im",
-        "peekOfCode": "SUPABASE_URL = os.getenv(\"SUPABASE_URL\")\nSUPABASE_SERVICE_KEY = os.getenv(\"SUPABASE_SERVICE_KEY\")\nsupabase: Client = create_client(SUPABASE_URL, SUPABASE_SERVICE_KEY)\ndef generate_im2im_task(prompt: str,\n                        user_uuid: str,\n                        task_id: str,\n                        image_path: str, \n                        seed: int = None\n                        ) -> dict:\n    from huggingface_hub import login",
+        "peekOfCode": "SUPABASE_URL = os.getenv(\"SUPABASE_URL\")\nSUPABASE_SERVICE_KEY = os.getenv(\"SUPABASE_SERVICE_KEY\")\nsupabase: Client = create_client(SUPABASE_URL, SUPABASE_SERVICE_KEY)\ndef generate_im2im_task(prompt: str,\n                        user_uuid: str,\n                        task_id: str,\n                        image_path: str,\n                        ) -> dict:\n    from huggingface_hub import login\n    login(token=os.environ[\"HUGGINGFACE_TOKEN\"])",
         "detail": "app.scripts.flux_im2im",
         "documentation": {}
     },
@@ -580,7 +589,7 @@
         "kind": 5,
         "importPath": "app.scripts.flux_im2im",
         "description": "app.scripts.flux_im2im",
-        "peekOfCode": "SUPABASE_SERVICE_KEY = os.getenv(\"SUPABASE_SERVICE_KEY\")\nsupabase: Client = create_client(SUPABASE_URL, SUPABASE_SERVICE_KEY)\ndef generate_im2im_task(prompt: str,\n                        user_uuid: str,\n                        task_id: str,\n                        image_path: str, \n                        seed: int = None\n                        ) -> dict:\n    from huggingface_hub import login\n    login(token=os.environ[\"HUGGINGFACE_TOKEN\"])",
+        "peekOfCode": "SUPABASE_SERVICE_KEY = os.getenv(\"SUPABASE_SERVICE_KEY\")\nsupabase: Client = create_client(SUPABASE_URL, SUPABASE_SERVICE_KEY)\ndef generate_im2im_task(prompt: str,\n                        user_uuid: str,\n                        task_id: str,\n                        image_path: str,\n                        ) -> dict:\n    from huggingface_hub import login\n    login(token=os.environ[\"HUGGINGFACE_TOKEN\"])\n    print(\"Start loading pipeline!\")",
         "detail": "app.scripts.flux_im2im",
         "documentation": {}
     },

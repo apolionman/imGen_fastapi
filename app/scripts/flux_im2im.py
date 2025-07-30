@@ -13,13 +13,10 @@ supabase: Client = create_client(SUPABASE_URL, SUPABASE_SERVICE_KEY)
 def generate_im2im_task(prompt: str,
                         user_uuid: str,
                         task_id: str,
-                        image_path: str, 
-                        seed: int = None
+                        image_path: str,
                         ) -> dict:
     from huggingface_hub import login
     login(token=os.environ["HUGGINGFACE_TOKEN"])
-
-
 
     print("Start loading pipeline!")
     pipe = FluxKontextPipeline.from_pretrained(
@@ -28,27 +25,26 @@ def generate_im2im_task(prompt: str,
         device_map="balanced"
     )
 
-    print(f"image here: {image_path}")
-    if seed is None:
-        seed = random.randint(0, 999999)
+    # print(f"image here: {image_path}")
+    # if seed is None:
+    #     seed = random.randint(0, 999999)
 
-    generator = torch.manual_seed(seed)
+    # generator = torch.manual_seed(seed)
     input_image = Image.open(image_path).convert("RGB").resize((1024, 1024))
     # input_image = load_image(image_path).convert("RGB").resize((1024, 1024))
 
-    print(f"🧐 Input image loaded: {image_path}")
-    print(f"🔍 Prompt: '{prompt}', Seed: {seed}")
+    # print(f"🧐 Input image loaded: {image_path}")
+    # print(f"🔍 Prompt: '{prompt}', Seed: {seed}")
 
     try:
         result = pipe(
             prompt=prompt,
             image=input_image,
-            height=1024,
-            width=1024,
-            guidance_scale=3.5,
+            height=768,
+            width=1360,
+            guidance_scale=2.5,
             num_inference_steps=50,
             max_sequence_length=512,
-            generator=generator
         )
 
         print(f"📦 Result keys: {result.keys()}")
@@ -69,13 +65,13 @@ def generate_im2im_task(prompt: str,
 
         try:
             image.save(genI_name)
-            print(f"✅ Image saved to {genI_name} (Seed: {seed})")
+            # print(f"✅ Image saved to {genI_name} (Seed: {seed})")
             try:
                 supabase.table("thumbnail_tasks").upsert({
                     "task_id": task_id,
                     "user_id": user_uuid,
                     "image_url": image_url
-                }).on_conflict(["task_id", "user_uuid"]).execute()
+                }).on_conflict(["task_id", "user_id"]).execute()
             except Exception as e:
                 print(f"⚠️ Supabase insert error: {e}")
         except Exception as e:
