@@ -23,7 +23,7 @@ def generate_im2im_task(prompt: str,
         print("Start loading pipeline!")
         pipe = FluxKontextPipeline.from_pretrained(
             "black-forest-labs/FLUX.1-Kontext-dev",
-            torch_dtype=torch.float16,
+            torch_dtype=torch.float32,
             device_map="balanced"
         )
 
@@ -34,7 +34,7 @@ def generate_im2im_task(prompt: str,
             image=input_image,
             height=768,
             width=1360,
-            guidance_scale=2.5,
+            guidance_scale=3.5,
             num_inference_steps=50,
             max_sequence_length=512,
         )
