@@ -526,7 +526,7 @@
         "kind": 6,
         "importPath": "app.routes.endpoints",
         "description": "app.routes.endpoints",
-        "peekOfCode": "class FluxImageRequest(BaseModel):\n    prompt: str\n    task_id: str\n    user_uuid: str\n    image_url: str\n@router.post(\"/generate-flux-im2im\")\nasync def enqueue_flux_im2im(req: FluxImageRequest):\n    tmp_file = None\n    try:\n        # Download image",
+        "peekOfCode": "class FluxImageRequest(BaseModel):\n    prompt: str\n    task_id: str\n    user_uuid: str\n    image_url: str\n@router.post(\"/generate-flux-im2im\")\nasync def enqueue_flux_im2im(req: FluxImageRequest):\n    try:\n        # Download image\n        response = requests.get(req.image_url)",
         "detail": "app.routes.endpoints",
         "documentation": {}
     },

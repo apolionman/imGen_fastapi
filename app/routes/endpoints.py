@@ -40,38 +40,6 @@ async def enqueue_flux_task(req: FluxRequest):
     )
     return {"task_id": job.id, "status": "queued"}
 
-@router.get("/generate-flux/status/{task_id}")
-async def flux_task_status(task_id: str, return_base64: Optional[bool] = True):
-    try:
-        job = Job.fetch(task_id, connection=redis_conn)
-    except Exception:
-        raise HTTPException(status_code=404, detail="Task not found")
-
-    if job.is_finished:
-        result = job.result
-        image_path = result.get("image_path")
-        if not image_path or not os.path.exists(image_path):
-            raise HTTPException(status_code=500, detail="Image not found")
-
-        if return_base64:
-            with open(image_path, "rb") as img_file:
-                encoded_string = base64.b64encode(img_file.read()).decode('utf-8')
-            return JSONResponse(content={
-                "status": "success",
-                "image_base64": f"data:image/png;base64,{encoded_string}",
-                "seed": result.get("seed")
-            })
-
-        return FileResponse(
-            path=image_path,
-            media_type="image/png",
-            filename=os.path.basename(image_path)
-        )
-    elif job.is_failed:
-        return {"status": "failed"}
-    else:
-        return {"status": job.get_status()}
-
 class FluxImageRequest(BaseModel):
     prompt: str
     task_id: str
@@ -80,8 +48,6 @@ class FluxImageRequest(BaseModel):
 
 @router.post("/generate-flux-im2im")
 async def enqueue_flux_im2im(req: FluxImageRequest):
-    tmp_file = None
-
     try:
         # Download image
         response = requests.get(req.image_url)
@@ -89,26 +55,29 @@ async def enqueue_flux_im2im(req: FluxImageRequest):
             raise HTTPException(status_code=400, detail="Failed to download image from URL.")
         contents = response.content
 
-        # Create temp file
-        tmp_file = tempfile.NamedTemporaryFile(delete=False, suffix=".png")
-        tmp_path = tmp_file.name
-        tmp_file.close()  # Close file so it can be written
+        # Save image to ./input folder with unique filename
+        input_folder = './input'
+        os.makedirs(input_folder, exist_ok=True)
 
-        # Handle SVG vs image
+        input_id = str(uuid.uuid4())[:8]
+        ext = ".png"
+        input_path = os.path.join(input_folder, f"{input_id}{ext}")
+
+        # Handle SVG vs other images
         if req.image_url.lower().endswith(".svg"):
-            cairosvg.svg2png(bytestring=contents, write_to=tmp_path)
+            cairosvg.svg2png(bytestring=contents, write_to=input_path)
         else:
             try:
                 image = Image.open(io.BytesIO(contents)).convert("RGB")
             except UnidentifiedImageError:
                 raise HTTPException(status_code=400, detail="Unsupported image format.")
-            image.save(tmp_path, format="PNG")
+            image.save(input_path, format="PNG")
 
-        # Enqueue the job
+        # Enqueue job with full image path
         job = queue.enqueue(
             generate_im2im_task,
             req.prompt,
-            tmp_path,
+            input_path,
             req.user_uuid,
             req.task_id,
             job_id=req.task_id
@@ -118,35 +87,3 @@ async def enqueue_flux_im2im(req: FluxImageRequest):
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-
-@router.get("/generate-flux-im2im/status/{task_id}")
-async def flux_im2im_task_status(task_id: str, return_base64: Optional[bool] = True):
-    try:
-        job = Job.fetch(task_id, connection=redis_conn)
-    except Exception:
-        raise HTTPException(status_code=404, detail="Task not found")
-
-    if job.is_finished:
-        result = job.result
-        image_path = result.get("image_path")
-        if not image_path or not os.path.exists(image_path):
-            raise HTTPException(status_code=500, detail="Image not found")
-
-        if return_base64:
-            with open(image_path, "rb") as img_file:
-                encoded_string = base64.b64encode(img_file.read()).decode('utf-8')
-            return JSONResponse(content={
-                "status": "success",
-                "image_base64": f"data:image/png;base64,{encoded_string}",
-                "seed": result.get("seed")
-            })
-
-        return FileResponse(
-            path=image_path,
-            media_type="image/png",
-            filename=os.path.basename(image_path)
-        )
-    elif job.is_failed:
-        return {"status": "failed"}
-    else:
-        return {"status": job.get_status()}
