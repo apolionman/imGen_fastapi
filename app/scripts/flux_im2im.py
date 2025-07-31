@@ -27,7 +27,7 @@ def generate_im2im_task(prompt: str,
             device_map="balanced"
         )
 
-        input_image = Image.open(image_path).convert("RGB").resize((1024, 1024))
+        input_image = Image.open(image_path).convert("RGB").resize((1360, 768))
 
         result = pipe(
             prompt=prompt,
