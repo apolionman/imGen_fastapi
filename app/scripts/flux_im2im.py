@@ -48,7 +48,7 @@ def generate_im2im_task(prompt: str,
         os.makedirs(output_dir, exist_ok=True)
         filename = f"{uuid.uuid4().hex[:8]}.png"
         genI_name = os.path.join(output_dir, filename)
-        image.save(filename)
+        image.save(genI_name)
 
         file_path = f"thumbnails/{filename}"
         content_type, _ = mimetypes.guess_type(filename)
