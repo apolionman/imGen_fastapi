@@ -21,14 +21,7 @@ def generate_image_task(prompt: str,
         torch_dtype=torch.float16,
         device_map="balanced",
     )
-
     print("Pipe loaded, starting image generation")
-
-    # try:
-    # if seed is None:
-    #     seed = random.randint(0, 999999)
-    # generator = torch.manual_seed(seed)
-    # generator = torch.Generator(device="cuda").manual_seed(42)
     result = pipe(
         prompt,
         height=768,
@@ -40,24 +33,19 @@ def generate_image_task(prompt: str,
     )
     print("Image generation completed")
     image = result.images[0]
-
     if image is None:
         print("⚠️ Image is None")
         return {"status": "error", "error": "Generated image is None"}
-
     output_dir = "./output"
     os.makedirs(output_dir, exist_ok=True)
     filename = f"{uuid.uuid4().hex[:8]}.png"
     genI_name = os.path.join(output_dir, filename)
     image.save(genI_name)
-    
     print('File is here ===> ', genI_name)
-
     file_path = f"thumbnails/{filename}"
     print('Output path is here ==>', file_path)
-    
-    content_type, _ = mimetypes.guess_type(filename)
 
+    content_type, _ = mimetypes.guess_type(filename)
     # Fallback if not recognized
     if content_type is None:
         content_type = "application/octet-stream"
@@ -86,8 +74,6 @@ def generate_image_task(prompt: str,
     except Exception as e:
         print(f"⚠️ Supabase insert error: {e}")
         return {"status": "error", "error": "DB insert failed"}
-
-    print(f"✅ Image uploaded to Supabase at {image_url} (Seed: {seed})")
 
     return {
         "status": "success",
