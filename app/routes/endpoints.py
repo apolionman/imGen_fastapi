@@ -56,7 +56,7 @@ async def enqueue_flux_im2im(req: FluxImageRequest):
         contents = response.content
 
         # Save image to ./input folder with unique filename
-        input_folder = './input'
+        input_folder = '/app/input_images'
         os.makedirs(input_folder, exist_ok=True)
 
         input_id = str(uuid.uuid4())[:8]

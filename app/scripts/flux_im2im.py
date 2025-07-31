@@ -44,7 +44,7 @@ def generate_im2im_task(prompt: str,
             print("⚠️ Image is None")
             return {"status": "error", "error": "Generated image is None"}
 
-        output_dir = "./output"
+        output_dir = "/app/output"
         os.makedirs(output_dir, exist_ok=True)
         filename = f"{uuid.uuid4().hex[:8]}.png"
         genI_name = os.path.join(output_dir, filename)
