@@ -79,8 +79,7 @@ async def enqueue_flux_im2im(req: FluxImageRequest):
             req.prompt,
             input_path,
             req.user_uuid,
-            req.task_id,
-            job_id=req.task_id
+            req.task_id
         )
 
         return {"task_id": job.id, "status": "queued"}
